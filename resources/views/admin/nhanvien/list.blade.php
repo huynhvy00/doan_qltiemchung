@@ -20,6 +20,9 @@
                 <li class="breadcrumb-item active">
                     <strong>Danh sách</strong>
                 </li>
+                <li class="breadcrumb-item active">
+                    <strong>Danh sách</strong>
+                </li>
             </ol>
         </div>
     </div>

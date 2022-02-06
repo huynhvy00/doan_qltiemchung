@@ -1,67 +1,53 @@
-<nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
-            <div class="container">
-                <a class="navbar-brand mx-auto d-lg-none" href="/">
-                    DaNaVC
-                    <strong class="d-block">Hệ Thống Tiêm Chủng</strong>
-                </a>
+<header>
+    <div class="container">
+        <div class="row">
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#hero">Trang chủ</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">Thông tin vaccine</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#timeline">Các mốc</a>
-                        </li>
-
-                        <a class="navbar-brand d-none d-lg-block" href="/">
-                            <img src="assets/images/logo.png" class="" alt="" width=30px>
-
-                            DaNaVC
-                            <strong class="d-block">Hệ Thống Tiêm Chủng Đà Nẵng</strong>
-                        </a>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#reviews">Cẩm nang</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#booking">Bảng giá</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#booking">Bệnh học</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" ></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" ></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#myModal"  class="nav-link" class="trigger-btn"   data-toggle="modal">Đăng nhập</a>
-
-                        </li>
-                    </ul>
-
-                </div>
-                <button>đăng nhạp</button>
-                <button>đăng nhạp</button>
-                <button>đăng nhạp</button>
-
+            <div class="col-md-4 col-sm-5">
+                <p>Chào mừng đến với hệ thống tiêm chủng Đà Nẵng</p>
             </div>
-        </nav>
+
+            <div class="col-md-8 col-sm-7 text-align-right">
+                <span class="phone-icon"><i class="fa fa-phone"></i> 036-450-7725</span>
+                <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 6:00 AM - 10:00 PM (Thứ 2 - Thứ 7)</span>
+                <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="#">danavc@injection.com</a></span>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+
+<!-- MENU -->
+<section class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+            </button>
+
+            <!-- lOGO TEXT HERE -->
+            <a href="index.html"><img src="images/LOGO2.png" alt="" width="50px" /></a>
+            <strong>HỆ THỐNG TIÊM CHỦNG ĐÀ NẴNG</strong>
+        </div>
+
+        <!-- MENU LINKS -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#top" class="smoothScroll">Trang chủ</a></li>
+                <li><a href="#about" class="smoothScroll">Giới thiệu</a></li>
+                <li><a href="/vaccines" class="smoothScroll">Vắc xin</a></li>
+                <li><a href="" class="smoothScroll">Đăng ký tiêm</a></li>
+                <li><a href="#news" class="smoothScroll">Tra cứu</a></li>
+                <li><a href="#about" class="smoothScroll">Bệnh học</a></li>
+                <li><a href="#team" class="smoothScroll">Tin tức</a></li>
+                <li class="appointment-btn">
+                <a href="#myModal"  class="nav-ink" class="trigger-btn"   data-toggle="modal">
+                Đăng nhập</a></li>
+            </ul>
+        </div>
+
+    </div>
+</section>

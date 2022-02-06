@@ -118,6 +118,9 @@ Route::get('/pass', function () {
 Route::get('/header', function () {
     return view('admin.header');
 });
+Route::get('/vaccines', function () {
+    return view('vaccines');
+});
 // Route::get('/main', function () {
 //     return view('admin/main');
 // });

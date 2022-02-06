@@ -1,382 +1,375 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <title>DaNaVC - Hệ thống tiêm chủng Đà Nẵng</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Tooplate">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="user/css/bootstrap.min.css">
+    <link rel="stylesheet" href="user/css/font-awesome.min.css">
+    <link rel="stylesheet" href="user/css/animate.css">
+    <link rel="stylesheet" href="user/css/owl.carousel.css">
+    <link rel="stylesheet" href="user/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="user/css/tooplate-style.css">
+    <!-- item -->
 
-    <title>Hệ thống tiêm chủng Đà Nẵng</title>
-
-    <!-- CSS FILES -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <link href="assets/css/owl.carousel.min.css" rel="stylesheet">
-
-    <link href="assets/css/owl.theme.default.min.css" rel="stylesheet">
-
-    <link href="assets/css/templatemo-medic-care.css" rel="stylesheet">
-    <link href="assets/css/modal-login.css" rel="stylesheet">
-    <!--
-
-TemplateMo 566 Medic Care
-
-https://templatemo.com/tm-566-medic-care
-
--->
+    <!--  -->
 </head>
 
-<body id="top">
-
-    <main>
-
-
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+    <section class="preloader">
+        <div class="spinner">
+            <span class="spinner-rotate"></span>
+        </div>
+    </section>
+    <!-- HEADER -->
     @include('header')
-        @include('modal-login')
-        <section class="hero" id="hero">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-12">
-                        <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="assets/images/slider/portrait-successful-mid-adult-doctor-with-crossed-arms.jpg" class="img-fluid" alt="">
-                                </div>
-
-                                <div class="carousel-item">
-                                    <img src="assets/images/slider/young-asian-female-dentist-white-coat-posing-clinic-equipment.jpg" class="img-fluid" alt="">
-                                </div>
-
-                                <div class="carousel-item">
-                                    <img src="assets/images/slider/doctor-s-hand-holding-stethoscope-closeup.jpg" class="img-fluid" alt="">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="heroText d-flex flex-column justify-content-center">
-
-                            <h1 class="mt-auto mb-2">
-                                Better
-                                <div class="animated-info">
-                                    <span class="animated-item">health</span>
-                                    <span class="animated-item">days</span>
-                                    <span class="animated-item">lives</span>
-                                </div>
-                            </h1>
-
-                            <p class="mb-4">Medic Care is a Bootstrap 5 Template provided by TemplateMo website. Credits go to FreePik and RawPixel for images used in this template.</p>
-
-                            <div class="heroLinks d-flex flex-wrap align-items-center">
-                                <a class="custom-link me-4" href="#about" data-hover="Learn More">Learn More</a>
-
-                                <p class="contact-phone mb-0"><i class="bi-phone"></i> 010-020-0340</p>
+    <!-- HOME -->
+    <section id="home" class="slider" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row">
+                <div class="owl-carousel owl-theme">
+                    <div class="item item-first">
+                        <div class="caption">
+                            <div class="col-md-offset-1 col-md-10">
+                                <h3>Hãy để chúng tôi chăm sóc bạn</h3>
+                                <h1>Bảo vệ trẻ em</h1>
+                                <a href="#team" class="section-btn btn btn-default smoothScroll">Liên hệ ngay</a>
                             </div>
                         </div>
                     </div>
 
+                    <div class="item item-second">
+                        <div class="caption">
+                            <div class="col-md-offset-1 col-md-10">
+                                <h3>Tránh xa nguy hiểm</h3>
+                                <h1>Bảo vệ gia đình</h1>
+                                <a href="#about" class="section-btn btn btn-default btn-gray smoothScroll">Liên hệ ngay</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item item-third">
+                        <div class="caption">
+                            <div class="col-md-offset-1 col-md-10">
+                                <h3>Phòng ngừa các loại bệnh</h3>
+                                <h1>Bảo vệ xã hội</h1>
+                                <a href="#news" class="section-btn btn btn-default btn-blue smoothScroll">Liên hệ ngay</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
 
-        <section class="section-padding" id="about">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <h2 class="mb-lg-3 mb-3">Meet Dr. Carson</h2>
-
-                        <p>Protect yourself and others by wearing masks and washing hands frequently. Outdoor is safer than indoor for gatherings or holding events. People who get sick with Coronavirus disease (COVID-19) will experience mild to moderate symptoms and recover without special treatments.</p>
-
-                        <p>You can feel free to use this CSS template for your medical profession or health care related websites. You can <a rel="nofollow" href="http://paypal.me/templatemo" target="_blank">support us a little</a> via PayPal if this template is good and useful for your work.</p>
-                    </div>
-
-                    <div class="col-lg-4 col-md-5 col-12 mx-auto">
-                        <div class="featured-circle bg-white shadow-lg d-flex justify-content-center align-items-center">
-                            <p class="featured-text"><span class="featured-number">12</span> Years<br> of Experiences</p>
+                <div class="col-md-6 col-sm-6">
+                    <div class="about-info">
+                        <h3 class="wow fadeInUp" data-wow-delay="0.6s">Giới thiệu hệ thống</h3>
+                        <div class="wow fadeInUp" data-wow-delay="0.8s">
+                            <p>
+                                Hệ thống tiêm chủng VNVC (thuộc Công ty Cổ phần Vacxin Việt Nam) chính thức đi vào hoạt động
+                                từ tháng 6 năm 2017. Trong bối cảnh thế giới đang phải đương đầu với tình trạng biến đổi phức
+                                tạp của các chủng vi khuẩn gây bệnh cũng như sự thiếu hụt vắc xin tại Việt Nam như hiện nay,
+                                Hệ thống tiêm chủng VNVC ra đời nhằm cung cấp cho trẻ em Việt Nam những loại vắc xin có chất
+                                lượng tốt nhất cùng với hệ thống phòng tiêm chủng an toàn, hiện đại và cao cấp. Với những mục
+                                tiêu đó, Công ty VNVC đã xây dựng dây chuyền bảo quản lạnh (Cold chain) đạt tiêu chuẩn GSP …
+                                <a href="">Xem thêm</a>
+                            </p>
                         </div>
                     </div>
-
                 </div>
+
             </div>
-        </section>
-
-        <section class="gallery">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-6 col-6 ps-0">
-                        <img src="assets/images/gallery/medium-shot-man-getting-vaccine.jpg" class="img-fluid galleryImage" alt="get a vaccine" title="get a vaccine for yourself">
+        </div>
+    </section>
+    <!-- TEAM -->
+    <section id="team" data-stellar-background-ratio="1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="about-info">
+                        <h3 class="wow fadeInUp" data-wow-delay="0.1s" id="khuvuc" margin-bottom:20px">Các khu vực </h3>
                     </div>
-
-                    <div class="col-lg-6 col-6 pe-0">
-                        <img src="assets/images/gallery/female-doctor-with-presenting-hand-gesture.jpg" class="img-fluid galleryImage" alt="wear a mask" title="wear a mask to protect yourself">
-                    </div>
-
                 </div>
-            </div>
-        </section>
+                <div class="clearfix"></div>
+                <div id="contact">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
+                            <img src="user/images/team-image2.jpg" class="img-responsive" alt="" id="img-contact" />
 
-        <section class="section-padding pb-0" id="timeline">
-            <div class="container">
-                <div class="row">
+                            <div class="team-info">
+                                <h5>Trung tâm tại quận Cẩm Lệ</h5>
+                                <div class="team-contact-info">
+                                    <p><i class="fa fa-phone"></i> 010-070-0170</p>
+                                    <p><i class="fa fa-envelope-o"></i> <a href="#">camlevc@.com</a></p>
+                                    <p><i class="fa fa-map-marker"></i> 30 Bình Thái 1, Cẩm Lệ</p>
 
-                    <h2 class="text-center mb-lg-5 mb-4">Our Timeline</h2>
-
-                    <div class="timeline">
-                        <div class="row g-0 justify-content-end justify-content-md-around align-items-start timeline-nodes">
-                            <div class="col-9 col-md-5 me-md-4 me-lg-0 order-3 order-md-1 timeline-content bg-white shadow-lg">
-                                <h3 class=" text-light">Get the vaccine</h3>
-
-                                <p>Donec facilisis urna dui, a dignissim mauris pretium a. Quisque quis libero fermentum, tempus felis eu, consequat nibh.</p>
+                                </div>
+                                <ul class="social-icon">
+                                    <li><a href="#" class="fa fa-facebook-square"></a></li>
+                                    <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                </ul>
                             </div>
 
-                            <div class="col-3 col-sm-1 order-2 timeline-icons text-md-center">
-                                <i class="bi-patch-check-fill timeline-icon"></i>
-                            </div>
-
-                            <div class="col-9 col-md-5 ps-md-3 ps-lg-0 order-1 order-md-3 py-4 timeline-date">
-                                <time>2021-07-31 Saturday</time>
-                            </div>
-                        </div>
-
-                        <div class="row g-0 justify-content-end justify-content-md-around align-items-start timeline-nodes my-lg-5 my-4">
-                            <div class="col-9 col-md-5 ms-md-4 ms-lg-0 order-3 order-md-1 timeline-content bg-white shadow-lg">
-                                <h3 class=" text-light">Consulting your health</h3>
-
-                                <p>You are fully permitted to use this template for your commercial or personal website. You are not permitted to redistribute the template ZIP file for a download purpose on any other <a href="https://www.google.com/search?q=free+css" target="_blank">Free CSS collection</a> website.</p>
-                            </div>
-
-                            <div class="col-3 col-sm-1 order-2 timeline-icons text-md-center">
-                                <i class="bi-book timeline-icon"></i>
-                            </div>
-
-                            <div class="col-9 col-md-5 pe-md-3 pe-lg-0 order-1 order-md-3 py-4 timeline-date">
-                                <time>2021-07-15 Thursday</time>
-                            </div>
-                        </div>
-
-                        <div class="row g-0 justify-content-end justify-content-md-around align-items-start timeline-nodes">
-                            <div class="col-9 col-md-5 me-md-4 me-lg-0 order-3 order-md-1 timeline-content bg-white shadow-lg">
-                                <h3 class=" text-light">Certified Nurses</h3>
-
-                                <p>Phasellus eleifend, urna interdum congue viverra, arcu neque ultrices ligula, id pulvinar nisi nibh et lacus. Vivamus gravida, ipsum non euismod tincidunt, sapien elit fermentum mi, quis iaculis enim ligula at arcu.</p>
-                            </div>
-
-                            <div class="col-3 col-sm-1 order-2 timeline-icons text-md-center">
-                                <i class="bi-file-medical timeline-icon"></i>
-                            </div>
-
-                            <div class="col-9 col-md-5 ps-md-3 ps-lg-0 order-1 order-md-3 py-4 timeline-date">
-                                <time>2021-06-28 Monday</time>
-                            </div>
-                        </div>
-
-                        <div class="row g-0 justify-content-end justify-content-md-around align-items-start timeline-nodes my-lg-5 my-4">
-                            <div class="col-9 col-md-5 ms-md-4 ms-lg-0 order-3 order-md-1 timeline-content bg-white shadow-lg">
-                                <h3 class=" text-light">Covid-19 Hospitals</h3>
-
-                                <p class="mb-0 pb-0">Fusce vestibulum euismod nulla sed ultrices. Praesent rutrum nulla vel sapien euismod, quis tempus dui placerat.</p>
-
-                                <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla</p>
-                            </div>
-
-                            <div class="col-3 col-sm-1 order-2 timeline-icons text-md-center">
-                                <i class="bi-globe timeline-icon"></i>
-                            </div>
-
-                            <div class="col-9 col-md-5 pe-md-3 pe-lg-0 order-1 order-md-3 py-4 timeline-date">
-                                <time>2021-05-30 Sunday</time>
-                            </div>
-                        </div>
-
-                        <div class="row g-0 justify-content-end justify-content-md-around align-items-start timeline-nodes">
-                            <div class="col-9 col-md-5 me-md-4 me-lg-0 order-3 order-md-1 timeline-content bg-white shadow-lg">
-                                <h3 class=" text-light">Freelance Nursing</h3>
-
-                                <p>If you need a working contact form that submits email to your inbox, please <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">visit our contact page</a> for more information.</p>
-                            </div>
-
-                            <div class="col-3 col-sm-1 order-2 timeline-icons text-md-center">
-                                <i class="bi-person timeline-icon"></i>
-                            </div>
-
-                            <div class="col-9 col-md-5 ps-md-3 ps-lg-0 order-1 order-md-3 py-4 timeline-date">
-                                <time>2021-05-18 Tuesday</time>
-                            </div>
                         </div>
                     </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
+                            <img src="user/images/team-image2.jpg" class="img-responsive" alt="" id="img-contact" />
 
-                </div>
-            </div>
-        </section>
+                            <div class="team-info">
+                                <h5>Trung tâm tại quận Ngũ Hành Sơn</h5>
+                                <div class="team-contact-info">
+                                    <p><i class="fa fa-phone"></i> 010-070-0170</p>
+                                    <p><i class="fa fa-envelope-o"></i> <a href="#">nguhanhsonvc@.com</a></p>
+                                    <p><i class="fa fa-map-marker"></i> 19 Trương Định</p>
 
-        <section class="section-padding pb-0" id="reviews">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-12">
-                        <h2 class="text-center mb-lg-5 mb-4">Our Patients</h2>
-
-                        <div class="owl-carousel reviews-carousel">
-
-                            <figure class="reviews-thumb d-flex flex-wrap align-items-center rounded">
-                                <div class="reviews-stars">
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star"></i>
                                 </div>
+                                <ul class="social-icon">
+                                    <li><a href="#" class="fa fa-facebook-square"></a></li>
+                                    <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                </ul>
+                            </div>
 
-                                <p class="text-primary d-block mt-2 mb-0 w-100"><strong>Best Health Care</strong></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
+                            <img src="user/images/team-image2.jpg" class="img-responsive" alt="" id="img-contact" />
 
-                                <p class="reviews-text w-100">Phasellus ligula ante, tempus ac imperdiet ut, mattis ac nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                            <div class="team-info">
+                                <h5>Trung tâm tại quận Hải Châu</h5>
+                                <div class="team-contact-info">
+                                    <p><i class="fa fa-phone"></i> 010-070-0170</p>
+                                    <p><i class="fa fa-envelope-o"></i> <a href="#">haichauvc@.com</a></p>
+                                    <p><i class="fa fa-map-marker"></i> 108 Lê Đình Lý</p>
 
-                                <img src="assets/images/reviews/beautiful-woman-face-portrait-brown-background.jpeg" class="img-fluid reviews-image" alt="">
-
-                                <figcaption class="ms-4">
-                                    <strong>Marie</strong>
-
-                                    <span class="text-muted">Patient</span>
-                                </figcaption>
-                            </figure>
-
-                            <figure class="reviews-thumb d-flex flex-wrap align-items-center rounded">
-                                <div class="reviews-stars">
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star"></i>
                                 </div>
+                                <ul class="social-icon">
+                                    <li><a href="#" class="fa fa-facebook-square"></a></li>
+                                    <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                </ul>
+                            </div>
 
-                                <p class="text-primary d-block mt-2 mb-0 w-100"><strong>Doctor cares everyone!</strong></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
+                            <img src="user/images/team-image2.jpg" class="img-responsive" alt="" id="img-contact" />
 
-                                <p class="reviews-text w-100">Donec in elementum orci, nec posuere ligula. Quisque vulputate diam et ullamcorper ullamcorper. Pellentesque vestibulum neque at leo fermentum mattis.</p>
+                            <div class="team-info">
+                                <h5>Trung tâm tại quận Liên Chiểu</h5>
+                                <div class="team-contact-info">
+                                    <p><i class="fa fa-phone"></i> 010-070-0170</p>
+                                    <p><i class="fa fa-envelope-o"></i> <a href="#">lienchieuvc@.com</a></p>
+                                    <p><i class="fa fa-map-marker"></i> 110 Tôn Đức Thắng</p>
 
-                                <img src="assets/images/reviews/senior-man-wearing-white-face-mask-covid-19-campaign-with-design-space.jpeg" class="img-fluid reviews-image" alt="">
-
-                                <figcaption class="ms-4">
-                                    <strong>Ben Walker</strong>
-
-                                    <span class="text-muted">Recovered</span>
-                                </figcaption>
-                            </figure>
-
-                            <figure class="reviews-thumb d-flex flex-wrap align-items-center rounded">
-                                <div class="reviews-stars">
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
                                 </div>
+                                <ul class="social-icon">
+                                    <li><a href="#" class="fa fa-facebook-square"></a></li>
+                                    <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                </ul>
+                            </div>
 
-                                <p class="text-primary d-block mt-2 mb-0 w-100"><strong>Great services!</strong></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
+                            <img src="user/images/team-image2.jpg" class="img-responsive" alt="" id="img-contact" />
 
-                                <p class="reviews-text w-100">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec sit amet velit vitae purus aliquam efficitur.</p>
+                            <div class="team-info">
+                                <h5>Trung tâm tại quận Sơn Trà</h5>
+                                <div class="team-contact-info">
+                                    <p><i class="fa fa-phone"></i> 010-070-0170</p>
+                                    <p><i class="fa fa-envelope-o"></i> <a href="#">sontravc@.com</a></p>
+                                    <p><i class="fa fa-map-marker"></i> 20 Mân Quang</p>
 
-                                <img src="assets/images/reviews/portrait-british-woman.jpeg" class="img-fluid reviews-image" alt="">
-
-                                <figcaption class="ms-4">
-                                    <strong>Laura Zono</strong>
-
-                                    <span class="text-muted">New Patient</span>
-                                </figcaption>
-                            </figure>
-
-                            <figure class="reviews-thumb d-flex flex-wrap align-items-center rounded">
-                                <div class="reviews-stars">
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star-fill"></i>
-                                    <i class="bi-star"></i>
-                                    <i class="bi-star"></i>
                                 </div>
-
-                                <p class="text-primary d-block mt-2 mb-0 w-100"><strong>Best Advices</strong></p>
-
-                                <p class="reviews-text w-100">Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla.</p>
-
-                                <img src="assets/images/reviews/woman-wearing-mask-face-closeup-covid-19-green-background.jpeg" class="img-fluid reviews-image" alt="">
-
-                                <figcaption class="ms-4">
-                                    <strong>Rosey</strong>
-
-                                    <span class="text-muted">Almost Recovered</span>
-                                </figcaption>
-                            </figure>
+                                <ul class="social-icon">
+                                    <li><a href="#" class="fa fa-facebook-square"></a></li>
+                                    <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                </ul>
+                            </div>
 
                         </div>
                     </div>
 
                 </div>
+
+
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section-padding" id="booking">
-            <div class="container">
-                <div class="row">
+    <!-- NEWS -->
 
-                    <div class="col-lg-8 col-12 mx-auto">
-                        <div class="booking-form">
+    <section id="news" data-stellar-background-ratio="2.5">
+        <div class="container">
+            <div class="row">
 
-                            <h2 class="text-center mb-lg-3 mb-2">Book an appointment</h2>
+                <div class="col-md-12 col-sm-12">
+                    <!-- SECTION TITLE -->
+                    <div class="section-title wow fadeInUp" id="tit" data-wow-delay="0.1s">
+                        <h3>Danh mục Vắc xin</h3>
+                        <a id="more" href="">Xem tất cả</a>
+                    </div>
+                    <hr>
 
-                            <form role="form" action="#booking" method="post">
-                                <div class="row">
-                                    <div class="col-lg-6 col-12">
-                                        <input type="text" name="name" id="name" class="form-control" placeholder="Full name" required>
-                                    </div>
+                </div>
 
-                                    <div class="col-lg-6 col-12">
-                                        <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required>
-                                    </div>
+                <div class="col-md-4 col-sm-6" id="item">
+                    <!-- NEWS THUMB -->
+                    <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="news-detail.html">
+                            <img src="user/images/news-image1.jpg" class="img-responsive" alt="">
+                        </a>
+                        <div class="news-info">
+                            <span>Vắc xin VARILRIX (Bỉ) phòng bệnh thủy đậu</span>
+                            <span>Giá: 200.000 VND</span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
 
-                                    <div class="col-lg-6 col-12">
-                                        <input type="telephone" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" placeholder="Phone: 123-456-7890">
-                                    </div>
+                <div class="col-md-4 col-sm-6" id="item">
+                    <!-- NEWS THUMB -->
+                    <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="news-detail.html">
+                            <img src="user/images/news-image1.jpg" class="img-responsive" alt="">
+                        </a>
+                        <div class="news-info">
+                            <span>IMOJEV – Vắc xin phòng viêm não Nhật Bản thế hệ mới</span>
+                            <span>Giá: 290.000 VND</span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6" id="item">
+                    <!-- NEWS THUMB -->
+                    <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="news-detail.html">
+                            <img src="user/images/news-image1.jpg" class="img-responsive" alt="">
+                        </a>
+                        <div class="news-info">
+                            <span>Vắc xin ENGERIX B (Bỉ) phòng bệnh viêm gan B</span>
+                            <span>Giá: 900.000 VND</span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
 
-                                    <div class="col-lg-6 col-12">
-                                        <input type="date" name="date" id="date" value="" class="form-control">
+            </div>
+        </div>
+    </section>
+    <!--  -->
+    <section id="team" data-stellar-background-ratio="1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="about-info">
+                        <h3 class="wow fadeInUp" data-wow-delay="0.1s" id="khuvuc" margin-bottom:20px">Tin tức</h3>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div id="contact">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
+                            <img src="user/images/team-image2.jpg" class="img-responsive" alt="" id="img-contact" />
 
-                                    </div>
-
-                                    <div class="col-12">
-                                        <textarea class="form-control" rows="5" id="message" name="message" placeholder="Additional Message"></textarea>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-4 col-6 mx-auto">
-                                        <button type="submit" class="form-control" id="submit-button">Book Now</button>
-                                    </div>
+                            <div class="team-info">
+                                <h5>BÙNG NỔ CHUỖI ƯU ĐÃI LỚN NHẤT NĂM: PHÒNG BỆNH CHO CẢ NHÀ ĐÓN TẾT BÌNH AN</h5>
+                                <div class="team-contact-info">
+                                    <p>Mừng giáng sinh và năm mới, VNVC bùng nổ hàng loạt ưu đãi hấp dẫn, quà tặng giá trị,
+                                        hỗ trợ đặt vắc xin miễn phí, đặc biệt bộ đôi vắc xin Hot nhất...</p>
                                 </div>
-                            </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
+                            <img src="user/images/team-image2.jpg" class="img-responsive" alt="" id="img-contact" />
+
+                            <div class="team-info">
+                                <h5>ĐỪNG ĐỂ MẤT TẾT VÌ THỦY ĐẬU!</h5>
+                                <div class="team-contact-info">
+                                    <p>Tết Nguyên đán trùng với thời điểm tăng cao bệnh thủy đậu. Giao lưu đi lại nhiều càng
+                                        khiến người lớn dễ mắc thủy đậu, biến chứng nguy hiểm nếu không...</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
+                            <img src="user/images/team-image2.jpg" class="img-responsive" alt="" id="img-contact" />
+                            <div class="team-info">
+                                <h5>VNVC TIẾP TỤC KÝ THÀNH CÔNG HỢP ĐỒNG ĐẶT MUA 25 TRIỆU LIỀU VẮC XIN COVID-19 CỦA ASTRAZENECA</h5>
+                                <div class="team-contact-info">
+                                    <p>Hợp đồng đặt mua 25 triệu liều vắc xin Covid-19 tiếp theo cho năm 2022 được
+                                         đàm phán song phương với AstraZeneca và đi đến...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
+                            <img src="user/images/team-image2.jpg" class="img-responsive" alt="" id="img-contact" />
+                            <div class="team-info">
+                                <h5>GIỚI THIỆU TRUNG TÂM TIÊM CHỦNG</h5>
+                                <div class="team-contact-info">
+                                    <p>Hệ thống tiêm chủng VNVC ra đời nhằm cung cấp cho trẻ em Việt Nam những loại vắc
+                                        xin có chất lượng tốt nhất.</p>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
-
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
+    <!-- MAKE AN APPOINTMENT -->
+
+
+    <!-- GOOGLE MAP -->
+    <section id="google-map">
+        <!-- How to change your own map point
+            1. Go to Google Maps
+            2. Click on your location point
+            3. Click "Share" and choose "Embed map" tab
+            4. Copy only URL and paste it within the src="" field below
+	-->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3030413476204!2d100.5641230193719!3d13.757206847615207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf51ce6427b7918fc!2sG+Tower!5e0!3m2!1sen!2sth!4v1510722015945" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </section>
+
+
+    <!-- FOOTER -->
     @include('footer')
+
+    <!-- SCRIPTS -->
+    <script src="user/js/jquery.js"></script>
+    <script src="user/js/bootstrap.min.js"></script>
+    <script src="user/js/jquery.sticky.js"></script>
+    <script src="user/js/jquery.stellar.min.js"></script>
+    <script src="user/js/wow.min.js"></script>
+    <script src="user/js/smoothscroll.js"></script>
+    <script src="user/js/owl.carousel.min.js"></script>
+    <script src="user/js/custom.js"></script>
+    <!--  -->
+    <!-- item -->
+
+
 </body>
 
 </html>

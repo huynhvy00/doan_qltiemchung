@@ -1,59 +1,71 @@
-<footer class="site-footer section-padding" id="contact">
-            <div class="container">
-                <div class="row">
+<footer data-stellar-background-ratio="5">
+          <div class="container">
+               <div class="row">
 
-                    <div class="col-lg-5 me-auto col-12">
-                        <h5 class="mb-lg-4 mb-3">Opening Hours</h5>
+                    <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb">
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Thông tin liên hệ</h4>
 
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex">
-                                Sunday : Closed
-                            </li>
-
-                            <li class="list-group-item d-flex">
-                                Monday, Tuesday - Firday
-                                <span>8:00 AM - 3:30 PM</span>
-                            </li>
-
-                            <li class="list-group-item d-flex">
-                                Saturday
-                                <span>10:30 AM - 5:30 PM</span>
-                            </li>
-                        </ul>
+                              <div class="contact-info">
+                                   <p><i class="fa fa-phone"></i> 036-450-7725</p>
+                                   <p><i class="fa fa-envelope-o"></i> <a href="#">danavc@injection.com</a></p>
+                              </div>
+                         </div>
                     </div>
 
-                    <div class="col-lg-2 col-md-6 col-12 my-4 my-lg-0">
-                        <h5 class="mb-lg-4 mb-3">Our Clinic</h5>
+                    <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb">
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Cơ sở</h4>
+                              <div class="latest-stories">
 
-                        <p><a href="mailto:hello@company.co">hello@company.co</a><p>
+                                   <div class="stories-info">
+                                        <a href="#"><h5>Hệ thống tiêm chủng Đà Nẵng</h5></a>
+                                        <span>March 08, 2018</span>
+                                   </div>
+                              </div>
 
-                        <p>123 Digital Art Street, San Diego, CA 92123</p>
+                              <div class="latest-stories">
+
+                                   <div class="stories-info">
+                                        <a href="#"><h5>Trung tâm tiêm chủng</h5></a>
+                                        <span>February 20, 2018</span>
+                                   </div>
+                              </div>
+                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 col-12 ms-auto">
-                        <h5 class="mb-lg-4 mb-3">Socials</h5>
+                    <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb">
+                              <div class="opening-hours">
+                                   <h4 class="wow fadeInUp" data-wow-delay="0.4s">Giờ mở cửa</h4>
+                                   <p>Thứ 2 - Thứ 7 <span>06:00 AM - 10:00 PM</span></p>
+                                   <p>Chủ nhật <span>Đóng cửa</span></p>
+                              </div>
 
-                        <ul class="social-icon">
-                            <li><a href="#" class="social-icon-link bi-facebook"></a></li>
-
-                            <li><a href="#" class="social-icon-link bi-twitter"></a></li>
-
-                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
-
-                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
-                        </ul>
+                              <ul class="social-icon">
+                                   <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                   <li><a href="#" class="fa fa-twitter"></a></li>
+                                   <li><a href="#" class="fa fa-instagram"></a></li>
+                              </ul>
+                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-12 ms-auto mt-4 mt-lg-0">
-                        <p class="copyright-text">Copyright © Medic Care 2021 
-                        <br><br>Design: <a href="https://templatemo.com" target="_parent">TemplateMo</a></p>
+                    <div class="col-md-12 col-sm-12 border-top">
+                         <div class="col-md-4 col-sm-6">
+                              <div class="copyright-text">
+                                   <p>Copyright &copy; 2022 Huynh Vy
+
+                                   | Design: <a rel="nofollow" href="" target="_parent">by HuynhVy</a></p>
+                              </div>
+                         </div>
+
+                         <div class="col-md-2 col-sm-2 text-align-center">
+                              <div class="angle-up-btn">
+                                  <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i class="fa fa-angle-up"></i></a>
+                              </div>
+                         </div>
                     </div>
 
-                </div>
-            </section>
-        </footer>
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/owl.carousel.min.js"></script>
-        <script src="assets/js/scrollspy.min.js"></script>
-        <script src="assets/js/custom.js"></script>
+               </div>
+          </div>
+     </footer>

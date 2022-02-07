@@ -121,9 +121,15 @@ Route::get('/header', function () {
 Route::get('/vaccines', function () {
     return view('vaccines');
 });
-// Route::get('/main', function () {
-//     return view('admin/main');
-// });
+Route::get('/dang-ky-tiem', function () {
+    return view('dangkytiem');
+});
+Route::get('/cap-nhat-tai-khoan-ca-nhan', function () {
+    return view('capnhattk');
+});
+Route::get('/main', function () {
+    return view('admin/main');
+});
 Route::get('/create', function () {
     return view('admin/phuhuynh/create');
 });

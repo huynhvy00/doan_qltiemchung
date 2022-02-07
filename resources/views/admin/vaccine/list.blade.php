@@ -22,7 +22,8 @@
                 </li>
             </ol>
         </div>
-        <button>
+        <button style="background: none;
+    border: none;">
             <a class="btn btn-primary" style="float: right; " href="{{url('vaccine/create')}}">Thêm mới</a>
         </button>
     </div>

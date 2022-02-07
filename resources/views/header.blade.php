@@ -29,23 +29,23 @@
             </button>
 
             <!-- lOGO TEXT HERE -->
-            <a href="index.html"><img src="images/LOGO2.png" alt="" width="50px" /></a>
+            <a href="/"><img src="images/LOGO2.png" alt="" width="50px" /></a>
             <strong>HỆ THỐNG TIÊM CHỦNG ĐÀ NẴNG</strong>
         </div>
 
         <!-- MENU LINKS -->
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#top" class="smoothScroll">Trang chủ</a></li>
-                <li><a href="#about" class="smoothScroll">Giới thiệu</a></li>
+                <li><a href="/" class="smoothScroll">Trang chủ</a></li>
+                <li><a href="/gioi-thieu" class="smoothScroll">Giới thiệu</a></li>
                 <li><a href="/vaccines" class="smoothScroll">Vắc xin</a></li>
-                <li><a href="" class="smoothScroll">Đăng ký tiêm</a></li>
-                <li><a href="#news" class="smoothScroll">Tra cứu</a></li>
+                <li><a href="/dang-ky-tiem" class="smoothScroll">Đăng ký tiêm</a></li>
+                <li><a href="/cap-nhat-tai-khoan-ca-nhan" class="smoothScroll">Tra cứu</a></li>
                 <li><a href="#about" class="smoothScroll">Bệnh học</a></li>
                 <li><a href="#team" class="smoothScroll">Tin tức</a></li>
                 <li class="appointment-btn">
                 <a href="#myModal"  class="nav-ink" class="trigger-btn"   data-toggle="modal">
-                Đăng nhập</a></li>
+                Xin chào, PH Lê Văn A</a></li>
             </ul>
         </div>
 

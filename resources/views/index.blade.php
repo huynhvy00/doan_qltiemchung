@@ -76,12 +76,13 @@
                         <h3 class="wow fadeInUp" data-wow-delay="0.6s">Giới thiệu hệ thống</h3>
                         <div class="wow fadeInUp" data-wow-delay="0.8s">
                             <p>
-                                Hệ thống tiêm chủng VNVC (thuộc Công ty Cổ phần Vacxin Việt Nam) chính thức đi vào hoạt động
-                                từ tháng 6 năm 2017. Trong bối cảnh thế giới đang phải đương đầu với tình trạng biến đổi phức
-                                tạp của các chủng vi khuẩn gây bệnh cũng như sự thiếu hụt vắc xin tại Việt Nam như hiện nay,
-                                Hệ thống tiêm chủng VNVC ra đời nhằm cung cấp cho trẻ em Việt Nam những loại vắc xin có chất
-                                lượng tốt nhất cùng với hệ thống phòng tiêm chủng an toàn, hiện đại và cao cấp. Với những mục
-                                tiêu đó, Công ty VNVC đã xây dựng dây chuyền bảo quản lạnh (Cold chain) đạt tiêu chuẩn GSP …
+                                Hệ thống tiêm chủng DANAVC chính thức đi vào hoạt động từ tháng 01 năm 2022. Trong bối cảnh
+                                thế giới đang phải đương đầu với tình trạng biến đổi phức tạp của các chủng vi khuẩn gây bệnh
+                                 cũng như sự thiếu hụt vắc xin như hiện nay,
+                                Hệ thống tiêm chủng DANAVC ra đời nhằm hỗ trợ việc cung cấp vắc xin cho trẻ em đầy đủ và nhanh chóng.
+                                Đi kèm chất lượng, hệ thống giúp đội ngũ y tế có thể quản lý tốt thông tin trẻ tại địa bàn thành phố Đà Nẵng.
+                                . DANAVC đã xây dựng dây chuyền bảo quản lạnh (Cold chain) đạt tiêu chuẩn GSP với chất lượng tốt nhất cùng
+                                với hệ thống phòng tiêm chủng an toàn, hiện đại và cao cấp…
                                 <a href="">Xem thêm</a>
                             </p>
                         </div>
@@ -104,7 +105,7 @@
                 <div id="contact">
                     <div class="col-md-4 col-sm-6">
                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
-                            <img src="user/images/team-image2.jpg" class="img-responsive" alt="" id="img-contact" />
+                            <img src="images/cl.jpg" class="img-responsive" alt="" id="img-contact" />
 
                             <div class="team-info">
                                 <h5>Trung tâm tại quận Cẩm Lệ</h5>
@@ -124,7 +125,7 @@
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
-                            <img src="user/images/team-image2.jpg" class="img-responsive" alt="" id="img-contact" />
+                            <img src="images/nhs.png" class="img-responsive" alt="" id="img-contact" />
 
                             <div class="team-info">
                                 <h5>Trung tâm tại quận Ngũ Hành Sơn</h5>
@@ -144,7 +145,7 @@
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
-                            <img src="user/images/team-image2.jpg" class="img-responsive" alt="" id="img-contact" />
+                            <img src="images/hc.jpg" class="img-responsive" alt="" id="img-contact" />
 
                             <div class="team-info">
                                 <h5>Trung tâm tại quận Hải Châu</h5>
@@ -164,7 +165,7 @@
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
-                            <img src="user/images/team-image2.jpg" class="img-responsive" alt="" id="img-contact" />
+                            <img src="images/lc.jpg" class="img-responsive" alt="" id="img-contact" />
 
                             <div class="team-info">
                                 <h5>Trung tâm tại quận Liên Chiểu</h5>
@@ -184,7 +185,7 @@
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
-                            <img src="user/images/team-image2.jpg" class="img-responsive" alt="" id="img-contact" />
+                            <img src="images/sontra.jpg" class="img-responsive" alt="" id="img-contact" />
 
                             <div class="team-info">
                                 <h5>Trung tâm tại quận Sơn Trà</h5>
@@ -230,7 +231,7 @@
                     <!-- NEWS THUMB -->
                     <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
                         <a href="news-detail.html">
-                            <img src="user/images/news-image1.jpg" class="img-responsive" alt="">
+                            <img src="images/vx/vx1.jpg" class="img-responsive" alt="">
                         </a>
                         <div class="news-info">
                             <span>Vắc xin VARILRIX (Bỉ) phòng bệnh thủy đậu</span>
@@ -244,7 +245,7 @@
                     <!-- NEWS THUMB -->
                     <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
                         <a href="news-detail.html">
-                            <img src="user/images/news-image1.jpg" class="img-responsive" alt="">
+                            <img src="images/vx/vx2.png" class="img-responsive" alt="">
                         </a>
                         <div class="news-info">
                             <span>IMOJEV – Vắc xin phòng viêm não Nhật Bản thế hệ mới</span>
@@ -257,7 +258,7 @@
                     <!-- NEWS THUMB -->
                     <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
                         <a href="news-detail.html">
-                            <img src="user/images/news-image1.jpg" class="img-responsive" alt="">
+                            <img src="images/vx/vx3.jpg" class="img-responsive" alt="">
                         </a>
                         <div class="news-info">
                             <span>Vắc xin ENGERIX B (Bỉ) phòng bệnh viêm gan B</span>
@@ -274,16 +275,18 @@
     <section id="team" data-stellar-background-ratio="1">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-6">
-                    <div class="about-info">
+                <div class="col-md-6 col-sm-6" style="width:100%">
+                    <div class="about-info" style="display: flex; flex-direction: row;justify-content: space-between;">
                         <h3 class="wow fadeInUp" data-wow-delay="0.1s" id="khuvuc" margin-bottom:20px">Tin tức</h3>
+                        <a id="more" href="">Xem tất cả</a>
                     </div>
+                    <hr>
                 </div>
                 <div class="clearfix"></div>
                 <div id="contact">
                     <div class="col-md-4 col-sm-6">
                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
-                            <img src="user/images/team-image2.jpg" class="img-responsive" alt="" id="img-contact" />
+                            <img src="images/tintuc/tt2.jpg" class="img-responsive" alt="" id="img-" />
 
                             <div class="team-info">
                                 <h5>BÙNG NỔ CHUỖI ƯU ĐÃI LỚN NHẤT NĂM: PHÒNG BỆNH CHO CẢ NHÀ ĐÓN TẾT BÌNH AN</h5>
@@ -297,7 +300,7 @@
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
-                            <img src="user/images/team-image2.jpg" class="img-responsive" alt="" id="img-contact" />
+                            <img src="images/tintuc/tt1.jpg" class="img-responsive" alt="" id="img-" />
 
                             <div class="team-info">
                                 <h5>ĐỪNG ĐỂ MẤT TẾT VÌ THỦY ĐẬU!</h5>
@@ -311,19 +314,19 @@
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
-                            <img src="user/images/team-image2.jpg" class="img-responsive" alt="" id="img-contact" />
+                            <img src="images/tintuc/tt3.jpg" class="img-responsive" alt="" id="img-" />
                             <div class="team-info">
                                 <h5>VNVC TIẾP TỤC KÝ THÀNH CÔNG HỢP ĐỒNG ĐẶT MUA 25 TRIỆU LIỀU VẮC XIN COVID-19 CỦA ASTRAZENECA</h5>
                                 <div class="team-contact-info">
                                     <p>Hợp đồng đặt mua 25 triệu liều vắc xin Covid-19 tiếp theo cho năm 2022 được
-                                         đàm phán song phương với AstraZeneca và đi đến...</p>
+                                        đàm phán song phương với AstraZeneca và đi đến...</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
-                            <img src="user/images/team-image2.jpg" class="img-responsive" alt="" id="img-contact" />
+                            <img src="images/tintuc/tt2.jpg" class="img-responsive" alt="" id="img-" />
                             <div class="team-info">
                                 <h5>GIỚI THIỆU TRUNG TÂM TIÊM CHỦNG</h5>
                                 <div class="team-contact-info">
@@ -339,17 +342,9 @@
         </div>
     </section>
 
-    <!-- MAKE AN APPOINTMENT -->
-
-
     <!-- GOOGLE MAP -->
     <section id="google-map">
-        <!-- How to change your own map point
-            1. Go to Google Maps
-            2. Click on your location point
-            3. Click "Share" and choose "Embed map" tab
-            4. Copy only URL and paste it within the src="" field below
-	-->
+
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3030413476204!2d100.5641230193719!3d13.757206847615207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf51ce6427b7918fc!2sG+Tower!5e0!3m2!1sen!2sth!4v1510722015945" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
     </section>
 

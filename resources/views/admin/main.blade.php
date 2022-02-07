@@ -14,41 +14,26 @@
             <div class="sidebar-collapse">
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
-                        <span>QUẢN LÝ TIÊM CHỦNG</span>
-                        <span>{{ Auth::user()->tenNV }}</span>
-
-                        <div class="dropdown profile-element">
-                            <img alt="image" class="rounded-circle" src="admin/img/profile_small.jpg" />
-                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                <span class="block m-t-xs font-bold">{{ Auth::user()->tenNV }}</span>
-                                <span class="text-muted text-xs block">Art Director <b class="caret"></b></span>
-                            </a>
-                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
-                                <li><a class="dropdown-item" href="contacts.html">Contacts</a></li>
-                                <li><a class="dropdown-item" href="mailbox.html">Mailbox</a></li>
-                                <li class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="login.html">Logout</a></li>
-                            </ul>
-                        </div>
-                        <div class="logo-element">
-                            DaNaVC
+                        <div style="display: flex;   flex-direction: row; gap:10px">
+                            <a href="/admin/main"><img src="/images/LOGO2.png" alt="" width="30px" /></a>
+                            <h5>QUẢN LÝ TIÊM CHỦNG</h5>
                         </div>
                     </li>
-                    <li class="active">
+                    <li >
                         <a href="/main">
+                            <i class="fa fa-star"></i>
                             <span class="nav-label">Dashboards</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="{{asset('vaccine/list')}}">
-                            <i class="fa fa-diamond"></i>
+                            <i class="fa fa-database"></i>
                             <span class="nav-label">Quản lý Vaccine</span>
                         </a>
                     </li>
                     <li>
                         <a href="{{asset('benh/list')}}">
-                            <i class="fa fa-diamond"></i>
+                            <i class="fa fa-edit"></i>
                             <span class="nav-label">Quản lý thông tin bệnh</span>
                         </a>
                     </li>
@@ -58,145 +43,20 @@
                             <li><a href="{{asset('phuhuynh/list')}}">Phụ huynh</a></li>
                             <li><a href="{{asset('treem/list')}}">Trẻ em</a></li>
                             <li><a href="{{asset('nhanvien/list')}}">Nhân viên</a></li>
-
                         </ul>
                     </li>
                     <li>
-                        <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">Quản lý phiếu tiêm </span><span class="label label-warning float-right">16/24</span></a>
+                        <a href="mailbox.html"><i class="fa fa-sitemap"></i> <span class="nav-label">Quản lý phiếu tiêm </span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="">Phiếu đăng ký tiêm</a></li>
+                            <li><a href="">Phiếu đăng ký tiêm<span class="label label-warning float-right">16/24</span></a></li>
                             <li><a href="">Thực hiện tiêm</a></li>
-                            <!-- <li><a href="mail_compose.html">Compose email</a></li>
-                            <li><a href="email_template.html">Email templates</a></li> -->
                         </ul>
-                    </li>
-                    <!-- <li>
-                        <a href="metrics.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span> </a>
                     </li>
                     <li>
-                        <a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>
-                    </li> -->
-                    <!-- <li>
-                        <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="form_basic.html">Basic form</a></li>
-
-                        </ul>
-                    </li> -->
-                    <li>
-                        <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">App Views</span> <span class="float-right label label-primary">SPECIAL</span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="contacts.html">Contacts</a></li>
-                            <li><a href="profile.html">Profile</a></li>
-                            <li><a href="profile_2.html">Profile v.2</a></li>
-                            <li><a href="contacts_2.html">Contacts v.2</a></li>
-
-                        </ul>
-                    </li>
-                    <!-- <li>
-                        <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="search_results.html">Search results</a></li>
-                            <li><a href="lockscreen.html">Lockscreen</a></li>
-
-                        </ul>
-                    </li> -->
-                    <!-- <li>
-                        <a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span><span class="label label-info float-right">NEW</span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="toastr_notifications.html">Notification</a></li>
-                            <li><a href="nestable_list.html">Nestable list</a></li>
-                            <li><a href="agile_board.html">Agile board</a></li>
-                            <li><a href="timeline_2.html">Timeline v.2</a></li>
-                            <li><a href="diff.html">Diff</a></li>
-
-                        </ul>
-                    </li> -->
-                    <li>
-                        <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">UI Elements</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="typography.html">Typography</a></li>
-                            <li><a href="icons.html">Icons</a></li>
-                            <li><a href="draggable_panels.html">Draggable Panels</a></li>
-                            <!-- <li><a href="resizeable_panels.html">Resizeable Panels</a></li>
-                            <li><a href="buttons.html">Buttons</a></li>
-                            <li><a href="video.html">Video</a></li>
-                            <li><a href="tabs_panels.html">Panels</a></li>
-                            <li><a href="tabs.html">Tabs</a></li>
-                            <li><a href="notifications.html">Notifications & Tooltips</a></li>
-                            <li><a href="helper_classes.html">Helper css classes</a></li>
-                            <li><a href="badges_labels.html">Badges, Labels, Progress</a></li> -->
-                        </ul>
-                    </li>
-
-                    <!-- <li>
-                        <a href="grid_options.html"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>
+                        <a href="/"><i class="fa fa-pie-chart"></i> <span class="nav-label">Chuyển trang</span> </a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="table_basic.html">Static Tables</a></li>
-                            <li><a href="table_data_tables.html">Data Tables</a></li>
-                            <li><a href="table_foo_table.html">Foo Tables</a></li>
-                            <li><a href="jq_grid.html">jqGrid</a></li>
-                        </ul>
-                    </li> -->
-                    <!-- <li>
-                        <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="ecommerce_products_grid.html">Products grid</a></li>
-                            <li><a href="ecommerce_product_list.html">Products list</a></li>
-                            <li><a href="ecommerce_product.html">Product edit</a></li>
-                            <li><a href="ecommerce_product_detail.html">Product detail</a></li>
-                            <li><a href="ecommerce-cart.html">Cart</a></li>
-                            <li><a href="ecommerce-orders.html">Orders</a></li>
-                            <li><a href="ecommerce_payments.html">Credit Card form</a></li>
-                        </ul>
-                    </li> -->
-                    <!-- <li>
-                        <a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="basic_gallery.html">Lightbox Gallery</a></li>
-                            <li><a href="slick_carousel.html">Slick Carousel</a></li>
-                            <li><a href="carousel.html">Bootstrap Carousel</a></li>
-
-                        </ul>
-                    </li> -->
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li>
-                                <a href="#" id="damian">Third Level <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-
-                                </ul>
-                            </li>
-                            <li><a href="#">Second Level Item</a></li>
-                            <li>
-                                <a href="#">Second Level Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Item</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- <li>
-                        <a href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info float-right">62</span></a>
-                    </li> -->
-                    <li class="landing_link">
-                        <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning float-right">NEW</span></a>
-                    </li>
-                    <li class="special_link">
-                        <a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
+                        <a href="/admin/login"><i class="fa fa-sign-out"></i> <span class="nav-label">Đăng xuất</span></a>
                     </li>
                 </ul>
 
@@ -215,51 +75,19 @@
                         </form>
                     </div>
                     <ul class="nav navbar-top-links navbar-right">
-                        <!-- <li style="padding: 20px">
-                            <span class="m-r-sm text-muted welcome-message">Welcome to INSPINIA+ Admin Theme.</span>
-                        </li> -->
-                        <li class="dropdown">
-                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                                <i class="fa fa-envelope"></i> <span class="label label-warning">16</span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-messages dropdown-menu-right">
-                                <li class="dropdown-divider"></li>
-                                <li>
-                                    <div class="text-center link-block">
-                                        <a href="mailbox.html" class="dropdown-item">
-                                            <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                                <i class="fa fa-bell"></i> <span class="label label-primary">8</span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <div style="display: flex;   flex-direction: row; gap:10px">
+                            <a href="" style="padding: 0px 0px;">
+                                <img alt="image" class="rounded-circle" src="/images/phuhuynh/{{ Auth::user()->anh }}" style="margin: 15px 0px 15px 15px; height: 30px; width: 30px" />
+                                   <span >
+                                   Chào NVTT, {{ Auth::user()->tenNV }}
+                                   </span>
+                                </a>
 
-                                <li class="dropdown-divider"></li>
-                                <li>
-                                    <div class="text-center link-block">
-                                        <a href="notifications.html" class="dropdown-item">
-                                            <strong>See All Alerts</strong>
-                                            <i class="fa fa-angle-right"></i>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
+                            </div>
+
                         </li>
-                        <li>
-                            <a href="login.html">
-                                <i class="fa fa-sign-out"></i> Log out
-                            </a>
-                        </li>
-                        <li>
-                            <a class="right-sidebar-toggle">
-                                <i class="fa fa-tasks"></i>
-                            </a>
-                        </li>
+
                     </ul>
                 </nav>
             </div>
@@ -626,10 +454,10 @@
         </div>
         <div class="footer">
             <div class="float-right">
-                10GB of <strong>250GB</strong> Free.
+               Huynh Thi Thao Vy <strong>- 1811505310454</strong>
             </div>
             <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2018
+                <strong>Copyright</strong> Hệ thống quản lý tiêm chủng Đà Nẵng &copy; 2021-2022
             </div>
         </div>
     </div>

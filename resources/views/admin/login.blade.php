@@ -21,6 +21,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" action="/admin/login/store" method="post">
+                <img src="/images/LOGO2.png" alt=""  style="margin: 0px 162px 15px 162px; width:120px " />
 					<span class="login100-form-title p-b-43">
 						ĐĂNG NHẬP TÀI KHOẢN QUẢN LÝ TIÊM CHỦNG
 					</span>
@@ -61,7 +62,7 @@
 					</div>
                     @csrf
 				</form>
-				<div class="login100-more" style="background-image: url('login/images/tiemchung.jpg');">
+				<div class="login100-more" style="background-image: url('/login/images/bg1.jpg');">
 				</div>
 			</div>
 		</div>

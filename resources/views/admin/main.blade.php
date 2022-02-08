@@ -46,10 +46,11 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="mailbox.html"><i class="fa fa-sitemap"></i> <span class="nav-label">Quản lý phiếu tiêm </span></a>
+                        <a href=""><i class="fa fa-sitemap"></i> <span class="nav-label">Quản lý phiếu tiêm </span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="">Phiếu đăng ký tiêm<span class="label label-warning float-right">16/24</span></a></li>
+                            <li><a href="{{asset('phieutiem/list')}}">Phiếu đăng ký tiêm<span class="label label-warning float-right">16/24</span></a></li>
                             <li><a href="">Thực hiện tiêm</a></li>
+                            <li><a href="">Tạo phiếu đăng ký tiêm</a></li>
                         </ul>
                     </li>
                     <li>

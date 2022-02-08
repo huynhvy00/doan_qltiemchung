@@ -44,8 +44,8 @@
                 <li><a href="#about" class="smoothScroll">Bệnh học</a></li>
                 <li><a href="#team" class="smoothScroll">Tin tức</a></li>
                 <li class="appointment-btn">
-                <a href="#myModal"  class="nav-ink" class="trigger-btn"   data-toggle="modal">
-                Xin chào, PH Lê Văn A</a></li>
+                <a href="#myModal"  class="trigger-btn"   data-toggle="modal">
+                Đăng nhập</a></li>
             </ul>
         </div>
 

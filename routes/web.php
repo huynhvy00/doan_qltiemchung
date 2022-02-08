@@ -6,6 +6,7 @@ use App\Http\Controllers\user\PhuHuynhController;
 use App\Http\Controllers\admin\TreEmController;
 use App\Http\Controllers\admin\LoginAdController;
 use App\Http\Controllers\admin\MainController;
+use App\Http\Controllers\admin\PhieuDangKyTiemController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\VaccineController;
 use Illuminate\Support\Facades\Route;
@@ -102,7 +103,15 @@ Route::prefix('treem')->group(function (){
     Route::get('detail/{treem}',[TreEmController::class,'detail']);
     Route::get('delete/{id}',[TreEmController::class,'destroy']);
 });
-
+Route::prefix('phieutiem')->group(function (){
+    Route::get('/list',[PhieuDangKyTiemController::class,'index']);
+    Route::get('/create',[PhieuDangKyTiemController::class,'create']);
+    Route::post('/create',[PhieuDangKyTiemController::class,'store']);
+    Route::get('edit/{phieutiem}',[PhieuDangKyTiemController::class,'show']);
+    Route::post('edit/{phieutiem}',[PhieuDangKyTiemController::class,'update']);
+    Route::get('detail/{phieutiem}',[PhieuDangKyTiemController::class,'detail']);
+    Route::get('delete/{id}',[PhieuDangKyTiemController::class,'destroy']);
+});
 
 Route::get('/', function () {
     return view('index');
@@ -110,6 +119,9 @@ Route::get('/', function () {
 Route::get('/pass', function () {
     $p = Hash::make('123');
     return $p;
+});
+Route::get('/phieudangky', function () {
+    return view('phieudangky');
 });
 
 // Route::get('/login', function () {

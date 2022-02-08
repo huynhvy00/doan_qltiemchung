@@ -25,7 +25,7 @@
                             <span class="nav-label">Dashboards</span>
                         </a>
                     </li>
-                    <li class="active">
+                    <li >
                         <a href="{{asset('vaccine/list')}}">
                             <i class="fa fa-database"></i>
                             <span class="nav-label">Quản lý Vaccine</span>
@@ -48,7 +48,7 @@
                     <li>
                         <a href=""><i class="fa fa-sitemap"></i> <span class="nav-label">Quản lý phiếu tiêm </span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="{{asset('phieutiem/list')}}">Phiếu đăng ký tiêm<span class="label label-warning float-right">16/24</span></a></li>
+                            <li class="active"><a href="{{asset('phieutiem/list')}}">Phiếu đăng ký tiêm<span class="label label-warning float-right">16/24</span></a></li>
                             <li><a href="">Thực hiện tiêm</a></li>
                             <li><a href="">Tạo phiếu đăng ký tiêm</a></li>
                         </ul>

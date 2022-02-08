@@ -1,12 +1,15 @@
 <?php
 
 namespace App\Http\Controllers\admin;
+
 use App\Http\Controllers\Controller;
 use App\Models\khuVuc;
 use App\Models\User;
 use Mockery\Exception;
 use App\Http\Service\PhieuTiemService;
+use App\Models\Benh;
 use App\Models\ChiTietMuiTiem;
+use App\Models\doiTuong;
 use Illuminate\Support\Facades\Session;
 use App\Models\PhieuDangKyTiem;
 use App\Models\PhuHuynh;
@@ -23,58 +26,69 @@ class PhieuDangKyTiemController extends Controller
         $this->phieutiemService = $phieutiemService;
     }
 
-    public function index(){
+    public function index()
+    {
 
         $phieudk = PhieuDangKyTiem::latest()->paginate(5);
-        return view('admin.phieutiem.list',['title' => 'Danh sách phiếu đăng ký tiêm ',
-        'phieudk'=>$phieudk,
-        'a1'=> $this->phieutiemService->getPhieuDK(0),
-        'a2'=> $this->phieutiemService->getPhieuDK(1),
-        'nhanvien'=>$this->getUser(),
-        'vaccine'=>$this->getVaccine(),
-        'phuhuynh'=>$this->getPhuHuynh(),
-        'khuvuc'=>$this->getKhuVuc(),
-        'treem'=>$this->getTreem()]);
-
+        return view('admin.phieutiem.list', [
+            'title' => 'Danh sách phiếu đăng ký tiêm ',
+            'phieudk' => $phieudk,
+            'a1' => $this->phieutiemService->getPhieuDK(0),
+            'a2' => $this->phieutiemService->getPhieuDK(1),
+            'nhanvien' => $this->getUser(),
+            'vaccine' => $this->getVaccine(),
+            'phuhuynh' => $this->getPhuHuynh(),
+            'khuvuc' => $this->getKhuVuc(),
+            'treem' => $this->getTreem()
+        ]);
     }
-    public function show(PhieuDangKyTiem $phieudk){
-    //      $kv = $this->getKhuVuc();
-    //    dd($kv);
-        return view('admin.phieutiem.edit',[
-            'title'=>'Xác nhận phiếu đăng ký tiêm',
-        'vaccine'=>$this->getVaccine(),
-        'phuhuynh'=>$this->getPhuHuynh(),
-        'khuvuc'=>$this->getKhuVuc(),
-        'treem'=>$this->getTreEm(),
-            'nhanvien'=>$this->getUser(),
-            'phieudk'=>$phieudk]);
+    public function show(PhieuDangKyTiem $phieudk)
+    {
+        //      $kv = $this->getKhuVuc();
+        //    dd($kv);
+        return view('admin.phieutiem.edit', [
+            'title' => 'Xác nhận phiếu đăng ký tiêm',
+            'vaccine' => $this->getVaccine(),
+            'phuhuynh' => $this->getPhuHuynh(),
+            'khuvuc' => $this->getKhuVuc(),
+            'treem' => $this->getTreEm(),
+            'nhanvien' => $this->getUser(),
+            'phieudk' => $phieudk
+        ]);
     }
-    public function detail(PhieuDangKyTiem $phieudk){
-        return view('admin.treem.detail',[
-            'title'=> 'Chi tiết phiếu đăng ký',
-            'phieudk'=>$phieudk,
-        'vaccine'=>$this->getVaccine(),
-        'phuhuynh'=>$this->getPhuHuynh(),
-        'khuvuc'=>$this->getKhuVuc(),
-        'chitietmuitiem'=>$this->getChiTietMuiTiem(),
-        'treem'=>$this->getTreEm(),
-            'nhanvien'=>$this->getUser()
+    public function detail(PhieuDangKyTiem $phieudk)
+    {
+        // dd($phieudk);
+        return view('admin.phieutiem.detail', [
+            'title' => 'Chi tiết phiếu đăng ký',
+            'phieudk' => $phieudk,
+            'vaccine' => $this->getVaccine(),
+            'phuhuynh' => $this->getPhuHuynh(),
+            'khuvuc' => $this->getKhuVuc(),
+            'doituong' => $this->getDoiTuong(),
+            'benh' => $this->getBenh(),
+            'chitietmuitiem' => $this->getChiTietMuiTiem(),
+            'treem' => $this->getTreEm(),
+            'nhanvien' => $this->getUser()
 
         ]);
     }
     public function create()
     {
-        return view('admin.phieudk.create',['title' => 'Lập phiếu đăng ký theo yêu cầu',
-        'vaccine'=>$this->getVaccine(),
-        'treem'=>$this->getTreEm(),
-        'phuhuynh'=>$this->getPhuHuynh(),
-        'khuvuc'=>$this->getKhuVuc(),
-        'nhanvien'=>$this->getUser()]);
+        return view('admin.phieutiem.create', [
+            'title' => 'Lập phiếu đăng ký theo yêu cầu',
+            'vaccine' => $this->getVaccine(),
+            'treem' => $this->getTreEm(),
+            'phuhuynh' => $this->getPhuHuynh(),
+            'khuvuc' => $this->getKhuVuc(),
+            'nhanvien' => $this->getUser()
+        ]);
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         // dd($request);
-        $dk = new PhieuDangKyTiem();
+        $phieudk = new PhieuDangKyTiem();
         $request->validate([
             'id_Tre' => 'required',
             'id_NV' => 'required',
@@ -85,22 +99,22 @@ class PhieuDangKyTiemController extends Controller
         ]);
 
         try {
-            $dk->id_Tre = $request->input('id_Tre');
-            $dk->id_NV = $request->input('id_NV');
-            $dk->ngayDKTiem = $request->input('ngayDKTiem');
-            $dk->tongTien = $request->input('tongTien');
-            $dk->soMui = $request->input('soMui');
-            $dk->tinhTrang = $request->input('tinhTrang');
+            $phieudk->id_Tre = $request->input('id_Tre');
+            $phieudk->id_NV = $request->input('id_NV');
+            $phieudk->ngayDKTiem = $request->input('ngayDKTiem');
+            $phieudk->tongTien = $request->input('tongTien');
+            $phieudk->soMui = $request->input('soMui');
+            $phieudk->tinhTrang = $request->input('tinhTrang');
 
-            $dk->save();
+            $phieudk->save();
             return redirect('phieutiem/list')->with('success', 'Tạo phiếu đăng ký tiêm thành công');
-        }catch(Exception $err){
-            Session::flash('error',$err->getMessage());
+        } catch (Exception $err) {
+            Session::flash('error', $err->getMessage());
             return redirect()->back();
-      }
-
+        }
     }
-    public function update(Request $request, PhieuDangKyTiem $dangky){
+    public function update(Request $request, PhieuDangKyTiem $phieudk)
+    {
         // dd($request);
         $request->validate([
             // 'id_Tre' => 'required',
@@ -113,31 +127,47 @@ class PhieuDangKyTiemController extends Controller
         try {
             // $dangky->id_Tre = $request->input('id_Tre');
             // $dangky->id_NV = $request->input('id_NV');
-            $dangky->ngayDKTiem = $request->input('ngayDKTiem');
+            $phieudk->ngayDKTiem = $request->input('ngayDKTiem');
             // $dangky->tongTien = $request->input('tongTien');
-            $dangky->tinhTrang = $request->input('tinhTrang');
+            $phieudk->tinhTrang = $request->input('tinhTrang');
             // $dangky->soMui = $request->input('soMui');
 
-            $dangky->save();
+            $phieudk->save();
             return redirect('phieudangky/list')->with('success', 'Cập nhật phiếu đăng ký tiêm thành công !');
-        }catch(Exception $err){
-            Session::flash('error',$err->getMessage());
+        } catch (Exception $err) {
+            Session::flash('error', $err->getMessage());
             return redirect()->back();
         }
     }
-    public function getTreEm(){
+    public function getTreEm()
+    {
         return TreEm::all();
     }
-    public function getUser(){
+    public function getUser()
+    {
         return User::all();
-    } public function getVaccine(){
+    }
+    public function getVaccine()
+    {
         return Vaccine::all();
-    } public function getPhuHuynh(){
+    }
+    public function getPhuHuynh()
+    {
         return PhuHuynh::all();
-    } public function getKhuVuc(){
+    }
+    public function getKhuVuc()
+    {
         return khuVuc::all();
-    } public function getChiTietMuiTiem(){
-    return ChiTietMuiTiem::all();
-}
-
+    }
+    public function getChiTietMuiTiem()
+    {
+        return ChiTietMuiTiem::all();
+    }
+    public function getDoiTuong()
+    {
+        return doiTuong::all();
+    }public function getBenh()
+    {
+        return Benh::all();
+    }
 }

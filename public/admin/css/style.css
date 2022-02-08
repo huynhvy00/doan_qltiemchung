@@ -11788,3 +11788,16 @@ margin-bottom: 20px !important;
 .line strong {
     margin-right: 5px;
 }
+.abb {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    margin-left: 30px;
+}
+.ro {
+    width: 50%;
+    /* background: red; */
+}
+.co2 {
+    width: 135px;
+}

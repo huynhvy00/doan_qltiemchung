@@ -103,7 +103,7 @@
                                     <td class="text-bold-500">Đã xác nhận</td>
                                     @endif
                                     <td class="text-bold-500">
-                                        <a href="{{url('/phieutiem/detail/'.$dk->id)}}">
+                                        <a href="{{url('phieutiem/detail/'.$dk->id)}}">
                                             <i class="fa fa-edit" style="color: blue;font-size: 20px;"></i>
                                         </a>
                                     </td>

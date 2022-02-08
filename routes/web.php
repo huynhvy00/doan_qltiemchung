@@ -107,9 +107,9 @@ Route::prefix('phieutiem')->group(function (){
     Route::get('/list',[PhieuDangKyTiemController::class,'index']);
     Route::get('/create',[PhieuDangKyTiemController::class,'create']);
     Route::post('/create',[PhieuDangKyTiemController::class,'store']);
-    Route::get('edit/{phieutiem}',[PhieuDangKyTiemController::class,'show']);
-    Route::post('edit/{phieutiem}',[PhieuDangKyTiemController::class,'update']);
-    Route::get('detail/{phieutiem}',[PhieuDangKyTiemController::class,'detail']);
+    Route::get('detail/{phieudk}',[PhieuDangKyTiemController::class,'show']);
+    Route::post('detail/{phieudk}',[PhieuDangKyTiemController::class,'update']);
+    Route::get('/detail/{phieudk}',[PhieuDangKyTiemController::class,'detail']);
     Route::get('delete/{id}',[PhieuDangKyTiemController::class,'destroy']);
 });
 

@@ -23,7 +23,6 @@
             <div class="panel-body">
                 <h3>Chi tiết phiếu đăng ký tiêm (MÃ PHIẾU: {{ $phieudk ->id }})</h3>
                 <hr>
-
                 <h3 class="title-detail">THÔNG TIN TRẺ ĐĂNG KÝ</h3>
                 <div class="abb">
                     <div class="ro">
@@ -188,8 +187,6 @@
                 </div>
 
                 <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('phieutiem/list')}}">Quay lại</a></button>
-                <button type="submit" id="btn-submit" class="btn btn-primary">Xác nhận phiếu</button>
-                <button type="submit" id="btn-submit" class="btn btn-danger">Xoá phiếu</button>
 
 
             </div>

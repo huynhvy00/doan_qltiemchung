@@ -11,11 +11,13 @@ use App\Models\Benh;
 use App\Models\ChiTietMuiTiem;
 use App\Models\doiTuong;
 use Illuminate\Support\Facades\Session;
+// use App
 use App\Models\PhieuDangKyTiem;
 use App\Models\PhuHuynh;
 use App\Models\TreEm;
 use App\Models\Vaccine;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PhieuDangKyTiemController extends Controller
 {
@@ -88,6 +90,8 @@ class PhieuDangKyTiemController extends Controller
     public function store(Request $request)
     {
         // dd($request);
+        $ldate = date('Y-m-d');
+
         $phieudk = new PhieuDangKyTiem();
         $request->validate([
             'id_Tre' => 'required',
@@ -101,10 +105,11 @@ class PhieuDangKyTiemController extends Controller
         try {
             $phieudk->id_Tre = $request->input('id_Tre');
             $phieudk->id_NV = $request->input('id_NV');
-            $phieudk->ngayDKTiem = $request->input('ngayDKTiem');
+            $phieudk->ngayDKTiem = $request->input($ldate = date('Y-m-d'));
             $phieudk->tongTien = $request->input('tongTien');
             $phieudk->soMui = $request->input('soMui');
             $phieudk->tinhTrang = $request->input('tinhTrang');
+            $phieudk->ngayTao = $ldate;
 
             $phieudk->save();
             return redirect('phieutiem/list')->with('success', 'Tạo phiếu đăng ký tiêm thành công');
@@ -115,25 +120,29 @@ class PhieuDangKyTiemController extends Controller
     }
     public function update(Request $request, PhieuDangKyTiem $phieudk)
     {
-        // dd($request);
+        // $Auth::user()->id;
+        // dd();
+        $a=1;
         $request->validate([
             // 'id_Tre' => 'required',
             // 'id_NV' => 'required',
-            'ngayDKTiem' => 'required',
+            // 'ngayDKTiem' => 'required',
             // 'tongTien' => 'required',
-            'tinhTrang' => 'required',
+            // 'tinhTrang' => 'required',
             // 'soMui' => 'required',
+            // 'nhanvienXN' => 'required',
         ]);
         try {
             // $dangky->id_Tre = $request->input('id_Tre');
             // $dangky->id_NV = $request->input('id_NV');
-            $phieudk->ngayDKTiem = $request->input('ngayDKTiem');
+            // $phieudk->ngayDKTiem = $request->input('ngayDKTiem');
             // $dangky->tongTien = $request->input('tongTien');
-            $phieudk->tinhTrang = $request->input('tinhTrang');
+            $phieudk->tinhTrang = $a;
+            $phieudk->id_NV = Auth::user()->id;
             // $dangky->soMui = $request->input('soMui');
 
             $phieudk->save();
-            return redirect('phieudangky/list')->with('success', 'Cập nhật phiếu đăng ký tiêm thành công !');
+            return redirect('phieutiem/list')->with('success', 'Xác nhận phiếu đăng ký tiêm thành công !');
         } catch (Exception $err) {
             Session::flash('error', $err->getMessage());
             return redirect()->back();

@@ -18,6 +18,7 @@ class CreatePhieuDangKyTiemsTable extends Migration
             $table->integer('id_Tre');
             $table->integer('id_NV');
             $table->date('ngayDKTiem');
+            $table->date('ngayTao');
             $table->decimal('tongTien');
             $table->integer('tinhTrang')->default(1);
             $table->integer('soMui');

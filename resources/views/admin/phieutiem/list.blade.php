@@ -45,11 +45,12 @@
                                     <th>Họ tên trẻ</th>
                                     <th>Mã tiêm</th>
                                     <th>Khu vực</th>
-                                    <th>Ngày tạo phiếu</th>
                                     <th>Số mũi</th>
                                     <th>Ngày tiêm dự kiến</th>
                                     <th>Tổng tiền</th>
                                     <th>Nhân viên</th>
+                                    <th>Ngày tạo phiếu</th>
+
                                     <th>Tình trạng</th>
                                     <th>Chi tiết</th>
                                 </tr>
@@ -87,26 +88,38 @@
                                     @endif
                                     @endforeach
 
-                                    <td class="text-bold-500">Ngày tạo phiếu</td>
                                     <td class="text-bold-500">{{ $dk->soMui }}</td>
                                     <td class="text-bold-500">{{ $dk->ngayDKTiem }}</td>
                                     <td class="text-bold-500">{{ number_format($dk->tongTien,0,',','.').' đ'}}
-                                        @foreach($nhanvien as $nv)
+
+                                   @if($dk->id_NV == 0)
+                                    <td class="text-bold-500" style="color: red;">Trống</td>
+                                    @endif
+                                    @foreach($nhanvien as $nv)
                                         @if($dk->id_NV == $nv->id)
                                     <td class="text-bold-500">{{ $nv->tenNV }}</td>
                                     @endif
                                     @endforeach
+                                    <td class="text-bold-500">{{ $dk->ngayTao }}</td>
 
                                     @if ($dk->tinhTrang ==0)
-                                    <td class="text-bold-500" style="color: red">Chưa xác nhận</td>
+                                    <td class="text-bold-500" style="color: #fff;background: red; margin-left:20px ">Chưa xác nhận</td>
                                     @else
                                     <td class="text-bold-500">Đã xác nhận</td>
                                     @endif
+                                    @if ($dk->tinhTrang ==0)
                                     <td class="text-bold-500">
                                         <a href="{{url('phieutiem/detail/'.$dk->id)}}">
                                             <i class="fa fa-edit" style="color: blue;font-size: 20px;"></i>
                                         </a>
                                     </td>
+                                    @else
+                                    <td class="text-bold-500">
+                                        <a href="{{url('phieutiem/detail1/'.$dk->id)}}">
+                                            <i class="fa fa-edit" style="color: #CDC9A5; font-size: 20px;"></i>
+                                        </a>
+                                    </td>
+                                    @endif
                                 </tr>
                                 @endforeach
 
@@ -120,15 +133,16 @@
                         <table class="table table-striped mb-0" style="font-size: 13px;">
                             <thead>
                                 <tr>
-                                    <th>STT</th>
+                                <th>STT</th>
                                     <th>Họ tên trẻ</th>
                                     <th>Mã tiêm</th>
                                     <th>Khu vực</th>
-                                    <th>Ngày tạo phiếu</th>
                                     <th>Số mũi</th>
                                     <th>Ngày tiêm dự kiến</th>
                                     <th>Tổng tiền</th>
                                     <th>Nhân viên</th>
+                                    <th>Ngày tạo phiếu</th>
+
                                     <th>Tình trạng</th>
                                     <th>Chi tiết</th>
                                 </tr>
@@ -166,22 +180,41 @@
                                     @endif
                                     @endforeach
 
-                                    <td class="text-bold-500">Ngày tạo phiếu</td>
                                     <td class="text-bold-500">{{ $dk->soMui }}</td>
                                     <td class="text-bold-500">{{ $dk->ngayDKTiem }}</td>
                                     <td class="text-bold-500">{{ number_format($dk->tongTien,0,',','.').' đ'}}
-                                        @foreach($nhanvien as $nv)
+
+                                   @if($dk->id_NV == 0)
+                                    <td class="text-bold-500" style="color: red;">Trống</td>
+                                    @endif
+                                    @foreach($nhanvien as $nv)
                                         @if($dk->id_NV == $nv->id)
                                     <td class="text-bold-500">{{ $nv->tenNV }}</td>
                                     @endif
                                     @endforeach
+                                    <td class="text-bold-500">{{ $dk->ngayTao }}</td>
+
 
                                     @if ($dk->tinhTrang ==0)
                                     <td class="text-bold-500" style="color: red">Chưa xác nhận</td>
                                     @else
                                     <td class="text-bold-500">Đã xác nhận</td>
                                     @endif
-                                    <td class="text-bold-500"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></td>
+
+                                    @if ($dk->tinhTrang ==0)
+                                    <td class="text-bold-500">
+                                        <a href="{{url('phieutiem/detail/'.$dk->id)}}">
+                                            <i class="fa fa-edit" style="color: blue;font-size: 20px;"></i>
+                                        </a>
+                                    </td>
+                                    @else
+                                    <td class="text-bold-500">
+                                        <a href="{{url('phieutiem/detail/'.$dk->id)}}">
+                                            <i class="fa fa-edit" style="font-size: 20px;"></i>
+                                        </a>
+                                    </td>
+                                    @endif
+
                                 </tr>
                                 @endforeach
 
@@ -192,24 +225,25 @@
                 <div role="tabpanel" id="tab-3" class="tab-pane">
                     <div class="panel-body">
                         <table class="table table-striped mb-0" style="font-size: 13px;">
-                            <thead>
+                            <thead >
                                 <tr>
-                                    <th>STT</th>
+                                <th>STT</th>
                                     <th>Họ tên trẻ</th>
                                     <th>Mã tiêm</th>
                                     <th>Khu vực</th>
-                                    <th>Ngày tạo phiếu</th>
                                     <th>Số mũi</th>
                                     <th>Ngày tiêm dự kiến</th>
                                     <th>Tổng tiền</th>
                                     <th>Nhân viên</th>
+                                    <th>Ngày tạo phiếu</th>
+
                                     <th>Tình trạng</th>
                                     <th colspan="2">Chi tiết</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($a1 as $dk )
-                                <tr>
+                                <tr >
                                     <td class="text-bold-500">{{++$f}}</td>
                                     @foreach($treem as $te)
                                     @if($dk->id_Tre == $te->id)
@@ -240,22 +274,31 @@
                                     @endif
                                     @endforeach
 
-                                    <td class="text-bold-500">Ngày tạo phiếu</td>
                                     <td class="text-bold-500">{{ $dk->soMui }}</td>
                                     <td class="text-bold-500">{{ $dk->ngayDKTiem }}</td>
                                     <td class="text-bold-500">{{ number_format($dk->tongTien,0,',','.').' đ'}}
-                                        @foreach($nhanvien as $nv)
+
+                                   @if($dk->id_NV == 0)
+                                    <td class="text-bold-500" style="color: red;">Trống</td>
+                                    @endif
+                                    @foreach($nhanvien as $nv)
                                         @if($dk->id_NV == $nv->id)
                                     <td class="text-bold-500">{{ $nv->tenNV }}</td>
                                     @endif
                                     @endforeach
+                                    <td class="text-bold-500">{{ $dk->ngayTao }}</td>
+
 
                                     @if ($dk->tinhTrang ==0)
-                                    <td class="text-bold-500" style="color: red">Chưa xác nhận</td>
+                                    <td class="text-bold-500" style="color: #fff; background: red;">Chưa xác nhận</td>
                                     @else
                                     <td class="text-bold-500">Đã xác nhận</td>
                                     @endif
-                                    <td class="text-bold-500"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></td>
+                                    <td class="text-bold-500">
+                                        <a href="{{url('phieutiem/detail/'.$dk->id)}}">
+                                            <i class="fa fa-edit" style="color: blue;font-size: 20px;"></i>
+                                        </a>
+                                    </td>
                                     <td class="text-bold-500" style="color: red;font-size: 20px;"><i class="fa fa-trash"></i></td>
                                 </tr>
                                 @endforeach

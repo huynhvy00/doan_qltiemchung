@@ -14,6 +14,7 @@ class PhieuDangKyTiem extends Model
         'ngayDKTiem',
         'tongTien',
         'tinhTrang',
+        'ngayTao',
         'soMui'
     ];
 }

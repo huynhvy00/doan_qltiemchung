@@ -14,36 +14,43 @@ use Illuminate\Http\Request;
 
 class VaccineController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $vaccine = Vaccine::latest()->paginate(5);
-        return view('admin.vaccine.list',['title' => 'Danh sách vaccine', 'vaccine'=>$vaccine,
-        'benh'=>$this->getBenh(),
-        'doituong'=>$this->getDoiTuong(),
-        'losx'=>$this->getLoSX()]);
-
+        return view('admin.vaccine.list', [
+            'title' => 'Danh sách vaccine', 'vaccine' => $vaccine,
+            'benh' => $this->getBenh(),
+            'doituong' => $this->getDoiTuong(),
+            'losx' => $this->getLoSX()
+        ]);
     }
-    public function detail(Vaccine $vaccine){
-        return view('admin.vaccine.detail',[
-            'title'=> 'Chi tiet vaccine',
-            'vaccine'=>$vaccine,
-            'benh'=>$this->getBenh(),
-            'doituong'=>$this->getDoiTuong(),
-            'losx'=>$this->getLoSX()
+    public function detail(Vaccine $vaccine)
+    {
+        return view('admin.vaccine.detail', [
+            'title' => 'Chi tiet vaccine',
+            'vaccine' => $vaccine,
+            'benh' => $this->getBenh(),
+            'doituong' => $this->getDoiTuong(),
+            'losx' => $this->getLoSX()
         ]);
     }
 
 
     public function create()
     {
-        return view('admin.vaccine.create',['title' => 'them moi vacine',
-        'benh'=>$this->getBenh(),
-        'doituong'=>$this->getDoiTuong(),
-        'losx'=>$this->getLoSX()]);
+        return view('admin.vaccine.create', [
+            'title' => 'them moi vacine',
+            'benh' => $this->getBenh(),
+            'doituong' => $this->getDoiTuong(),
+            'losx' => $this->getLoSX()
+        ]);
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         // dd($request);
         $vx = new Vaccine();
+        $ldate = date('Y-m-d');
         $request->validate([
             'tenVX' => 'required',
             'code' => 'required',
@@ -69,35 +76,38 @@ class VaccineController extends Controller
             $vx->soLuong = $request->input('soLuong');
             $vx->donGia = $request->input('donGia');
             $vx->ghiChu = $request->input('ghiChu');
-
+            $vx->ngayNhap = $ldate;
 
             if ($request->hasFile('anh')) {
-               $file = $request->file('anh');
-               $extention = $file->getClientOriginalExtension();
-                $newImageName = time().'-'.$request->input('name').'.'.$extention;
+                $file = $request->file('anh');
+                $extention = $file->getClientOriginalExtension();
+                $newImageName = time() . '-' . $request->input('name') . '.' . $extention;
                 $file->move(public_path('images/vx'), $newImageName);
                 $vx->anh = $newImageName;
             }
             $vx->save();
             return redirect('vaccine/list')->with('success', 'Thêm mới vaccin thành công');
-        }catch(Exception $err){
-            Session::flash('error',$err->getMessage());
+        } catch (Exception $err) {
+            Session::flash('error', $err->getMessage());
             return redirect()->back();
-      }
-
+        }
     }
-    public function show(Vaccine $vaccine){
+    public function show(Vaccine $vaccine)
+    {
         //      $kv = $this->getKhuVuc();
         //    dd($kv);
-            return view('admin.vaccine.edit',[
-                'title'=>'Cap nhat vaccine',
-            'benh'=>$this->getBenh(),
-        'doituong'=>$this->getDoiTuong(),
-        'losx'=>$this->getLoSX(),
-                'vaccine'=>$vaccine] );
-        }
-    public function update(Request $request, Vaccine $vaccine){
+        return view('admin.vaccine.edit', [
+            'title' => 'Cap nhat vaccine',
+            'benh' => $this->getBenh(),
+            'doituong' => $this->getDoiTuong(),
+            'losx' => $this->getLoSX(),
+            'vaccine' => $vaccine
+        ]);
+    }
+    public function update(Request $request, Vaccine $vaccine)
+    {
         // dd($request);
+
         $request->validate([
             'tenVX' => 'required',
             'id_DoiTuong' => 'required',
@@ -125,25 +135,27 @@ class VaccineController extends Controller
             if ($request->hasFile('anh')) {
                 $file = $request->file('anh');
                 $extension = $file->getClientOriginalExtension();
-                $newImageName = time().'-'.$request->input('name').'.'.$extension;
+                $newImageName = time() . '-' . $request->input('name') . '.' . $extension;
                 $file->move(public_path('images/vx'), $newImageName);
                 $vaccine->anh = $newImageName;
             }
             $vaccine->save();
             return redirect('vaccine/list')->with('success', 'Cập nhật thông tin vaccine thành công');
-        }catch(Exception $err){
-            Session::flash('error',$err->getMessage());
+        } catch (Exception $err) {
+            Session::flash('error', $err->getMessage());
             return redirect()->back();
         }
     }
-    public function getLoSX(){
+    public function getLoSX()
+    {
         return LoSX::all();
     }
-    public function getDoiTuong(){
+    public function getDoiTuong()
+    {
         return doiTuong::all();
     }
-    public function getBenh(){
+    public function getBenh()
+    {
         return Benh::all();
     }
-
 }

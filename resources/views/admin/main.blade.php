@@ -22,7 +22,7 @@
                     <li >
                         <a href="/main">
                             <i class="fa fa-star"></i>
-                            <span class="nav-label">Dashboards</span>
+                            <span class="nav-label">Dashboards </span>
                         </a>
                     </li>
                     <li >
@@ -48,7 +48,7 @@
                     <li>
                         <a href=""><i class="fa fa-sitemap"></i> <span class="nav-label">Quản lý phiếu tiêm </span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li class="active"><a href="{{asset('phieutiem/list')}}">Phiếu đăng ký tiêm<span class="label label-warning float-right">16/24</span></a></li>
+                            <li class="active"><a href="{{asset('phieutiem/list')}}">Phiếu đăng ký tiêm<span class="label label-warning float-right">/24</span></a></li>
                             <li><a href="">Thực hiện tiêm</a></li>
                             <li><a href="">Tạo phiếu đăng ký tiêm</a></li>
                         </ul>
@@ -78,6 +78,7 @@
                     <ul class="nav navbar-top-links navbar-right">
                         <li>
                             <div style="display: flex;   flex-direction: row; gap:10px">
+
                             <a href="" style="padding: 0px 0px;">
                                 <img alt="image" class="rounded-circle" src="/images/phuhuynh/{{ Auth::user()->anh }}" style="margin: 15px 0px 15px 15px; height: 30px; width: 30px" />
                                    <span >

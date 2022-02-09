@@ -11801,3 +11801,9 @@ margin-bottom: 20px !important;
 .co2 {
     width: 135px;
 }
+.title-detail {
+    display: flex;
+    /* justify-content: center; */
+    margin-bottom: 20px;
+
+}

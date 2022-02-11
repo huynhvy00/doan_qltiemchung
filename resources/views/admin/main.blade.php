@@ -20,7 +20,7 @@
                         </div>
                     </li>
                     <li >
-                        <a href="/main">
+                        <a href="/admin/main">
                             <i class="fa fa-star"></i>
                             <span class="nav-label">Dashboards </span>
                         </a>
@@ -81,9 +81,20 @@
 
                             <a href="" style="padding: 0px 0px;">
                                 <img alt="image" class="rounded-circle" src="/images/phuhuynh/{{ Auth::user()->anh }}" style="margin: 15px 0px 15px 15px; height: 30px; width: 30px" />
-                                   <span >
+                                @if( Auth::user()->idLoaiNV == 1 )
+                                <span >
+                                   Chào NVYT, {{ Auth::user()->tenNV }}
+                                   </span>
+
+                                @elseif( Auth::user()->idLoaiNV == 2 )
+                                <span >
                                    Chào NVTT, {{ Auth::user()->tenNV }}
                                    </span>
+                                @else
+                                <span >
+                                   Chào AD, {{ Auth::user()->tenNV }}
+                                   </span>
+                                @endif
                                 </a>
 
                             </div>

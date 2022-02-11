@@ -1,7 +1,7 @@
 @extends('admin.main')
 @section('content')
 <div class="page-heading">
-<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-9">
             <h3>QUẢN LÝ THÔNG TIN BỆNH HỌC</h3>
             <ol class="breadcrumb">
@@ -16,9 +16,7 @@
                 </li>
             </ol>
         </div>
-        <button>
-            <a class="btn btn-primary" style="float: right; " href="{{url('vaccine/create')}}">Thêm mới</a>
-        </button>
+
     </div>
     @include('admin.alert')
     <form method="post" enctype="multipart/form-data">
@@ -29,18 +27,19 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="basicInput">Tên bệnh</label>
-                                <input type="text" class="form-control" name="tenBenh" id="basicInput" placeholder="Enter name">
+                                <input type="text" class="form-control" name="tenBenh" id="basicInput" >
                             </div>
                             <div class="form-group">
-                                <label for="helpInputTop">Code</label>
-                                <input type="text" class="form-control" name="code" id="helpInputTop" placeholder="Enter slug">
+                                <label for="helpInputTop">Mã bệnh</label>
+                                <input type="text" class="form-control" name="code" id="helpInputTop" >
                             </div>
                             <div class="form-group">
-                                <label for="helpInputTop">Ghi chú</label>
-                                <input type="text" class="form-control" name="ghiChu" id="helpInputTop" placeholder="Enter slug">
-                            </div>
+                                <label for="helpInputTop">Mô tả</label>
 
-                            <button type="submit" class="btn btn-secondary">Submit</button>
+                                <input type="text" class="form-control" name="ghiChu" id="helpInputTop">
+                            </div>
+                            <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('benh/list')}}">Quay lại</a></button>
+                            <button type="submit" id="btn-submit" class="btn btn-primary">Tạo mới</button>
                         </div>
                     </div>
                 </div>

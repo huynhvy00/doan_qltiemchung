@@ -5681,7 +5681,7 @@ body.body-small .footer.fixed {
 }
 
 .panel-body {
-    padding: 15px;
+    padding: 25px;
 }
 
 /* Bootstrap 3.3.x panels */
@@ -5995,13 +5995,16 @@ code {
 .ibox-content {
     background-color: #ffffff;
     color: inherit;
-    padding: 9px 15px 10px 15px;
+    padding: 0px 4px 0px 4px;
     border-color: #e7eaec;
+    margin-top: 20px;
     border-image: none;
     border-style: solid solid none;
     border-width: 1px 0;
 }
-
+.pagination {
+    margin-left: 15px;
+}
 .ibox-footer {
     color: inherit;
     border-top: 1px solid #e7eaec;
@@ -11766,7 +11769,7 @@ margin-bottom: 20px !important;
 }
 
 .content-detail {
-    padding: 20px;
+    padding: 0px 20px 20px 34px;
     display: flex;
     flex-direction: row;
 }
@@ -11783,7 +11786,7 @@ margin-bottom: 20px !important;
 }
 .img-vaccine {
     height: 200px;
-    padding: 20px;
+    padding: 0px 20px;
 }
 .line strong {
     margin-right: 5px;
@@ -11806,4 +11809,23 @@ margin-bottom: 20px !important;
     /* justify-content: center; */
     margin-bottom: 20px;
 
+}
+.tr-detail {
+    border: 1px solid #ececec;
+}
+.bbb {
+    background: #ffd;
+    width: 200px !important;
+}
+.bbc {
+    background: #fff;
+}
+.note-content {
+    background-color: #ffffff;
+    color: inherit;
+    padding: 0px 4px 0px 4px;
+    border-color: #e7eaec;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0;
 }

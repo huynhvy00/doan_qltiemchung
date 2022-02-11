@@ -2,10 +2,7 @@
 @section('content')
 <?php $i = 0; ?>
 <div>
-
-
     @include('admin.alert')
-
     <!-- Striped rows start -->
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-9">
@@ -26,7 +23,6 @@
     <form method="post" enctype="multipart/form-data">
         <section class="section">
             <div class="panel-body">
-
                 <fieldset>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Tên vaccine:</label>
@@ -42,7 +38,6 @@
                                 <option value="{{$b->code}}">{{$b->tenBenh}}</option>
                                 @endforeach
                             </select>
-                            <!-- <input type="text" class="form-control" name="code" placeholder="Loại bệnh"> -->
                         </div>
                     </div>
                     <div class="form-group row">
@@ -89,10 +84,13 @@
                             <input type="number" class="form-control" name="donGia" placeholder="Đơn giá">
                         </div>
                     </div>
-                    <!-- <div class="form-group row"><label class="col-sm-2 col-form-label">Ngày nhập về:</label>
-                        <div class="col-sm-10"><input type="text" class="form-control" name="ngayNhap" placeholder="Ngày nhập"></div>
-                    </div> -->
                     <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Ảnh:</label>
+                        <div class="col-sm-10">
+                            <input type="file" id="formFile" name="anh">
+                        </div>
+                    </div>
+                    <!-- <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Ghi chú:</label>
                         <div class="col-sm-10">
                             <div class="ibox-content no-padding">
@@ -101,16 +99,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+                    <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('vaccine/list')}}">Quay lại</a></button>
+                    <button type="submit" id="btn-submit" class="btn btn-primary">Tạo mới</button>
             </div>
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Ảnh:</label>
-                <div class="col-sm-10">
-                    <input type="file" id="formFile" name="anh">
-                </div>
-            </div>
-            <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('vaccine/list')}}">Quay lại</a></button>
-            <button type="submit" id="btn-submit" class="btn btn-primary">Tạo mới</button>
             </fieldset>
 </div>
 </section>

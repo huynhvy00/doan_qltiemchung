@@ -16,7 +16,7 @@ class VaccineController extends Controller
 {
     public function index()
     {
-        $vaccine = Vaccine::latest()->paginate(5);
+        $vaccine = Vaccine::latest()->paginate(10);
         return view('admin.vaccine.list', [
             'title' => 'Danh sách vaccine', 'vaccine' => $vaccine,
             'benh' => $this->getBenh(),
@@ -60,7 +60,7 @@ class VaccineController extends Controller
             'hanSD' => 'required',
             'soLuong' => 'required',
             'donGia' => 'required',
-            'ghiChu' => 'required',
+            // 'ghiChu' => 'required',
             // 'ngayNhap' => 'required',
 
             'anh' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
@@ -75,7 +75,7 @@ class VaccineController extends Controller
             $vx->hanSD = $request->input('hanSD');
             $vx->soLuong = $request->input('soLuong');
             $vx->donGia = $request->input('donGia');
-            $vx->ghiChu = $request->input('ghiChu');
+            // $vx->ghiChu = $request->input('ghiChu');
             $vx->ngayNhap = $ldate;
 
             if ($request->hasFile('anh')) {
@@ -117,7 +117,7 @@ class VaccineController extends Controller
             'hanSD' => 'required',
             'soLuong' => 'required',
             'donGia' => 'required',
-            'ghiChu' => 'required',
+            // 'ghiChu' => 'required',
             'tinhTrang' => 'required',
         ]);
         try {
@@ -128,7 +128,7 @@ class VaccineController extends Controller
             $vaccine->ngaySX = $request->input('ngaySX');
             $vaccine->hanSD = $request->input('hanSD');
             $vaccine->soLuong = $request->input('soLuong');
-            $vaccine->ghiChu = $request->input('ghiChu');
+            // $vaccine->ghiChu = $request->input('ghiChu');
             $vaccine->donGia = $request->input('donGia');
             $vaccine->tinhTrang = $request->input('tinhTrang');
 

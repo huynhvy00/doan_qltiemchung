@@ -40,7 +40,6 @@
                                 <option value="{{$b->code}}">{{$b->tenBenh}}</option>
                                 @endforeach
                             </select>
-                            <!-- <input type="text" class="form-control" name="code" value="{{$vaccine->code}}"> -->
                         </div>
                     </div>
                     <div class="form-group row">
@@ -51,7 +50,6 @@
                                 <option value="{{$lo->soLo}}">{{$lo->soLo}}</option>
                                 @endforeach
                             </select>
-                            <!-- <input type="text" class="form-control" name="code_lo" value="{{$vaccine->code_lo}}"> -->
                         </div>
                     </div>
                     <div class="form-group row">
@@ -62,7 +60,6 @@
                                 <option value="{{$dt->id}}">{{$dt->tenDT}} - {{$dt->doTuoi}}</option>
                                 @endforeach
                             </select>
-                            <!-- <input type="text" class="form-control" name="id_DoiTuong" value="{{$vaccine->id_DoiTuong}}"> -->
                         </div>
                     </div>
                     <div class="form-group row">
@@ -93,15 +90,25 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Tình trạng:</label>
                         <div class="col-sm-10">
-                        <!-- <select name="tinhTrang" class="form-control">
+                            <select name="tinhTrang" class="form-control">
                                 <option value="1">Còn</option>
                                 <option value="0">Hết</option>
                                 <option value="2">Thu hồi</option>
-                            </select> -->
-                            <input type="text" class="form-control" name="tinhTrang" value="{{$vaccine->tinhTrang}}">
-                        </div>
+                            </select>
+                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Ảnh:</label>
+                        <div class="mb-3" style="margin-left: 15px;">
+                            <img src="/images/vx/{{ $vaccine->anh }}" height="100px" width="100px">
+                        </div>
+                        <div class="col-sm-10">
+                            <input type="file" id="formFile" name="anh">
+                        </div>
+                    </div>
+                    <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('vaccine/list')}}">Quay lại</a></button>
+                    <button type="submit" id="btn-submit" class="btn btn-primary">Cập nhật</button>
+                    <!-- <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Ghi chú:</label>
                         <div class="col-sm-10">
                             <div class="ibox-content no-padding">
@@ -112,19 +119,9 @@
 
 
                         </div>
-                    </div>
+                    </div> -->
             </div>
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Ảnh:</label>
-                <div class="mb-3">
-                    <img src="/images/vx/{{ $vaccine->anh }}" height="100px" width="100px">
-                </div>
-                <div class="col-sm-10">
-                    <input type="file" id="formFile" name="anh">
-                </div>
-            </div>
-            <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('vaccine/list')}}">Quay lại</a></button>
-            <button type="submit" id="btn-submit" class="btn btn-primary">Cập nhật</button>
+
             </fieldset>
 
 

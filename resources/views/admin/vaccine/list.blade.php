@@ -12,7 +12,7 @@
             <h3>QUẢN LÝ THÔNG TIN VACINE</h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="index.html">Home</a>
+                    <a href="index.html">Trang chủ</a>
                 </li>
                 <li class="breadcrumb-item">
                     Vaccine
@@ -50,7 +50,7 @@
                                 <th data-hide="phone,tablet" class="footable-visible footable-sortable">Đơn giá<span class="footable-sort-indicator"></span></th>
                                 <th data-hide="phone" class="footable-visible">Ảnh<span class="footable-sort-indicator"></span></th>
                                 <th data-hide="phone" class="footable-visible footable-sortable">Tình trạng<span class="footable-sort-indicator"></span></th>
-                                <th class="text-right footable-visible footable-last-column" data-sort-ignore="true">Thao tác</th>
+                                <th colspan=2 class="text-right footable-visible footable-last-column" data-sort-ignore="true">Thao tác</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -84,7 +84,7 @@
                                     {{ $vx->soLuong }}
                                 </td>
                                 <td class="footable-visible">
-                                    {{ $vx->donGia }} VND
+                                {{ number_format($vx->donGia,0,',','.').' đ'}}
                                 </td>
                                 <td class="footable-visible">
                                     <img alt="image" class="rounded-circle m-t-xs img-fluid" id="vx" src="/images/vx/{{ $vx->anh }}">
@@ -105,10 +105,11 @@
                                 @endif
 
                                 <td class="text-right footable-visible footable-last-column">
-                                    <div class="btn-group">
-                                        <button class="btn-white btn btn-xs"><a href="{{url('vaccine/detail/'.$vx->id)}}">View</a></button>
-                                        <button class="btn-white btn btn-xs"><a href="{{url('vaccine/edit/'.$vx->id)}}">Edit</a></button>
-                                    </div>
+                                    <a href="{{url('vaccine/detail/'.$vx->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
+                                </td>
+                                <td class="text-right footable-visible footable-last-column">
+                                    <a href="{{url('vaccine/edit/'.$vx->id)}}"> <i class="fa fa-edit" style="color: blue;font-size: 20px;"></i>
+                                    </a>
                                 </td>
                             </tr>
                             @endforeach

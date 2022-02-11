@@ -17,7 +17,8 @@
                 </li>
             </ol>
         </div>
-        <button>
+        <button style="background: none;
+    border: none;">
             <a class="btn btn-primary" style="float: right; " href="{{url('benh/create')}}">Thêm mới</a>
         </button>
     </div>
@@ -32,21 +33,19 @@
             <div class="col-lg-12">
                 <div class="ibox">
                     <div class="ibox-title">
-                        <h5>STT: {{++$i}} - Bệnh: {{ $nv->tenBenh }} - Mã code: {{ $nv->code }}</h5>
+                        <h5>STT: {{++$i}}   -   Tên bệnh: {{ $nv->tenBenh }}   -   Mã code: {{ $nv->code }}</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
                             </a>
-                            <a class="fullscreen-link" href="{{url('benh/edit/'.$nv->id)}}">
-                                <i class="fa fa-wrench"></i>
+                            <a href="{{url('benh/edit/'.$nv->id)}}">
+                                <i class="fa fa-edit"></i>
                             </a>
-                            <a class="close-link" href="{{url('benh/delete/'.$nv->id)}}">
-                                <i class="fa fa-times"></i>
-                            </a>
+
                         </div>
                     </div>
-                    <div class="ibox-content">
-                        <p>Ghi chú: {{ $nv->ghiChu }}</p>
+                    <div class="note-content">
+                        <p>Mô tả: {{ $nv->ghiChu }}</p>
                     </div>
                 </div>
             </div>

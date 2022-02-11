@@ -13,21 +13,17 @@ class BenhController extends Controller
     public function index(){
         $benh = Benh::latest()->paginate(10);
         return view('admin.benh.list',['title' => 'Danh sach benh', 'benh'=>$benh]);
-
     }
     public function show(Benh $benh){
-    //      $kv = $this->getKhuVuc();
     //    dd($kv);
         return view('admin.benh.edit',[
             'title'=>'Cập nhật thông tin benh hoc',
-        // 'khuvuc'=>$this->getKhuVuc(),
             'benh'=>$benh] );
     }
     public function create()
     {
         return view('admin.benh.create',['title' => 'Thêm mới thông tin bệnh']);
     }
-
     public function store(Request $request){
         // dd($request);
         $benh = new Benh();
@@ -48,7 +44,6 @@ class BenhController extends Controller
             Session::flash('error',$err->getMessage());
             return redirect()->back();
       }
-
     }
     public function update(Request $request, Benh $benh){
         // dd($request);
@@ -58,20 +53,15 @@ class BenhController extends Controller
             'ghiChu' => 'required',
         ]);
         try {
-            // $nhanvien->tenPH = $request->input('tenPH');
             $benh->tenBenh = $request->input('tenBenh');
             $benh->code = $request->input('code');
             $benh->ghiChu = $request->input('ghiChu');
 
             $benh->save();
-            return redirect('nhanvien/list')->with('success', 'Thông tin bệnh học được cập nhật thành công !');
+            return redirect('benh/list')->with('success', 'Thông tin bệnh học được cập nhật thành công !');
         }catch(Exception $err){
             Session::flash('error',$err->getMessage());
             return redirect()->back();
         }
     }
-    // public function getKhuVuc(){
-    //     return khuVuc::all();
-    // }
-
 }

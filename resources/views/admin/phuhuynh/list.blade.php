@@ -4,19 +4,23 @@
 <div class="page-heading">
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-9">
-            <h3>QUẢN LÝ THÔNG TIN VACINE</h3>
+            <h3>QUẢN LÝ THÔNG TIN HỒ SƠ</h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="index.html">Home</a>
+                    <a href="index.html">Trang chủ</a>
                 </li>
                 <li class="breadcrumb-item">
-                    App Views
+                    Quản lý hồ sơ phụ huynh
                 </li>
                 <li class="breadcrumb-item active">
-                    <strong>Contacts</strong>
+                    <strong>Danh sách</strong>
                 </li>
             </ol>
         </div>
+        <button style="background: none;
+    border: none;">
+            <a class="btn btn-primary" style="float: right; " href="{{url('phuhuynh/create')}}">Thêm mới</a>
+        </button>
     </div>
     <div class="page-title">
 
@@ -46,7 +50,7 @@
                                         <th>Khu vực</th>
                                         <th>Hình ảnh</th>
                                         <th>Tình trạng</th>
-                                        <th>Chi tiết</th>
+                                        <th colspan="2">Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -73,7 +77,6 @@
                                         @endif
                                         @endforeach
                                         <td>
-
                                             <img src="/images/phuhuynh/{{ $ph->anh }}" height="50px" width="50px" border-radius="25px">
                                         </td>
                                         @if ($ph->tinhTrang ==0)
@@ -81,11 +84,10 @@
                                         @else
                                         <td class="text-bold-500">Đang hoạt động</td>
                                         @endif
-                                        <td class="text-bold-500"> <a class="btn btn-outline-secondary" href="{{url('phuhuynh/edit/'.$ph->id)}}">Sửa</a></td>
 
+                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/detail/'.$ph->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
+                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/edit/'.$ph->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
 
-
-                                        </>
                                     </tr>
                                     @endforeach
 

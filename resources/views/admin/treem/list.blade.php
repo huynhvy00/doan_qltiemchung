@@ -7,7 +7,7 @@
             <h3>QUẢN LÝ THÔNG TIN HỒ SƠ TRẺ EM</h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="index.html">Trang chủ</a>
+                    <a href="">Trang chủ</a>
                 </li>
                 <li class="breadcrumb-item">
                     Trẻ em
@@ -17,12 +17,14 @@
                 </li>
             </ol>
         </div>
-        <button>
+        <button style="background: none;
+    border: none;">
             <a class="btn btn-primary" style="float: right; " href="{{url('treem/create')}}">Thêm mới</a>
         </button>
     </div>
 
     @include('admin.alert')
+    @include('modal-login')
 
     <!-- Striped rows start -->
     <section class="section">
@@ -66,14 +68,9 @@
                                         @else
                                         <td class="text-bold-500">Nam</td>
                                         @endif
-                                        <td class="text-bold-500">
-                                            <a class="btn btn-outline-secondary" href="{{url('treem/edit/'.$te->id)}}">
-                                                Sửa
-                                            </a>
-                                            <a class="btn btn-outline-secondary" href="{{url('treem/delete/'.$te->id)}}">
-                                                Xoá
-                                            </a>
-                                        </td>
+                                        <td class="text-bold-500"> <a href="#myModal"  class="trigger-btn"   data-toggle="modal"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
+                                        <td class="text-bold-500"> <a href="{{url('treem/active/'.$te->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
+
                                         </>
                                     </tr>
                                     @endforeach

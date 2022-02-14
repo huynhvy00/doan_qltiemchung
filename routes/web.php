@@ -67,6 +67,9 @@ Route::prefix('phuhuynh')->group(function (){
     Route::get('edit/{phuhuynh}',[PhuHuynhController::class,'show']);
     Route::post('edit/{phuhuynh}',[PhuHuynhController::class,'update']);
     Route::get('delete/{id}',[PhuHuynhController::class,'destroy']);
+    Route::get('detail/{phuhuynh}',[PhuHuynhController::class,'detail']);
+   // Route::get('active/{phuhuynh}',[PhuHuynhController::class,'getActive']);
+    Route::get('active/{phuhuynh}',[PhuHuynhController::class,'postActive']);
 });
 
 Route::prefix('nhanvien')->group(function (){

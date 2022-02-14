@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="basicInput">Mật khẩu:</label>
-                                    <input type="text" class="form-control" name="password" id="basicInput" value="{{$phuhuynh->password}}">
+                                    <input type="password" class="form-control" name="password" id="basicInput" value="{{$phuhuynh->password}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="helpInputTop">Địa chỉ:</label>

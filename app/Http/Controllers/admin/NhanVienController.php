@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\khuVuc;
 use App\Models\NhanVien;
+use App\Models\User;
 use Mockery\Exception;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
@@ -12,12 +13,12 @@ use Illuminate\Http\Request;
 class NhanVienController extends Controller
 {
     public function index(){
-        $nhanvien = NhanVien::latest()->paginate(5);
+        $nhanvien = User::latest()->paginate(5);
         return view('admin.nhanvien.list',['title' => 'Danh sách nhân viên', 'nhanvien'=>$nhanvien,
         'khuvuc'=>$this->getKhuVuc()]);
 
     }
-    public function show(NhanVien $nhanvien){
+    public function show(User $nhanvien){
     //      $kv = $this->getKhuVuc();
     //    dd($kv);
         return view('admin.nhanvien.edit',[
@@ -33,7 +34,7 @@ class NhanVienController extends Controller
 
     public function store(Request $request){
         // dd($request);
-        $nv = new NhanVien();
+        $nv = new User();
         $request->validate([
             'tenNV' => 'required',
             'idLoaiNV' => 'required',
@@ -79,7 +80,7 @@ class NhanVienController extends Controller
       }
 
     }
-    public function update(Request $request, NhanVien $nhanvien){
+    public function update(Request $request, User $nhanvien){
         // dd($request);
         $request->validate([
             // 'tenPH' => 'required',

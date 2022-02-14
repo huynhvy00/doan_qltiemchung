@@ -31,7 +31,7 @@ class PhieuDangKyTiemController extends Controller
     public function index()
     {
 
-        $phieudk = PhieuDangKyTiem::latest()->paginate(5);
+        $phieudk = PhieuDangKyTiem::latest()->paginate(10);
         return view('admin.phieutiem.list', [
             'title' => 'Danh sách phiếu đăng ký tiêm ',
             'phieudk' => $phieudk,

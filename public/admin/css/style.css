@@ -11773,11 +11773,20 @@ margin-bottom: 20px !important;
     display: flex;
     flex-direction: row;
 }
-
+.content-detail-child {
+    padding: 0px 20px 20px 34px;
+    /* display: flex; */
+    /* flex-direction: row; */
+}
 .info {
     display: flex;
     flex-direction: column;
     width: 60%;
+}
+.info-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .line {
@@ -11819,6 +11828,7 @@ margin-bottom: 20px !important;
 }
 .bbc {
     background: #fff;
+
 }
 .note-content {
     background-color: #ffffff;

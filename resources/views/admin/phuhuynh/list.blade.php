@@ -1,6 +1,6 @@
 @extends('admin.main')
 @section('content')
-<?php $i = 0; ?>
+<?php $i = 0; $j=0; $k=0; $l=0; $m=0; ?>
 <div class="page-heading">
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-9">
@@ -30,31 +30,38 @@
 
     <!-- Striped rows start -->
     <section class="section">
-        <div class="row" id="table-striped">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-content">
-                        <!-- table striped -->
-                        <div class="table-responsive">
-                            <table class="table table-striped mb-0">
-                                <thead>
-                                    <tr>
-                                        <th>STT</th>
-                                        <th>Họ tên</th>
-                                        <th>CMND</th>
-                                        <th>SDT</th>
-                                        <th>Ngày sinh</th>
-                                        <th>Email</th>
-                                        <th>Giới tính</th>
-                                        <!-- <th>Nhân viên</th> -->
-                                        <th>Khu vực</th>
-                                        <th>Hình ảnh</th>
-                                        <th>Tình trạng</th>
-                                        <th colspan="2">Thao tác</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($phuhuynh as $ph)
+
+        <div class="tabs-container" style="margin-top: 20px;">
+            <ul class="nav nav-tabs" role="tablist">
+                <li><a class="nav-link active show" data-toggle="tab" href="#tab-1">Hải Châu</a></li>
+                <li><a class="nav-link" data-toggle="tab" href="#tab-2">Cẩm Lệ</a></li>
+                <li><a class="nav-link" data-toggle="tab" href="#tab-3">Ngũ Hành Sơn</a></li>
+                <li><a class="nav-link" data-toggle="tab" href="#tab-4">Sơn Trà</a></li>
+                <li><a class="nav-link" data-toggle="tab" href="#tab-5">Liên Chiểu</a></li>
+                <!-- <li><a class="nav-link" data-toggle="tab" href="#tab-3">Ngũ Hành Sơn</a></li> -->
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" id="tab-1" class="tab-pane active show">
+                    <div class="panel-body">
+                        <table class="table table-striped mb-0" style="font-size: 13px;">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Họ tên</th>
+                                    <th>CMND</th>
+                                    <th>SDT</th>
+                                    <th>Ngày sinh</th>
+                                    <th>Email</th>
+                                    <th>Giới tính</th>
+                                    <!-- <th>Nhân viên</th> -->
+                                    <!-- <th>Khu vực</th> -->
+                                    <th>Hình ảnh</th>
+                                    <th>Tình trạng</th>
+                                    <th colspan="2">Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($haichau as $ph)
                                     <tr>
                                         <td class="text-bold-500">{{++$i}}</td>
                                         <td>{{ $ph->tenPH }}</td>
@@ -71,34 +78,281 @@
                                         <!-- <td class="text-bold-500">{{ $ph->diaChi }}</td> -->
                                         <!-- <td class="text-bold-500">{{ $ph->idLoaiPH }}</td> -->
 
-                                        @foreach($khuvuc as $kv)
+                                        <!-- @foreach($khuvuc as $kv)
                                         @if($ph->code == $kv->code)
                                         <td class="text-bold-500">{{ $kv->tenKV }}</td>
                                         @endif
-                                        @endforeach
+                                        @endforeach -->
                                         <td>
                                             <img src="/images/phuhuynh/{{ $ph->anh }}" height="50px" width="50px" border-radius="25px">
                                         </td>
                                         @if ($ph->tinhTrang ==0)
-                                        <td class="text-bold-500">Bị khoá</td>
+                                        <td class="text-bold-500" style="color: #f11;"><b>Vô hiệu hoá</b></td>
                                         @else
-                                        <td class="text-bold-500">Đang hoạt động</td>
+                                        <td class="text-bold-500" style="color: blue;"><b>Đang hoạt động</b></td>
                                         @endif
 
                                         <td class="text-bold-500"> <a href="{{url('phuhuynh/detail/'.$ph->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
-                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/edit/'.$ph->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
+                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/active/'.$ph->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
 
                                     </tr>
                                     @endforeach
 
-                                </tbody>
-                            </table>
-                        </div>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <div role="tabpanel" id="tab-2" class="tab-pane">
+                    <div class="panel-body">
+                        <table class="table table-striped mb-0" style="font-size: 13px;">
+                            <thead>
+                                <tr>
+                                <th>STT</th>
+                                    <th>Họ tên</th>
+                                    <th>CMND</th>
+                                    <th>SDT</th>
+                                    <th>Ngày sinh</th>
+                                    <th>Email</th>
+                                    <th>Giới tính</th>
+                                    <!-- <th>Nhân viên</th> -->
+                                    <!-- <th>Khu vực</th> -->
+                                    <th>Hình ảnh</th>
+                                    <th>Tình trạng</th>
+                                    <th colspan="2">Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($camle as $ph)
+                                    <tr>
+                                        <td class="text-bold-500">{{++$j}}</td>
+                                        <td>{{ $ph->tenPH }}</td>
+                                        <td class="text-bold-500">{{ $ph->CMND }}</td>
+                                        <td class="text-bold-500">{{ $ph->sdt }}</td>
+                                        <td class="text-bold-500">{{ $ph->ngaySinh }}</td>
+                                        <td class="text-bold-500">{{ $ph->email }}</td>
+
+                                        @if ($ph->gioiTinh ==0)
+                                        <td class="text-bold-500">Nữ</td>
+                                        @else
+                                        <td class="text-bold-500">Nam</td>
+                                        @endif
+                                        <!-- <td class="text-bold-500">{{ $ph->diaChi }}</td> -->
+                                        <!-- <td class="text-bold-500">{{ $ph->idLoaiPH }}</td> -->
+
+                                        <!-- @foreach($khuvuc as $kv)
+                                        @if($ph->code == $kv->code)
+                                        <td class="text-bold-500">{{ $kv->tenKV }}</td>
+                                        @endif
+                                        @endforeach -->
+                                        <td>
+                                            <img src="/images/phuhuynh/{{ $ph->anh }}" height="50px" width="50px" border-radius="25px">
+                                        </td>
+                                        @if ($ph->tinhTrang ==0)
+                                        <td class="text-bold-500" style="color: #f11;"><b>Vô hiệu hoá</b></td>
+                                        @else
+                                        <td class="text-bold-500" style="color: blue;"><b>Đang hoạt động</b></td>
+                                        @endif
+
+                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/detail/'.$ph->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
+                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/active/'.$ph->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
+
+                                    </tr>
+                                    @endforeach
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div role="tabpanel" id="tab-3" class="tab-pane">
+                    <div class="panel-body">
+                        <table class="table table-striped mb-0" style="font-size: 13px;">
+                            <thead>
+                                <tr>
+                                <th>STT</th>
+                                    <th>Họ tên</th>
+                                    <th>CMND</th>
+                                    <th>SDT</th>
+                                    <th>Ngày sinh</th>
+                                    <th>Email</th>
+                                    <th>Giới tính</th>
+                                    <!-- <th>Nhân viên</th> -->
+                                    <!-- <th>Khu vực</th> -->
+                                    <th>Hình ảnh</th>
+                                    <th>Tình trạng</th>
+                                    <th colspan="2">Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($nguhanhson as $ph)
+                                    <tr>
+                                        <td class="text-bold-500">{{++$k}}</td>
+                                        <td>{{ $ph->tenPH }}</td>
+                                        <td class="text-bold-500">{{ $ph->CMND }}</td>
+                                        <td class="text-bold-500">{{ $ph->sdt }}</td>
+                                        <td class="text-bold-500">{{ $ph->ngaySinh }}</td>
+                                        <td class="text-bold-500">{{ $ph->email }}</td>
+
+                                        @if ($ph->gioiTinh ==0)
+                                        <td class="text-bold-500">Nữ</td>
+                                        @else
+                                        <td class="text-bold-500">Nam</td>
+                                        @endif
+                                        <!-- <td class="text-bold-500">{{ $ph->diaChi }}</td> -->
+                                        <!-- <td class="text-bold-500">{{ $ph->idLoaiPH }}</td> -->
+
+                                        <!-- @foreach($khuvuc as $kv)
+                                        @if($ph->code == $kv->code)
+                                        <td class="text-bold-500">{{ $kv->tenKV }}</td>
+                                        @endif
+                                        @endforeach -->
+                                        <td>
+                                            <img src="/images/phuhuynh/{{ $ph->anh }}" height="50px" width="50px" border-radius="25px">
+                                        </td>
+                                        @if ($ph->tinhTrang ==0)
+                                        <td class="text-bold-500" style="color: #f11;"><b>Vô hiệu hoá</b></td>
+                                        @else
+                                        <td class="text-bold-500" style="color: blue;"><b>Đang hoạt động</b></td>
+                                        @endif
+
+                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/detail/'.$ph->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
+                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/active/'.$ph->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
+
+                                    </tr>
+                                    @endforeach
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div role="tabpanel" id="tab-4" class="tab-pane">
+                    <div class="panel-body">
+                        <table class="table table-striped mb-0" style="font-size: 13px;">
+                            <thead>
+                                <tr>
+                                <th>STT</th>
+                                    <th>Họ tên</th>
+                                    <th>CMND</th>
+                                    <th>SDT</th>
+                                    <th>Ngày sinh</th>
+                                    <th>Email</th>
+                                    <th>Giới tính</th>
+                                    <!-- <th>Nhân viên</th> -->
+                                    <!-- <th>Khu vực</th> -->
+                                    <th>Hình ảnh</th>
+                                    <th>Tình trạng</th>
+                                    <th colspan="2">Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($sontra as $ph)
+                                    <tr>
+                                        <td class="text-bold-500">{{++$l}}</td>
+                                        <td>{{ $ph->tenPH }}</td>
+                                        <td class="text-bold-500">{{ $ph->CMND }}</td>
+                                        <td class="text-bold-500">{{ $ph->sdt }}</td>
+                                        <td class="text-bold-500">{{ $ph->ngaySinh }}</td>
+                                        <td class="text-bold-500">{{ $ph->email }}</td>
+
+                                        @if ($ph->gioiTinh ==0)
+                                        <td class="text-bold-500">Nữ</td>
+                                        @else
+                                        <td class="text-bold-500">Nam</td>
+                                        @endif
+                                        <!-- <td class="text-bold-500">{{ $ph->diaChi }}</td> -->
+                                        <!-- <td class="text-bold-500">{{ $ph->idLoaiPH }}</td> -->
+
+                                        <!-- @foreach($khuvuc as $kv)
+                                        @if($ph->code == $kv->code)
+                                        <td class="text-bold-500">{{ $kv->tenKV }}</td>
+                                        @endif
+                                        @endforeach -->
+                                        <td>
+                                            <img src="/images/phuhuynh/{{ $ph->anh }}" height="50px" width="50px" border-radius="25px">
+                                        </td>
+                                        @if ($ph->tinhTrang ==0)
+                                        <td class="text-bold-500" style="color: #f11;"><b>Vô hiệu hoá</b></td>
+                                        @else
+                                        <td class="text-bold-500" style="color: blue;"><b>Đang hoạt động</b></td>
+                                        @endif
+
+                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/detail/'.$ph->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
+                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/active/'.$ph->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
+
+                                    </tr>
+                                    @endforeach
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div role="tabpanel" id="tab-5" class="tab-pane">
+                    <div class="panel-body">
+                        <table class="table table-striped mb-0" style="font-size: 13px;">
+                            <thead>
+                                <tr>
+                                <th>STT</th>
+                                    <th>Họ tên</th>
+                                    <th>CMND</th>
+                                    <th>SDT</th>
+                                    <th>Ngày sinh</th>
+                                    <th>Email</th>
+                                    <th>Giới tính</th>
+                                    <!-- <th>Nhân viên</th> -->
+                                    <!-- <th>Khu vực</th> -->
+                                    <th>Hình ảnh</th>
+                                    <th>Tình trạng</th>
+                                    <th colspan="2">Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($lienchieu as $ph)
+                                    <tr>
+                                        <td class="text-bold-500">{{++$m}}</td>
+                                        <td>{{ $ph->tenPH }}</td>
+                                        <td class="text-bold-500">{{ $ph->CMND }}</td>
+                                        <td class="text-bold-500">{{ $ph->sdt }}</td>
+                                        <td class="text-bold-500">{{ $ph->ngaySinh }}</td>
+                                        <td class="text-bold-500">{{ $ph->email }}</td>
+
+                                        @if ($ph->gioiTinh ==0)
+                                        <td class="text-bold-500">Nữ</td>
+                                        @else
+                                        <td class="text-bold-500">Nam</td>
+                                        @endif
+                                        <!-- <td class="text-bold-500">{{ $ph->diaChi }}</td> -->
+                                        <!-- <td class="text-bold-500">{{ $ph->idLoaiPH }}</td> -->
+
+                                        <!-- @foreach($khuvuc as $kv)
+                                        @if($ph->code == $kv->code)
+                                        <td class="text-bold-500">{{ $kv->tenKV }}</td>
+                                        @endif
+                                        @endforeach -->
+                                        <td>
+                                            <img src="/images/phuhuynh/{{ $ph->anh }}" height="50px" width="50px" border-radius="25px">
+                                        </td>
+                                        @if ($ph->tinhTrang ==0)
+                                        <td class="text-bold-500" style="color: #f11;"><b>Vô hiệu hoá</b></td>
+                                        @else
+                                        <td class="text-bold-500" style="color: blue;"><b>Đang hoạt động</b></td>
+                                        @endif
+
+                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/detail/'.$ph->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
+                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/active/'.$ph->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
+
+                                    </tr>
+                                    @endforeach
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
+
+
         </div>
     </section>
+
 </div>
 
 {{ $phuhuynh->links() }}

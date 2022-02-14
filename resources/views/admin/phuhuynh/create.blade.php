@@ -69,7 +69,7 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Giới tính:</label>
                         <div class="col-sm-10">
-                            <select name="code" class="form-control">
+                            <select name="gioiTinh" class="form-control">
                                 <option value="0">Nữ</option>
                                 <option value="1">Nam</option>
                             </select>
@@ -102,7 +102,7 @@
                             </div>
                         </div>
                     </div> -->
-                    <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('vaccine/list')}}">Quay lại</a></button>
+                    <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('phuhuynh/list')}}">Quay lại</a></button>
                     <button type="submit" id="btn-submit" class="btn btn-primary">Tạo mới</button>
             </div>
             </fieldset>

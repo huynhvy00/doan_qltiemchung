@@ -73,11 +73,13 @@ Route::prefix('phuhuynh')->group(function (){
 });
 
 Route::prefix('nhanvien')->group(function (){
-    Route::get('/list',[UserController::class,'index']);
-    Route::get('/create',[UserController::class,'create']);
-    Route::post('/create',[UserController::class,'store']);
+    Route::get('list',[UserController::class,'index']);
+    Route::get('create',[UserController::class,'create']);
+    Route::post('create',[UserController::class,'store']);
     Route::get('edit/{nhanvien}',[UserController::class,'show']);
     Route::post('edit/{nhanvien}',[UserController::class,'update']);
+    Route::get('detail/{nhanvien}',[UserController::class,'detail']);
+    Route::get('active/{nhanvien}',[UserController::class,'postActive']);
     Route::get('delete/{id}',[UserController::class,'destroy']);
 });
 Route::prefix('benh')->group(function (){

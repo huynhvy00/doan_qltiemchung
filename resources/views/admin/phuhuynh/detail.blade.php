@@ -79,7 +79,7 @@
                 <th class="bbb">Tình trạng</th>
                 @if ($phuhuynh->tinhTrang == 1)
                 <td class="bbc">Đang hoạt động </td>
-                @elseif ($phuhuynh->phuhuynh == 0)
+                @elseif ($phuhuynh->tinhTrang == 0)
                 <td class="bbc">Vô hiệu hoá </td>
                 @endif
             </tr>
@@ -110,6 +110,12 @@
                 <th class="bbb">Tên con</th>
                 <td class="bbc">
                     {{ $tre ->tenTre }}
+                </td>
+            </tr>
+            <tr class="tr-detail">
+                <th class="bbb">Mã tiêm chủng</th>
+                <td class="bbc">
+                    {{ $tre ->code }}
                 </td>
             </tr>
             <tr class="tr-detail">

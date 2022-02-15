@@ -6002,9 +6002,11 @@ code {
     border-style: solid solid none;
     border-width: 1px 0;
 }
+
 .pagination {
     margin-left: 15px;
 }
+
 .ibox-footer {
     color: inherit;
     border-top: 1px solid #e7eaec;
@@ -6915,6 +6917,57 @@ body.mini-navbar.fixed-sidebar .logo-element {
     margin-bottom: 20px;
     box-shadow: 0px 2px 5px rgb(53 63 79 / 10%), 0px 3px 5px rgb(53 63 79 / 15%);
     border-radius: 18px;
+    display: flex;
+}
+
+.contact-box1 {
+    background-color: #c6ffc6;
+    border: 1px solid #e7eaec;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 5px rgb(53 63 79 / 10%), 0px 3px 5px rgb(53 63 79 / 15%);
+    border-radius: 18px;
+    display: flex;
+}
+
+.contact-box2 {
+    background-color: #F2F2F2;
+    border: 1px solid #e7eaec;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 5px rgb(53 63 79 / 10%), 0px 3px 5px rgb(53 63 79 / 15%);
+    border-radius: 18px;
+    display: flex;
+}
+
+.contact-box3 {
+    background-color: #CEF6F5;
+    border: 1px solid #e7eaec;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 5px rgb(53 63 79 / 10%), 0px 3px 5px rgb(53 63 79 / 15%);
+    border-radius: 18px;
+    display: flex;
+}
+
+.contact-box4 {
+    background-color: #F2F5A9;
+    border: 1px solid #e7eaec;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 5px rgb(53 63 79 / 10%), 0px 3px 5px rgb(53 63 79 / 15%);
+    border-radius: 18px;
+    display: flex;
+}
+
+.contact-box5 {
+    background-color: #FFF5EE;
+    border: 1px solid #e7eaec;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 5px rgb(53 63 79 / 10%), 0px 3px 5px rgb(53 63 79 / 15%);
+    border-radius: 18px;
+    display: flex;
 }
 
 .contact-box>a {
@@ -11773,16 +11826,19 @@ margin-bottom: 20px !important;
     display: flex;
     flex-direction: row;
 }
+
 .content-detail-child {
     padding: 0px 20px 20px 34px;
     /* display: flex; */
     /* flex-direction: row; */
 }
+
 .info {
     display: flex;
     flex-direction: column;
     width: 60%;
 }
+
 .info-child {
     display: flex;
     flex-wrap: wrap;
@@ -11793,43 +11849,53 @@ margin-bottom: 20px !important;
     display: flex;
     flex-direction: row;
 }
+
 .img-vaccine {
     height: 200px;
     padding: 0px 20px;
 }
+
 .line strong {
     margin-right: 5px;
 }
+
 .abb {
     display: flex;
     gap: 20px;
     flex-direction: row;
     margin-left: 30px;
 }
+
 .ro {
     width: 50%;
     /* background: red; */
 }
+
 .co2 {
     width: 135px;
 }
+
 .title-detail {
     display: flex;
     /* justify-content: center; */
     margin-bottom: 20px;
 
 }
+
 .tr-detail {
     border: 1px solid #ececec;
 }
+
 .bbb {
     background: #ffd;
     width: 200px !important;
 }
+
 .bbc {
     background: #fff;
 
 }
+
 .note-content {
     background-color: #ffffff;
     color: inherit;

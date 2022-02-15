@@ -32,7 +32,7 @@ class PhuHuynhController extends Controller
         'khuvuc'=>$this->getKhuVuc()]);
     }
     public function getActive($phuhuynh){
-        dd($phuhuynh);
+        // dd($phuhuynh);
         return view('admin.phuhuynh.list',['title'=>'Vô hiệu hoá tài khoản phụ huynh',
         'haichau'=>$phuhuynh,
         'camle'=>$phuhuynh,
@@ -103,7 +103,7 @@ class PhuHuynhController extends Controller
     public function detail(PhuHuynh $phuhuynh)
     {
         return view('admin.phuhuynh.detail', [
-            'title' => 'Chi thông tin hồ sơ phụ huynh',
+            'title' => 'Chi tiết thông tin hồ sơ phụ huynh',
             'phuhuynh' => $phuhuynh,
             'doituong' => $this->getDoiTuong(),
             'treem' => $this->getTreEm(),

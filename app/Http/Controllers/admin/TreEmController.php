@@ -1,49 +1,74 @@
 <?php
 
 namespace App\Http\Controllers\admin;
-use App\Http\Controllers\Controller;
 
+use App\Http\Controllers\Controller;
+use App\Http\Service\TreEmService;
 use App\Models\doiTuong;
+use App\Models\khuVuc;
+use App\Models\PhuHuynh;
 use App\Models\User;
 use App\Models\TreEm;
 use Mockery\Exception;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+
 class TreEmController extends Controller
 {
-    public function index(){
-        $treem = TreEm::latest()->paginate(5);
-        return view('admin.treem.list',['title' => 'Danh sách trẻ em', 'treem'=>$treem,
-        'doituong'=>$this->getDoiTuong(),
-        'phuhuynh'=>$this->getPhuHuynh()]);
+    public function __construct(TreEmService $treService)
+    {
+        $this->treService = $treService;
+    }
+    public function index()
+    {
+        $treem = TreEm::latest()->paginate(10);
+        return view('admin.treem.list', [
+            'title' => 'Danh sách trẻ em',
+            'treem' => $treem,
+            'haichau' => $this->treService->getTre('HC'),
+            'camle' => $this->treService->getTre('CL'),
+            'nguhanhson' => $this->treService->getTre('NHS'),
+            'sontra' => $this->treService->getTre('ST'),
+            'lienchieu' => $this->treService->getTre('LC'),
 
+            'doituong' => $this->getDoiTuong(),
+            'phuhuynh' => $this->getPhuHuynh()
+        ]);
     }
-    public function show(TreEm $treem){
-    //      $kv = $this->getKhuVuc();
-    //    dd($kv);
-        return view('admin.treem.edit',[
-            'title'=>'Cập nhật thông tin trẻ em',
-            'doituong'=>$this->getDoiTuong(),
-            'phuhuynh'=>$this->getPhuHuynh(),
-            'treem'=>$treem]);
+    public function show(TreEm $treem)
+    {
+        //      $kv = $this->getKhuVuc();
+        //    dd($kv);
+        return view('admin.treem.edit', [
+            'title' => 'Cập nhật thông tin trẻ em',
+            'doituong' => $this->getDoiTuong(),
+            'phuhuynh' => $this->getPhuHuynh(),
+            'khuvuc' => $this->getKhuVuc(),
+            'treem' => $treem
+        ]);
     }
-    public function detail(TreEm $treem){
-        return view('admin.treem.detail',[
-            'title'=> 'Chi tiết hồ sơ trẻ em',
-            'treem'=>$treem,
-            'doituong'=>$this->getDoiTuong(),
-            'phuhuynh'=>$this->getPhuHuynh()
+    public function detail(TreEm $treem)
+    {
+        return view('admin.treem.detail', [
+            'title' => 'Chi tiết hồ sơ trẻ em',
+            'treem' => $treem,
+            'khuvuc' => $this->getKhuVuc(),
+            'doituong' => $this->getDoiTuong(),
+            'phuhuynh' => $this->getPhuHuynh()
 
         ]);
     }
     public function create()
     {
-        return view('admin.treem.create',['title' => 'Thêm mới hồ sơ trẻ',
-        'doituong'=>$this->getDoiTuong(),
-        'phuhuynh'=>$this->getPhuHuynh()]);
+        return view('admin.treem.create', [
+            'title' => 'Thêm mới hồ sơ trẻ',
+            'doituong' => $this->getDoiTuong(),
+            'phuhuynh' => $this->getPhuHuynh()
+        ]);
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         // dd($request);
         $te = new TreEm();
         $request->validate([
@@ -65,13 +90,13 @@ class TreEmController extends Controller
 
             $te->save();
             return redirect('treem/list')->with('success', 'Tạo mới hồ sơ trẻ em thành công');
-        }catch(Exception $err){
-            Session::flash('error',$err->getMessage());
+        } catch (Exception $err) {
+            Session::flash('error', $err->getMessage());
             return redirect()->back();
-      }
-
+        }
     }
-    public function update(Request $request, TreEm $treem){
+    public function update(Request $request, TreEm $treem)
+    {
         // dd($request);
         $request->validate([
             'tenTre' => 'required',
@@ -91,15 +116,21 @@ class TreEmController extends Controller
 
             $treem->save();
             return redirect('treem/list')->with('success', 'Cập nhật hồ sơ trẻ em thành công !');
-        }catch(Exception $err){
-            Session::flash('error',$err->getMessage());
+        } catch (Exception $err) {
+            Session::flash('error', $err->getMessage());
             return redirect()->back();
         }
     }
-    public function getDoiTuong(){
+    public function getDoiTuong()
+    {
         return doiTuong::all();
     }
-    public function getPhuHuynh(){
-        return User::all();
+    public function getPhuHuynh()
+    {
+        return PhuHuynh::all();
+    }
+    public function getKhuVuc()
+    {
+        return khuVuc::all();
     }
 }

@@ -3,36 +3,66 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Http\Service\UserService;
 use App\Models\khuVuc;
-use Illuminate\Http\Request;
-
+use App\Models\LoaiNhanVien;
+use App\Models\User;
 use Mockery\Exception;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index(){
-        $nhanvien = User::latest()->paginate(5);
-        return view('admin.nhanvien.list',['title' => 'Danh sách nhân viên', 'nhanvien'=>$nhanvien,
-        'khuvuc'=>$this->getKhuVuc()]);
-
+    public function __construct(UserService $userService)
+    {
+        $this->userService = $userService;
     }
-    public function show(User $nhanvien){
-    //      $kv = $this->getKhuVuc();
-    //    dd($kv);
-        return view('admin.nhanvien.edit',[
-            'title'=>'Cập nhật thông tin nhân viên',
-        'khuvuc'=>$this->getKhuVuc(),
-            'nhanvien'=>$nhanvien] );
+    public function index()
+    {
+        $nhanvien = User::latest()->paginate(10);
+        return view('admin.nhanvien.list', [
+            'title' => 'Danh sách nhân viên',
+            'nhanvien' => $nhanvien,
+            'nhanvienyte' => $this->userService->getUser(1),
+            'nhanvientrungtam' => $this->userService->getUser(2),
+
+            'khuvuc' => $this->getKhuVuc()
+        ]);
+    }
+    public function getActive($user){
+        // dd($user);
+        return view('admin.nhanvien.list',['title'=>'Vô hiệu hoá tài khoản nhân viên',
+        'nhanvienyte'=>$user,
+        'nhanvientrungtam'=>$user,
+
+    ]);
+    }
+    public function postActive($user){
+        $this->userService->active($user);
+        return redirect()->back();
+    }
+
+    public function show(User $nhanvien)
+    {
+        //      $kv = $this->getKhuVuc();
+        //    dd($kv);
+        return view('admin.nhanvien.edit', [
+            'title' => 'Cập nhật thông tin nhân viên',
+            'khuvuc' => $this->getKhuVuc(),
+            'nhanvien' => $nhanvien
+        ]);
     }
     public function create()
     {
-        return view('admin.nhanvien.create',['title' => 'Thêm mới nhân viên',
-        'khuvuc'=>$this->getKhuVuc(),]);
+        return view('admin.nhanvien.create', [
+            'title' => 'Thêm mới nhân viên',
+            'khuvuc' => $this->getKhuVuc(),
+            'loainhanvien' => $this->getLoaiNhanVien(),
+        ]);
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         // dd($request);
         $nv = new User();
         $request->validate([
@@ -66,21 +96,30 @@ class UserController extends Controller
 
 
             if ($request->hasFile('anh')) {
-               $file = $request->file('anh');
-               $extention = $file->getClientOriginalExtension();
-                $newImageName = time().'-'.$request->input('name').'.'.$extention;
+                $file = $request->file('anh');
+                $extention = $file->getClientOriginalExtension();
+                $newImageName = time() . '-' . $request->input('name') . '.' . $extention;
                 $file->move(public_path('images/phuhuynh'), $newImageName);
                 $nv->anh = $newImageName;
             }
             $nv->save();
             return redirect('nhanvien/list')->with('success', 'Tạo mới hồ sơ nhân viênh thành công');
-        }catch(Exception $err){
-            Session::flash('error',$err->getMessage());
+        } catch (Exception $err) {
+            Session::flash('error', $err->getMessage());
             return redirect()->back();
-      }
-
+        }
     }
-    public function update(Request $request, User $nhanvien){
+    public function detail(User $nhanvien)
+    {
+        return view('admin.nhanvien.detail', [
+            'title' => 'Chi tiết thông tin hồ sơ nhân viên',
+            'nhanvien' => $nhanvien,
+            'loainhanvien' => $this->getLoaiNhanVien(),
+            'khuvuc'=>$this->getKhuVuc(),
+        ]);
+    }
+    public function update(Request $request, User $nhanvien)
+    {
         // dd($request);
         $request->validate([
             // 'tenPH' => 'required',
@@ -107,19 +146,23 @@ class UserController extends Controller
             if ($request->hasFile('anh')) {
                 $file = $request->file('anh');
                 $extension = $file->getClientOriginalExtension();
-                $newImageName = time().'-'.$request->input('name').'.'.$extension;
+                $newImageName = time() . '-' . $request->input('name') . '.' . $extension;
                 $file->move(public_path('images/phuhuynh'), $newImageName);
                 $nhanvien->anh = $newImageName;
             }
             $nhanvien->save();
             return redirect('nhanvien/list')->with('success', 'Thông tin nhân viên cập nhật thành công !');
-        }catch(Exception $err){
-            Session::flash('error',$err->getMessage());
+        } catch (Exception $err) {
+            Session::flash('error', $err->getMessage());
             return redirect()->back();
         }
     }
-    public function getKhuVuc(){
+    public function getKhuVuc()
+    {
         return khuVuc::all();
     }
-
+    public function getLoaiNhanVien()
+    {
+        return LoaiNhanVien::all();
+    }
 }

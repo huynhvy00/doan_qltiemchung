@@ -60,9 +60,13 @@
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Giới tính:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="gioiTinh">
+                    <div class="" style="margin-left: 35px;">
+                        <label class="form-check-label" for="gioiTinh" style="margin-right: 50px;">
+                            <input name="gioiTinh" type="radio" class="form-check-input" value="1" id="gender">Nam</label>
+                        <label class="form-check-label">
+                            <input name="gioiTinh" type="radio" class="form-check-input" value="0">Nữ</label>
                     </div>
+
                 </div>
 
                 <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('treem/list')}}">Quay lại</a></button>

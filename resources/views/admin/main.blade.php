@@ -3,6 +3,7 @@
 
 <head>
     @include('admin.header')
+
 </head>
 
 <body>

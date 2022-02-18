@@ -93,7 +93,7 @@ class VaccineController extends Controller
                 $vx->anh = $newImageName;
             }
             $vx->save();
-            return redirect('vaccine/list')->with('success', 'Thêm mới vaccin thành công');
+            return redirect('admin/vaccine/list')->with('success', 'Thêm mới vaccin thành công');
         } catch (Exception $err) {
             Session::flash('error', $err->getMessage());
             return redirect()->back();
@@ -147,7 +147,7 @@ class VaccineController extends Controller
                 $vaccine->anh = $newImageName;
             }
             $vaccine->save();
-            return redirect('vaccine/list')->with('success', 'Cập nhật thông tin vaccine thành công');
+            return redirect('admin/vaccine/list')->with('success', 'Cập nhật thông tin vaccine thành công');
         } catch (Exception $err) {
             Session::flash('error', $err->getMessage());
             return redirect()->back();

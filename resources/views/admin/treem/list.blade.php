@@ -55,7 +55,7 @@ $m = 0; ?>
 
                                     <th>Đối tượng</th>
                                     <th>Giới tính</th>
-                                    <th colspan="2">Thao tác</th>
+                                    <th colspan="1">Thao tác</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -80,7 +80,6 @@ $m = 0; ?>
                                     <td class="text-bold-500">Nam</td>
                                     @endif
                                     <td class="text-bold-500"> <a href="{{url('admin/treem/detail/'.$te->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
-                                    <td class="text-bold-500"> <a href="{{url('admin/treem/active/'.$te->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
 
                                 </tr>
                                 @endforeach
@@ -128,7 +127,6 @@ $m = 0; ?>
                                     <td class="text-bold-500">Nam</td>
                                     @endif
                                     <td class="text-bold-500"> <a href="{{url('admin/treem/detail/'.$te->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
-                                    <td class="text-bold-500"> <a href="{{url('admin/treem/active/'.$te->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
 
                                 </tr>
                                 @endforeach
@@ -176,7 +174,6 @@ $m = 0; ?>
                                     <td class="text-bold-500">Nam</td>
                                     @endif
                                     <td class="text-bold-500"> <a href="{{url('admin/treem/detail/'.$te->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
-                                    <td class="text-bold-500"> <a href="{{url('admin/treem/active/'.$te->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
 
                                 </tr>
                                 @endforeach
@@ -224,7 +221,6 @@ $m = 0; ?>
                                     <td class="text-bold-500">Nam</td>
                                     @endif
                                     <td class="text-bold-500"> <a href="{{url('admin/treem/detail/'.$te->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
-                                    <td class="text-bold-500"> <a href="{{url('admin/treem/active/'.$te->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
 
                                 </tr>
                                 @endforeach
@@ -271,7 +267,6 @@ $m = 0; ?>
                                     <td class="text-bold-500">Nam</td>
                                     @endif
                                     <td class="text-bold-500"> <a href="{{url('admin/treem/detail/'.$te->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
-                                    <td class="text-bold-500"> <a href="{{url('admin/treem/active/'.$te->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
 
                                 </tr>
                                 @endforeach

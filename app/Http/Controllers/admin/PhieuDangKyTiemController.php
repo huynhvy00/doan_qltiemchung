@@ -64,6 +64,21 @@ class PhieuDangKyTiemController extends Controller
             'phieudk' => $phieudk
         ]);
     }
+    public function update(Request $request, PhieuDangKyTiem $phieudk)
+    {
+        $a = 1;
+        $request->validate([]);
+        try {
+
+            $phieudk->tinhTrang = $a;
+            $phieudk->id_NV = Auth::user()->id;
+            $phieudk->save();
+            return redirect('admin/phieutiem/list')->with('success', 'Xác nhận phiếu đăng ký tiêm thành công !');
+        } catch (Exception $err) {
+            Session::flash('error', $err->getMessage());
+            return redirect()->back();
+        }
+    }
     public function detail(PhieuDangKyTiem $phieudk)
     {
         // dd($phieudk);
@@ -86,7 +101,7 @@ class PhieuDangKyTiemController extends Controller
        // dd("hearrrr");
         // $vaccine = $this->getVaccine();
 // dd($vaccine);
-        return view('admin.phieutiem.create', [
+        return view('admin.phieutiem.list', [
             'title' => 'Lập phiếu đăng ký theo yêu cầu',
             'vaccine' => $this->getVaccine(),
             'treem' => $this->getTreEm(),
@@ -105,25 +120,11 @@ class PhieuDangKyTiemController extends Controller
         return redirect()->back();
     }
 
-    public function update(Request $request, PhieuDangKyTiem $phieudk)
-    {
-        $a = 1;
-        $request->validate([]);
-        try {
 
-            $phieudk->tinhTrang = $a;
-            $phieudk->id_NV = Auth::user()->id;
-            $phieudk->save();
-            return redirect('phieutiem/list')->with('success', 'Xác nhận phiếu đăng ký tiêm thành công !');
-        } catch (Exception $err) {
-            Session::flash('error', $err->getMessage());
-            return redirect()->back();
-        }
-    }
     public function postHidden(Request $request, PhieuDangKyTiem $phieudk)
     {
         $this->phieutiemService->updateHidden($request, $phieudk);
-        return redirect('phieutiem/list')->with('success', 'Xoá phiếu đăng ký thành công !');
+        return redirect('admin/phieutiem/list')->with('success', 'Xoá phiếu đăng ký thành công !');
 
     }
     // public function createChiTiet()

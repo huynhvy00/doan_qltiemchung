@@ -77,7 +77,7 @@
                                 <!-- <p class="exam" style="float: left; margin-right: 20px;">Tổng tiền: </p>
                                 <p class="exam">Số lượng: </p> -->
 
-                                <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('admin/treem/list')}}">Quay lại</a></button>
+                                <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('admin/phieutiem/list')}}">Quay lại</a></button>
                                 <button type="submit" id="btn-submit" class="btn btn-primary">Tạo mới</button>
                             </fieldset>
                         </div>

@@ -39,7 +39,7 @@ class BenhController extends Controller
             $benh->ghiChu = $request->input('ghiChu');
 
             $benh->save();
-            return redirect('benh/list')->with('success', 'Tạo thông tin bệnh học thành công');
+            return redirect('admin/benh/list')->with('success', 'Tạo thông tin bệnh học thành công');
         }catch(Exception $err){
             Session::flash('error',$err->getMessage());
             return redirect()->back();
@@ -58,7 +58,7 @@ class BenhController extends Controller
             $benh->ghiChu = $request->input('ghiChu');
 
             $benh->save();
-            return redirect('benh/list')->with('success', 'Thông tin bệnh học được cập nhật thành công !');
+            return redirect('admin/benh/list')->with('success', 'Thông tin bệnh học được cập nhật thành công !');
         }catch(Exception $err){
             Session::flash('error',$err->getMessage());
             return redirect()->back();

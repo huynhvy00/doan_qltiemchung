@@ -20,19 +20,7 @@
             </ol>
         </div>
     </div>
-    <div class="page-title">
-        <div class="page-title-actions">
-            <div class="mb-2 mr-2 btn-group">
-                <button class="btn btn-focus"> <i class="pe-7s-filter"></i></button>
-                <select name="filter" id="exampleSelect" class="dropdown-toggle-split dropdown-toggle btn btn-focus">
-                    <option value="">--Choose an option--</option>
-                    <option value="code">Mã số sinh viên</option>
-                    <option value="name">Tên sinh viên</option>
-                    <option value="course">Khoá học</option>
-                </select>
-            </div>
-        </div>
-    </div>
+
 
     @include('admin.alert')
 
@@ -239,7 +227,7 @@
                                     <td class="text-bold-500" style="color: #fff;background: blue;">Đã xác nhận</td>
                                     @endif
                                     <td class="text-bold-500">
-                                        <a href="{{url('admin/phieutiem/chitietphieutiem/detail/'.$dakt->id)}}">
+                                        <a href="{{url('admin/phieutiem/chitietmuitiem/detailKTra/'.$dakt->id)}}">
                                             <i class="fa fa-edit" style="color: blue;font-size: 20px;"></i>
                                         </a>
                                     </td>
@@ -339,11 +327,12 @@
                                     @elseif ($dt->tinhTrang ==1)
                                     <td class="text-bold-500" style="color: #fff;background: yellow; margin-left:20px ">Đã kiểm tra</td>
                                     @else
-                                    <td class="text-bold-500" style="color: #fff;background: blue;">Đã xác nhận</td>
+                                    <td class="text-bold-500" style="color: #fff;background: blue;">Đã tiêm</td>
                                     @endif
                                     <td class="text-bold-500">
-                                        <!-- <a href="{{url('phieutiem/detail/'.$dt->id)}}"> -->
-                                        <i class="fa fa-edit" style="color: blue;font-size: 20px;"></i>
+
+                                        <a href="{{url('admin/phieutiem/chitietmuitiem/detailDT/'.$dt->id)}}">
+                                            <i class="fa fa-edit" style="font-size: 20px;"></i>
                                         </a>
                                     </td>
 

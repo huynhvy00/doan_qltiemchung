@@ -3,11 +3,16 @@
 namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
+use App\Http\Service\PhieuTiemService;
 use App\Models\PhuHuynh;
 use App\Http\Service\PhuHuynhService;
+use App\Models\Benh;
+use App\Models\ChiTietMuiTiem;
 use App\Models\doiTuong;
 use App\Models\khuVuc;
 use App\Models\TreEm;
+use App\Models\User;
+use App\Models\Vaccine;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Mockery\Exception;
@@ -15,16 +20,17 @@ use Illuminate\Support\Facades\Session;
 
 class PhuHuynhController extends Controller
 {
-    public function __construct(PhuHuynhService $phuhuynhService)
+    public function __construct(PhuHuynhService $phuhuynhService, PhieuTiemService $phieutiemService)
     {
         $this->phuhuynhService = $phuhuynhService;
+        $this->phieutiemService = $phieutiemService;
     }
     public function index(){
         $phuhuynh = PhuHuynh::latest()->paginate(10);
         return view('admin.phuhuynh.list',[
         'title' => 'Danh sách phụ huynh',
         'phuhuynh'=>$phuhuynh,
-        'haichau' => $this->phuhuynhService->getPhuHuynh('HC1'),
+        'haichau' => $this->phuhuynhService->getPhuHuynh('HC    '),
         'camle' => $this->phuhuynhService->getPhuHuynh('CL'),
         'nguhanhson' => $this->phuhuynhService->getPhuHuynh('NHS'),
         'sontra' => $this->phuhuynhService->getPhuHuynh('ST'),
@@ -55,12 +61,12 @@ class PhuHuynhController extends Controller
     }
     public function create()
     {
-        return view('admin.phuhuynh.create',['title' => 'Create Categories',
+        return view('admin.phuhuynh.create',['title' => 'Thêm tài khoản phụ huynh',
         'khuvuc'=>$this->getKhuVuc(),]);
     }
 
     public function store(Request $request){
-        dd($request);
+        // dd($request);
         $ph = new PhuHuynh();
         $request->validate([
             'tenPH' => 'required',
@@ -94,7 +100,7 @@ class PhuHuynhController extends Controller
                 $ph->anh = $newImageName;
             }
             $ph->save();
-            return redirect('phuhuynh/list')->with('success', 'Tạo mới hồ sơ phụ huynh thành công');
+            return redirect('admin/phuhuynh/list')->with('success', 'Tạo mới hồ sơ phụ huynh thành công');
         }catch(Exception $err){
             Session::flash('error',$err->getMessage());
             return redirect()->back();
@@ -133,18 +139,40 @@ class PhuHuynhController extends Controller
                 $phuhuynh->anh = $newImageName;
             }
             $phuhuynh->save();
-            return redirect('phuhuynh/list')->with('success', 'Category has been updated successfully');
+            return redirect('admin/phuhuynh/list')->with('success', 'Category has been updated successfully');
         }catch(Exception $err){
             Session::flash('error',$err->getMessage());
             return redirect()->back();
         }
     }
     // đang ky tiem
-    public function createPhieuDK(Request $request){
-        $this->phuhuynhService->getAllDangKy($request);
+    // public function createPhieuDK(Request $request){
+    //     $this->phuhuynhService->getAllDangKy($request);
+    //     return redirect()->back();
+    // }
+    public function createPhieuDK()
+    {
+       // dd("hearrrr");
+        // $vaccine = $this->getVaccine();
+// dd($vaccine);
+        return view('dang-ky-tiem', [
+            'title' => 'Lập phiếu đăng ký theo yêu cầu',
+            'vaccine' => $this->getVaccine(),
+            'treem' => $this->getTreEm(),
+            'benh' => $this->getBenh(),
+            'phuhuynh' => $this->getPhuHuynh(),
+            'khuvuc' => $this->getKhuVuc(),
+            'nhanvien' => $this->getUser()
+        ]);
+    }
+    public function storePhieuDK(Request $request){
+      //  dd('ffff');
+       // $this->chitietService->createChiTiet($request);
+
+
+        $this->phieutiemService->create($request);
         return redirect()->back();
     }
-
     // public function logout(){
     //     if (session()->has('phuhuynh')){
     //         session()->pull('phuhuynh');
@@ -152,14 +180,36 @@ class PhuHuynhController extends Controller
     //     }
     //     return redirect('index');
     // }
-    public function getKhuVuc(){
-        return khuVuc::all();
-    }
-    public function getTreEm(){
+    public function getTreEm()
+    {
         return TreEm::all();
     }
-    public function getDoiTuong(){
+    public function getUser()
+    {
+        return User::all();
+    }
+    public function getVaccine()
+    {
+        return Vaccine::all();
+    }
+    public function getPhuHuynh()
+    {
+        return PhuHuynh::all();
+    }
+    public function getKhuVuc()
+    {
+        return khuVuc::all();
+    }
+    public function getChiTietMuiTiem()
+    {
+        return ChiTietMuiTiem::all();
+    }
+    public function getDoiTuong()
+    {
         return doiTuong::all();
     }
-
+    public function getBenh()
+    {
+        return Benh::all();
+    }
 }

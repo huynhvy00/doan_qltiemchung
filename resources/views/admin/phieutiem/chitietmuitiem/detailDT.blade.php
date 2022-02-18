@@ -117,26 +117,31 @@
                     </div>
                 </div>
                 <hr>
-                <h3 class="title-detail">NHẬP CÁC CHỈ SỐ </h3>
+                <h3 class="title-detail">CÁC CHỈ SỐ </h3>
 
                 <div class="abb">
+                @foreach($lichsu as $ls)
+                    @if($chitiet->id_PhieuDK == $ls->id_PhieuTiem)
                     <div class="ro">
+
                         <div class="infor">
+
                             <label class="chiso">Biểu hiện trước khi tiêm:</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="bieuHienTruoc">
+                                <input type="text" class="form-control" disabled name="bieuHienTruoc" value="{{$ls->bieuHienTruoc}}">
                             </div>
+
                         </div>
                         <div class="infor">
                             <label class="chiso">Biểu hiện sau khi tiêm:</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="bieuHienSau">
+                                <input type="text" class="form-control" disabled name="nhipTim" value="{{$ls->nhipTim}}">
                             </div>
                         </div>
                         <div class="infor">
                             <label class="chiso">Nhịp tim:</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" name="nhipTim">
+                                <input type="number" class="form-control" disabled name="nhipTim" value="{{$ls->nhipTim}}">
                             </div>
                         </div>
 
@@ -145,41 +150,35 @@
                         <div class="infor">
                             <label class="chiso">Chiều cao:</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="chieuCao">
+                                <input type="text" class="form-control" disabled name="chieuCao" value="{{$ls->chieuCao}} cm">
                             </div>
                         </div>
                         <div class="infor">
                             <label class="chiso">Cân nặng:</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="canNang">
+                                <input type="text" class="form-control" disabled name="canNang" value="{{$ls->canNang}} kg">
                             </div>
                         </div>
                         <div class="infor">
                             <label class="chiso">Nhiệt độ cơ thể:</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="nhietDo">
+                                <input type="text" class="form-control" disabled name="nhietDo" value="{{$ls->nhietDo}} độ C">
                             </div>
                         </div>
 
                     </div>
+                    @endif
+                    @endforeach
                 </div>
 
 
 
-                @if($chitiet->tinhTrang == 1)
                 <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('admin/phieutiem/chitietmuitiem/list')}}">Quay lại</a></button>
             </div>
             @csrf
         </form>
-        @else
-        <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('admin/phieutiem/chitietmuitiem/list')}}">Quay lại</a></button>
-        <button type="submit" id="btn-submit" class="btn btn-primary">Xác nhận kiểm tra</button>
 
-</div>
-@csrf
-</form>
-@endif
 
-</section>
-@endsection
+    </section>
+    @endsection
 </div>

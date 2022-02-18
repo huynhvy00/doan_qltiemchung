@@ -66,6 +66,8 @@ class PhieuTiemService
             $phieu->id_NV = Auth::user()->id;
             $phieu->ngayDKTiem = $request->input('ngayDKTiem');
             $phieu->tongTien = $tongTien;
+            $phieu->tinhTrang = 1;
+
             $phieu->soMui = count($vx);
                 // 'tinhTrang' => $request->input('tinhTrang'),
                 $phieu->ngayTao = $ldate;

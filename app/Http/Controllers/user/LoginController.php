@@ -12,27 +12,26 @@ class LoginController extends Controller
 {
     public function index(){
 
-        return view('modal-login',['title' => 'Đăng nhập hệ thống']);
-  
+        return view('loginUser',['title' => 'Đăng nhập hệ thống']);
+
      }
-  
-     public function store(Request $request){
-  
-        $this->validate($request,[
-            'CMND'=>'required',
-            'password'=>'required'
-        ]);
-  
-        if (Auth::attempt([
-            'CMND'=>$request->input('CMND'),
-            'password'=>$request->input('password')
-        ], $request->input('remember'))){
-           return redirect()-> route('index');
-        }
-  
-        Session::flash('error','CMND or Password incorrect');
-        return redirect()->back();
-         //dd($request->input());
-  
-     }
+
+    //  public function store(Request $request){
+
+    //     $this->validate($request,[
+    //         'CMND'=>'required',
+    //         'password'=>'required'
+    //     ]);
+
+    //     if (Auth::attempt([
+    //         'CMND'=>$request->input('CMND'),
+    //         'password'=>$request->input('password')
+    //     ], $request->input('remember'))){
+    //        return redirect()-> route('index');
+    //     }
+
+    //     Session::flash('error','CMND or Password incorrect');
+    //     return redirect()->back();
+
+    //  }
   }

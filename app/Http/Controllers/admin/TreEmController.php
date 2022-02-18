@@ -89,7 +89,7 @@ class TreEmController extends Controller
             $te->code = $request->input('code');
 
             $te->save();
-            return redirect('treem/list')->with('success', 'Tạo mới hồ sơ trẻ em thành công');
+            return redirect('admin/treem/list')->with('success', 'Tạo mới hồ sơ trẻ em thành công');
         } catch (Exception $err) {
             Session::flash('error', $err->getMessage());
             return redirect()->back();
@@ -115,7 +115,7 @@ class TreEmController extends Controller
             $treem->code = $request->input('code');
 
             $treem->save();
-            return redirect('treem/list')->with('success', 'Cập nhật hồ sơ trẻ em thành công !');
+            return redirect('admin/treem/list')->with('success', 'Cập nhật hồ sơ trẻ em thành công !');
         } catch (Exception $err) {
             Session::flash('error', $err->getMessage());
             return redirect()->back();

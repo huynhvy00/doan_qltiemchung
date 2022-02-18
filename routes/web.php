@@ -10,6 +10,7 @@
     use App\Http\Controllers\admin\UserController;
     use App\Http\Controllers\admin\VaccineController;
     use App\Http\Controllers\admin\ChiTietMuiTiemController;
+use App\Http\Controllers\admin\LichSuTiemController;
 use App\Http\Controllers\user\MainUserController;
 use Illuminate\Support\Facades\Route;
     use Illuminate\Support\Facades\Hash;
@@ -103,6 +104,25 @@ use Illuminate\Support\Facades\Route;
                 // Route::post('create',[ChiTietMuiTiemController::class,'store']);
                 Route::get('detail/{chitiet}', [ChiTietMuiTiemController::class, 'show']);
                 Route::post('detail/{chitiet}', [ChiTietMuiTiemController::class, 'update']);
+                Route::get('detailKTra/{chitiet}', [ChiTietMuiTiemController::class, 'showKT']);
+                Route::post('detailKTra/{chitiet}', [ChiTietMuiTiemController::class, 'updateKT']);
+                Route::get('detailDT/{chitiet}', [ChiTietMuiTiemController::class, 'showDT']);
+                Route::post('detailDT/{chitiet}', [ChiTietMuiTiemController::class, 'updateDT']);
+
+                // Route::post('detail/delete/{phieudk}',[ChiTietMuiTiemController::class,'postHidden']);
+
+                // Route::get('delete/{id}',[ChiTietMuiTiemController::class,'destroy']);
+            });
+            Route::prefix('lichsutiem')->group(function () {
+                Route::get('list', [LichSuTiemController::class, 'index']);
+                // Route::get('create',[ChiTietMuiTiemController::class,'create']);
+                // Route::post('create',[ChiTietMuiTiemController::class,'store']);
+                Route::get('detail/{chitiet}', [ChiTietMuiTiemController::class, 'show']);
+                Route::post('detail/{chitiet}', [ChiTietMuiTiemController::class, 'update']);
+                Route::get('detailKTra/{chitiet}', [ChiTietMuiTiemController::class, 'showKT']);
+                Route::post('detailKTra/{chitiet}', [ChiTietMuiTiemController::class, 'updateKT']);
+                Route::get('detailDT/{chitiet}', [ChiTietMuiTiemController::class, 'showDT']);
+
                 // Route::post('detail/delete/{phieudk}',[ChiTietMuiTiemController::class,'postHidden']);
 
                 // Route::get('delete/{id}',[ChiTietMuiTiemController::class,'destroy']);
@@ -111,20 +131,23 @@ use Illuminate\Support\Facades\Route;
     });
     //login user
     Route::group(['prefix'=>''],function(){
-        Route::get('/',[MainUserController::class,'index'])->name('home');
-        Route::get('home',[MainUserController::class,'index']);
-       // Route::get('login', [MainUserController::class, 'login']);
+        Route::get('/',[MainUserController::class,'index']);
+        Route::get('home',[MainUserController::class,'index'])->name('home1');
+       Route::get('loginUser', [MainUserController::class, 'getLogin']);
         Route::post('login/store', [MainUserController::class, 'login']);
-        Route::get('logout',[PhuHuynhController::class,'logout']);
+        Route::get('logout',[MainUserController::class,'logout']);
         Route::get('vaccines',[VaccineController::class,'getVaccine']);
-        Route::get('dang-ky-tiem',[PhuHuynhController::class,'getAllDangKy']);
+        Route::get('dang-ky-tiem',[PhuHuynhController::class,'createPhieuDK']);
+        Route::post('dang-ky-tiem',[PhuHuynhController::class,'storePhieuDK']);
 
         Route::get('contract/{room}',[MainIndexController::class,'getRegist']);
         Route::post('contract/{room}',[MainIndexController::class,'postRegist']);
         Route::get('vehicle',[MainIndexController::class,'getRegistVehicle']);
         Route::post('vehicle',[MainIndexController::class,'postRegistVehicle']);
     });
-
+// Route::get('/home1', function(){
+//     return view('index');
+// });
 
 
     // //login ad
@@ -145,15 +168,13 @@ use Illuminate\Support\Facades\Route;
     // Route::get('/dang-ky-tiem', function () {
     //     return view('dangkytiem');
     // });
-    // Route::get('/login', function () {
-    //     return view('admin/login');
+    // Route::get('/login1', function () {
+    //     return view('loginUser');
     // });
     // Route::get('/header', function () {
     //     return view('admin.header');
     // });
-    // Route::get('/vaccines', function () {
-    //     return view('vaccines');
-    // });
+
 
     Route::get('/gioi-thieu', function () {
         return view('gioi-thieu');

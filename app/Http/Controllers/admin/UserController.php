@@ -103,7 +103,7 @@ class UserController extends Controller
                 $nv->anh = $newImageName;
             }
             $nv->save();
-            return redirect('nhanvien/list')->with('success', 'Tạo mới hồ sơ nhân viênh thành công');
+            return redirect('admin/nhanvien/list')->with('success', 'Tạo mới hồ sơ nhân viênh thành công');
         } catch (Exception $err) {
             Session::flash('error', $err->getMessage());
             return redirect()->back();
@@ -151,7 +151,7 @@ class UserController extends Controller
                 $nhanvien->anh = $newImageName;
             }
             $nhanvien->save();
-            return redirect('nhanvien/list')->with('success', 'Thông tin nhân viên cập nhật thành công !');
+            return redirect('admin/nhanvien/list')->with('success', 'Thông tin nhân viên cập nhật thành công !');
         } catch (Exception $err) {
             Session::flash('error', $err->getMessage());
             return redirect()->back();

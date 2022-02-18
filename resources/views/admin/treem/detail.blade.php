@@ -25,7 +25,7 @@
     </h3>
     <button style="background: none; margin-right: 40px; border: none;margin-top: 10px;">
         <a class="btn btn-primary" style="float: right; " href="{{url('admin/treem/create')}}">
-            Tra cứu lịch sử tiêm
+            Xem lịch sử tiêm
         </a>
     </button>
 </div>

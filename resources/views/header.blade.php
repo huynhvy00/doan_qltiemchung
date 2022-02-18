@@ -1,70 +1,4 @@
-<!-- <style>
-    /* #menu li {
-  text-align: left;
-  color: #fff;
-} */
-#menu li a {
-  text-decoration: none;
-  font-size: 16px;
-  display: block;
-  padding: 15px;
-  color: #fff;
-  background-color: #333;
-}
-/* #menu > li {
-  float: left;
-  border-right: 1px solid #fff;
-  position: relative;
-} */
-#menu > li > ul.dropdown_menu {
-  position: absolute;
-  list-style: none;
-  display: none;
-  width: 200px;
-}
-/* #menu > li:hover > a {
-  background-color: #5C5C5C;
-} */
-#menu > li:hover > ul.dropdown_menu {
-  z-index: 100;
-}
-ul.dropdown_menu > li {
-  position: relative;
-}
-ul.dropdown_menu > li > ul.submenu {
-  position: absolute;
-  display: none;
-  list-style: none;
-  width: 200px;
-  left: 200px;
-}
-ul.dropdown_menu > li:hover > a {
-  background-color: #5C5C5C !important;
-}
-ul.dropdown_menu > li:hover > ul.submenu {
-  z-index: 100;
-}
-ul.submenu > li:hover > a {
-  background-color: #5C5C5C !important;
-}
-.arrow {
-  width: 0;
-  height: 0;
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 5px;
-}
-.arrow-down {
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 7px solid #fff;
-}
-.arrow-right {
-  border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent;
-  border-left: 7px solid #fff;
-}
-</style> -->
+
 <header>
     <div class="container">
         <div class="row">
@@ -122,13 +56,13 @@ ul.submenu > li:hover > a {
                         <a href="/cap-nhat-thong-tin-ca-nhan">Thông tin cá nhân</a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)">Đăng xuất</a>
+                        <a href="{{ url('/logout') }}">Đăng xuất</a>
                     </li>
                 </ul>
                 </li>
                 @else
                 <li class="appointment-btn">
-                    <a href="#myModal" class="trigger-btn" data-toggle="modal">Đăng nhập</a>
+                    <a href="{{ url('/loginUser') }}" >Đăng nhập</a>
                 </li>
                 @endif
 

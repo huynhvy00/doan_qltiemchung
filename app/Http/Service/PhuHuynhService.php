@@ -42,9 +42,9 @@ class PhuHuynhService
 
     // login-user
     public function postLogin($request){
-       // dd($request);
+
         $request->validate([
-            'CMND'=>'required',
+            'CMND'=>'required|numeric',
             'password'=>'required'
         ]);
         $s_pass = $request->input('password');
@@ -61,7 +61,8 @@ class PhuHuynhService
                 $request->session()->put('phuhuynh',$s_data->CMND);
                 // dd(session('phuhuynh'));
                 $request->session()->put('tenPH',$s_data->tenPH);
-                redirect()->back();
+                return redirect()->route('home1');
+                dd('fdf');
             }else{
                 Session::flash('error','Mật khẩu sai. Vui lòng nhập lại');
                 redirect()->back();
@@ -78,14 +79,14 @@ class PhuHuynhService
     }
     //
 
-    public function getAllDangKy()
-    {
-        $vaccine = Vaccine::latest()->where('ghiChu',1)->paginate(50);
+    // public function getAllDangKy()
+    // {
+    //     $vaccine = Vaccine::latest()->where('ghiChu',1)->paginate(50);
 
-        return view('dang-ky-tiem', [
-            'title' => 'Danh sách vaccine', 'vaccine' => $vaccine,
+    //     return view('dang-ky-tiem', [
+    //         'title' => 'Danh sách vaccine', 'vaccine' => $vaccine,
 
-        ]);
-    }
+    //     ]);
+    // }
 
 }

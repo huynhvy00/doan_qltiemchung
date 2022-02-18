@@ -38,105 +38,54 @@
                     <!-- SECTION TITLE -->
                     <div class="section-title wow fadeInUp" id="tit" data-wow-delay="0.1s">
                         <h3>Danh mục Vắc xin</h3>
+                        <form method="get">
+                                <div class="page-title-wrapper">
+                                    <div class="app-header__content">
+                                        <div class="app-header-left">
+                                            <div class="search-wrapper active">
+                                                <div class="input-holder">
+                                                    <input type="text" class="search-input" placeholder="Type to search" name="key_search">
+                                                    <button class="search-icon"><span>search</span></button>
+                                                </div>
+                                                <button type="button" class="close"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="page-title-actions">
+                                        <div class="mb-2 mr-2 btn-group">
+                                            <button class="btn btn-focus"> <i class="pe-7s-filter"></i></button>
+                                            <select name="filter" id="exampleSelect" class="dropdown-toggle-split dropdown-toggle btn btn-focus">
+                                                    <option value="">--Choose an option--</option>
+                                                    <option value="code">Mã số sinh viên</option>
+                                                    <option value="name">Tên sinh viên</option>
+                                                    <option value="course">Khoá học</option>
+                                                </select>
+                                        </div>
+                                    </div>    -->
+                                </div>
+                            </form>
                     </div>
                     <hr>
 
                 </div>
+                @foreach($vaccine as $vx)
+                <div class="col-md-4 col-sm-6" id="item">
+                    <!-- NEWS THUMB -->
+                    <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="news-detail.html">
+                            <img src="/images/vx/{{ $vx->anh }}" width="250px !important" height="200px !important" class="img-responsive" alt="">
+                        </a>
+                        <div class="news-info">
+                            <span>{{$vx->tenVX}}</span>
+                            <span>Giá:  {{ number_format($vx->donGia,0,',','.').' đ'}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
 
-                <div class="col-md-4 col-sm-6" id="item">
-                    <!-- NEWS THUMB -->
-                    <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
-                        <a href="news-detail.html">
-                            <img src="images/vx/vx1.jpg" class="img-responsive" alt="">
-                        </a>
-                        <div class="news-info">
-                            <span>Vắc xin VARILRIX (Bỉ) phòng bệnh thủy đậu cho trẻ dưới 12 tháng tuổi</span>
-                            <span>Giá: 200.000 VND</span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-md-4 col-sm-6" id="item">
-                    <!-- NEWS THUMB -->
-                    <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
-                        <a href="news-detail.html">
-                            <img src="images/vx/vx2.png" class="img-responsive" alt="">
-                        </a>
-                        <div class="news-info">
-                            <span>IMOJEV – Vắc xin phòng viêm não Nhật Bản thế hệ mới</span>
-                            <span>Giá: 290.000 VND</span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6" id="item">
-                    <!-- NEWS THUMB -->
-                    <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
-                        <a href="news-detail.html">
-                            <img src="images/vx/vx3.jpg" class="img-responsive" alt="">
-                        </a>
-                        <div class="news-info">
-                            <span>Vắc xin ENGERIX B (Bỉ) phòng bệnh viêm gan B</span>
-                            <span>Giá: 900.000 VND</span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6" id="item">
-                    <!-- NEWS THUMB -->
-                    <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
-                        <a href="news-detail.html">
-                            <img src="images/vx/vx1.jpg" class="img-responsive" alt="">
-                        </a>
-                        <div class="news-info">
-                            <span>Vắc xin VARILRIX (Bỉ) phòng bệnh thủy đậu cho trẻ dưới 12 tháng tuổi</span>
-                            <span>Giá: 200.000 VND</span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6" id="item">
-                    <!-- NEWS THUMB -->
-                    <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
-                        <a href="news-detail.html">
-                            <img src="images/vx/vx2.png" class="img-responsive" alt="">
-                        </a>
-                        <div class="news-info">
-                            <span>IMOJEV – Vắc xin phòng viêm não Nhật Bản thế hệ mới</span>
-                            <span>Giá: 290.000 VND</span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6" id="item">
-                    <!-- NEWS THUMB -->
-                    <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
-                        <a href="news-detail.html">
-                            <img src="images/vx/vx1.jpg" class="img-responsive" alt="">
-                        </a>
-                        <div class="news-info">
-                            <span>Vắc xin VARILRIX (Bỉ) phòng bệnh thủy đậu cho trẻ dưới 12 tháng tuổi</span>
-                            <span>Giá: 200.000 VND</span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6" id="item">
-                    <!-- NEWS THUMB -->
-                    <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
-                        <a href="news-detail.html">
-                            <img src="images/vx/vx2.png" class="img-responsive" alt="">
-                        </a>
-                        <div class="news-info">
-                            <span>IMOJEV – Vắc xin phòng viêm não Nhật Bản thế hệ mới</span>
-                            <span>Giá: 290.000 VND</span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>

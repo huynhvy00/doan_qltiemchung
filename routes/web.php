@@ -116,6 +116,9 @@ use Illuminate\Support\Facades\Route;
        // Route::get('login', [MainUserController::class, 'login']);
         Route::post('login/store', [MainUserController::class, 'login']);
         Route::get('logout',[PhuHuynhController::class,'logout']);
+        Route::get('vaccines',[VaccineController::class,'getVaccine']);
+        Route::get('dang-ky-tiem',[PhuHuynhController::class,'getAllDangKy']);
+
         Route::get('contract/{room}',[MainIndexController::class,'getRegist']);
         Route::post('contract/{room}',[MainIndexController::class,'postRegist']);
         Route::get('vehicle',[MainIndexController::class,'getRegistVehicle']);
@@ -139,18 +142,18 @@ use Illuminate\Support\Facades\Route;
     // Route::get('/phieudangky', function () {
     //     return view('phieudangky');
     // });
-    Route::get('/dang-ky-tiem', function () {
-        return view('dangkytiem');
-    });
+    // Route::get('/dang-ky-tiem', function () {
+    //     return view('dangkytiem');
+    // });
     // Route::get('/login', function () {
     //     return view('admin/login');
     // });
     // Route::get('/header', function () {
     //     return view('admin.header');
     // });
-    Route::get('/vaccines', function () {
-        return view('vaccines');
-    });
+    // Route::get('/vaccines', function () {
+    //     return view('vaccines');
+    // });
 
     Route::get('/gioi-thieu', function () {
         return view('gioi-thieu');

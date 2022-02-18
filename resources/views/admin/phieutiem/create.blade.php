@@ -51,17 +51,15 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="vaccine">
-
                                         @foreach($vaccine as $vx)
-
+                                        @if($vx->ghiChu==1)
                                         <div class="item-vx">
-                                        <input name="id_VX" type="checkbox" class="form-check-input" id="gender">
+                                            <input type="checkbox" id="" name="id_VX[]" value="{{ $vx->id}}">
                                             <div class="detail-vx">
-                                        <input class="form-check-input" type="checkbox" name="hobby[]" value="1" {{ (is_array(old('hobby')) && in_array(1, old('hobby'))) ? ' checked' : '' }}> football
 
                                                 <div class="vaccine__metas">
                                                     <div class="vaccine__name"><b>{{ $vx->tenVX }}</b></div>
-                                                    <div class="vaccine__price">{{ $vx->donGia }}</div>
+                                                    <div class="exam">{{ number_format( $vx->donGia,0,',','.').' đ'}}</div>
                                                 </div>
                                                 @foreach($benh as $b)
                                                 @if($vx->code == $b->code)
@@ -70,13 +68,14 @@
                                                 @endforeach
                                             </div>
                                         </div>
+                                        @endif
                                         @endforeach
 
                                     </div>
                                 </div>
                                 <hr>
-                                <p class="exam" style="float: left; margin-right: 20px;">Tổng tiền: </p>
-                                <p class="exam">Số lượng: </p>
+                                <!-- <p class="exam" style="float: left; margin-right: 20px;">Tổng tiền: </p>
+                                <p class="exam">Số lượng: </p> -->
 
                                 <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('admin/treem/list')}}">Quay lại</a></button>
                                 <button type="submit" id="btn-submit" class="btn btn-primary">Tạo mới</button>

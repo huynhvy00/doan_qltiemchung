@@ -24,7 +24,7 @@
         </div>
         <button style="background: none;
     border: none;">
-            <a class="btn btn-primary" style="float: right; " href="{{url('vaccine/create')}}">Thêm mới</a>
+            <a class="btn btn-primary" style="float: right; " href="{{url('admin/vaccine/create')}}">Thêm mới</a>
         </button>
     </div>
     <div class="page-title">
@@ -105,10 +105,10 @@
                                 @endif
 
                                 <td class="text-right footable-visible footable-last-column">
-                                    <a href="{{url('vaccine/detail/'.$vx->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
+                                    <a href="{{url('admin/vaccine/detail/'.$vx->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
                                 </td>
                                 <td class="text-right footable-visible footable-last-column">
-                                    <a href="{{url('vaccine/edit/'.$vx->id)}}"> <i class="fa fa-edit" style="color: blue;font-size: 20px;"></i>
+                                    <a href="{{url('admin/vaccine/edit/'.$vx->id)}}"> <i class="fa fa-edit" style="color: blue;font-size: 20px;"></i>
                                     </a>
                                 </td>
                             </tr>

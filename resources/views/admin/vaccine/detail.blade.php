@@ -64,7 +64,7 @@
             <tr class="tr-detail">
                 <th class="bbb">Đơn giá</th>
                 <td class="bbc">
-                {{ number_format($vaccine->donGia,0,',','.').' đ'}}
+                    {{ number_format($vaccine->donGia,0,',','.').' đ'}}
                 </td>
             </tr>
             <tr class="tr-detail">
@@ -101,7 +101,9 @@
     <span style="margin: 0px 0px 0px 20px;"><b>Ảnh:</b></span>
     <img class="img-vaccine" src="/images/vx/{{ $vaccine->anh }}" alt="">
 </div>
-<button id="btn-submit" class="btn btn-secondary" style="width: fit-content; margin: 0px 0px 20px 33px !important"><a style="color: #fff;" href="{{url('vaccine/list')}}">Quay lại</a></button>
+<button id="btn-submit" class="btn btn-secondary" style="width: fit-content; margin: 0px 0px 20px 33px !important">
+    <a style="color: #fff;" href="{{url('admin/vaccine/list')}}">Quay lại</a>
+</button>
 
 </div>
 @endsection

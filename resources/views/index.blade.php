@@ -346,7 +346,7 @@
                     <!-- SECTION TITLE -->
                     <div class="section-title wow fadeInUp" id="tit" data-wow-delay="0.1s">
                         <h3>Danh mục Vắc xin</h3>
-                        <a id="more" href="">Xem tất cả</a>
+                        <a id="more" href="{{asset('vaccines')}}">Xem tất cả</a>
                     </div>
                     <hr>
 

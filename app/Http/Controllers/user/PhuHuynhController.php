@@ -139,10 +139,11 @@ class PhuHuynhController extends Controller
             return redirect()->back();
         }
     }
-    // public function login(Request $request){
-    //     $this->phuhuynhService->postLogin($request);
-    //     return redirect()->back();
-    // }
+    // đang ky tiem
+    public function createPhieuDK(Request $request){
+        $this->phuhuynhService->getAllDangKy($request);
+        return redirect()->back();
+    }
 
     // public function logout(){
     //     if (session()->has('phuhuynh')){

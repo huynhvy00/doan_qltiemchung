@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Service\VaccineService;
 use App\Models\doiTuong;
 use App\Models\Benh;
 use App\Models\LoSX;
+use App\Models\PhuHuynh;
+use App\Models\TreEm;
 // use App\Models\NhanVien;
 use App\Models\Vaccine;
 use Mockery\Exception;
@@ -14,6 +17,10 @@ use Illuminate\Http\Request;
 
 class VaccineController extends Controller
 {
+    public function __construct(VaccineService $vaccineService)
+    {
+        $this->vaccineService = $vaccineService;
+    }
     public function index()
     {
         $vaccine = Vaccine::latest()->paginate(10);
@@ -146,6 +153,31 @@ class VaccineController extends Controller
             return redirect()->back();
         }
     }
+
+    // public function getAll()
+    // {
+    //     $vaccine = Vaccine::latest()->where('ghiChu',1)->paginate(50);
+    //     return view('vaccines', [
+    //         'title' => 'Danh sách vaccine', 'vaccine' => $vaccine,
+    //         'benh' => $this->getBenh(),
+    //         'doituong' => $this->getDoiTuong(),
+    //         'phuhuynh' => $this->getPhuHuynh(),
+    //         'treem' => $this->getTreEm(),
+    //         'losx' => $this->getLoSX()
+    //     ]);
+    // }
+    public function getVaccine(Request $request){
+
+        return view('vaccines',['title'=>'Danh sách vaccine',
+        'vaccine'=>$this->vaccineService->getAll($request),
+        'benh' => $this->getBenh(),
+        'doituong' => $this->getDoiTuong(),
+        'phuhuynh' => $this->getPhuHuynh(),
+        'treem' => $this->getTreEm(),
+        'losx' => $this->getLoSX()
+    ]);
+    }
+
     public function getLoSX()
     {
         return LoSX::all();
@@ -157,5 +189,11 @@ class VaccineController extends Controller
     public function getBenh()
     {
         return Benh::all();
+    } public function getTreEm()
+    {
+        return TreEm::all();
+    } public function getPhuHUynh()
+    {
+        return PhuHuynh::all();
     }
 }

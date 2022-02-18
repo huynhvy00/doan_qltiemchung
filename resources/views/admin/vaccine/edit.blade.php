@@ -106,7 +106,7 @@
                             <input type="file" id="formFile" name="anh">
                         </div>
                     </div>
-                    <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('vaccine/list')}}">Quay lại</a></button>
+                    <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('admin/vaccine/list')}}">Quay lại</a></button>
                     <button type="submit" id="btn-submit" class="btn btn-primary">Cập nhật</button>
                     <!-- <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Ghi chú:</label>

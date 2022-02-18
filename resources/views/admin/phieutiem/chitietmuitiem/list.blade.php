@@ -131,9 +131,9 @@
                                     @if ($chuakt->tinhTrang ==0)
                                     <td class="text-bold-500" style="color: #fff;background: red; margin-left:20px ">Chưa kiểm tra</td>
                                     @elseif ($chuakt->tinhTrang ==1)
-                                    <td class="text-bold-500" style="color: #fff;background: red; margin-left:20px ">Đã kiểm tra</td>
+                                    <td class="text-bold-500" style="color: #fff;background: yellow; margin-left:20px ">Đã kiểm tra</td>
                                     @else
-                                    <td class="text-bold-500">Đã xác nhận</td>
+                                    <td class="text-bold-500" style="color: #fff;background: blue;">Đã xác nhận</td>
                                     @endif
                                     <td class="text-bold-500">
                                         <a href="{{url('admin/phieutiem/chitietmuitiem/detail/'.$chuakt->id)}}">
@@ -150,7 +150,7 @@
                     </div>
                 </div>
                 <div role="tabpanel" id="tab-2" class="tab-pane">
-                <div class="panel-body">
+                    <div class="panel-body">
                         <table class="table table-striped mb-0" style="font-size: 13px;">
                             <thead>
                                 <tr>
@@ -234,9 +234,9 @@
                                     @if ($dakt->tinhTrang ==0)
                                     <td class="text-bold-500" style="color: #fff;background: red; margin-left:20px ">Chưa kiểm tra</td>
                                     @elseif ($dakt->tinhTrang ==1)
-                                    <td class="text-bold-500" style="color: #fff;background: red; margin-left:20px ">Đã kiểm tra</td>
+                                    <td class="text-bold-500" style="color: #fff;background: #d00; margin-left:20px ">Đã kiểm tra</td>
                                     @else
-                                    <td class="text-bold-500">Đã xác nhận</td>
+                                    <td class="text-bold-500" style="color: #fff;background: blue;">Đã xác nhận</td>
                                     @endif
                                     <td class="text-bold-500">
                                         <a href="{{url('admin/phieutiem/chitietphieutiem/detail/'.$dakt->id)}}">
@@ -253,7 +253,7 @@
                     </div>
                 </div>
                 <div role="tabpanel" id="tab-3" class="tab-pane">
-                <div class="panel-body">
+                    <div class="panel-body">
                         <table class="table table-striped mb-0" style="font-size: 13px;">
                             <thead>
                                 <tr>
@@ -337,13 +337,13 @@
                                     @if ($dt->tinhTrang ==0)
                                     <td class="text-bold-500" style="color: #fff;background: red; margin-left:20px ">Chưa kiểm tra</td>
                                     @elseif ($dt->tinhTrang ==1)
-                                    <td class="text-bold-500" style="color: #fff;background: red; margin-left:20px ">Đã kiểm tra</td>
+                                    <td class="text-bold-500" style="color: #fff;background: yellow; margin-left:20px ">Đã kiểm tra</td>
                                     @else
-                                    <td class="text-bold-500">Đã xác nhận</td>
+                                    <td class="text-bold-500" style="color: #fff;background: blue;">Đã xác nhận</td>
                                     @endif
                                     <td class="text-bold-500">
                                         <!-- <a href="{{url('phieutiem/detail/'.$dt->id)}}"> -->
-                                            <i class="fa fa-edit" style="color: blue;font-size: 20px;"></i>
+                                        <i class="fa fa-edit" style="color: blue;font-size: 20px;"></i>
                                         </a>
                                     </td>
 

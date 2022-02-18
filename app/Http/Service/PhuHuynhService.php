@@ -4,6 +4,7 @@ namespace App\Http\Service;
 
 use App\Models\PhuHuynh;
 use App\Models\Room;
+use App\Models\Vaccine;
 use Illuminate\Support\Facades\Session;
 use League\Flysystem\Exception;
 
@@ -38,6 +39,8 @@ class PhuHuynhService
     //     }
     //     return true;
     // }
+
+    // login-user
     public function postLogin($request){
        // dd($request);
         $request->validate([
@@ -55,7 +58,7 @@ class PhuHuynhService
             // dd($student_pass);
             if(password_verify($s_pass,$student_pass)){
 
-                $request->session()->put('phuhuynh',$s_data->id);
+                $request->session()->put('phuhuynh',$s_data->CMND);
                 // dd(session('phuhuynh'));
                 $request->session()->put('tenPH',$s_data->tenPH);
                 redirect()->back();
@@ -73,4 +76,16 @@ class PhuHuynhService
         // dd($CMND);
         return PhuHuynh::where('CMND',$CMND)->where('tinhTrang',1)->First();
     }
+    //
+
+    public function getAllDangKy()
+    {
+        $vaccine = Vaccine::latest()->where('ghiChu',1)->paginate(50);
+
+        return view('dang-ky-tiem', [
+            'title' => 'Danh sách vaccine', 'vaccine' => $vaccine,
+
+        ]);
+    }
+
 }

@@ -90,10 +90,12 @@
                                     <div class="col-md-6 col-sm-6">
                                         <label for="select">Chọn trẻ</label>
                                         <select class="form-control">
-                                            <option>Lê Thị B</option>
-                                            <option>Lê Thị C</option>
-
+                                            @foreach($treem as $te)
+                                            @if (session()->has('phuhuynh') == $te->id_PH)
+                                            <option>{{$te->tenre}}</option>
+                                            @endif
                                         </select>
+
                                     </div>
                                     <div class="col-md-6 col-sm-6">
                                         <label for="date">Ngày tiêm mong muốn</label>
@@ -103,77 +105,24 @@
 
                                         <div class="form-group row">
                                             <div class="vaccine">
-
+                                                @foreach($vaccine as $vx)
                                                 <div class="a">
                                                     <div class="item-vx">
                                                         <input name="id_VX" type="checkbox" class="check-vx" id="gender">
                                                         <div class="detail-vx">
 
                                                             <div class="vaccine__metas">
-                                                                <div class="vaccine__name"><b>Teraxiu (Mỹ)</b></div>
-                                                                <div class="vaccine__price" style="color: red;">200.000 VND</div>
+                                                                <div class="vaccine__name"><b>{{$vx->tenVX}}</b></div>
+                                                                <div class="vaccine__price" style="color: red;">Giá: {{ number_format($vx->donGia,0,',','.').' đ'}}</div>
                                                             </div>
 
                                                             <div class="vaccine__description">Thuỷ đậu cho trẻ dưới 12 tháng tuổi</div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="a">
-                                                    <div class="item-vx">
-                                                        <input name="id_VX" type="checkbox" class="check-vx" id="gender">
-                                                        <div class="detail-vx">
+                                                @endforeach
 
-                                                            <div class="vaccine__metas">
-                                                                <div class="vaccine__name"><b>Libtin (Anh)</b></div>
-                                                                <div class="vaccine__price" style="color: red;">670.000 VND</div>
-                                                            </div>
 
-                                                            <div class="vaccine__description">Viêm màn não Nhật Bản</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="a">
-                                                    <div class="item-vx">
-                                                        <input name="id_VX" type="checkbox" class="check-vx" id="gender">
-                                                        <div class="detail-vx">
-
-                                                            <div class="vaccine__metas">
-                                                                <div class="vaccine__name"><b>Politepxic (Nhật Bản)</b></div>
-                                                                <div class="vaccine__price" style="color: red;">389.000 VND</div>
-                                                            </div>
-
-                                                            <div class="vaccine__description">Ho gà, cúm</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="a">
-                                                    <div class="item-vx">
-                                                        <input name="id_VX" type="checkbox" class="check-vx" id="gender">
-                                                        <div class="detail-vx">
-
-                                                            <div class="vaccine__metas">
-                                                                <div class="vaccine__name"><b>Pentamin (Việt Nam)</b></div>
-                                                                <div class="vaccine__price" style="color: red;">900.000 VND</div>
-                                                            </div>
-
-                                                            <div class="vaccine__description">Bạch hầu</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="a">
-                                                    <div class="item-vx">
-                                                        <input name="id_VX" type="checkbox" class="check-vx" id="gender">
-                                                        <div class="detail-vx">
-
-                                                            <div class="vaccine__metas">
-                                                                <div class="vaccine__name"><b>Mintabin (Mỹ)</b></div>
-                                                                <div class="vaccine__price" style="color: red;">980.000 VND</div>
-                                                            </div>
-
-                                                            <div class="vaccine__description">6 trong 1 </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
 
                                             </div>
                                         </div>

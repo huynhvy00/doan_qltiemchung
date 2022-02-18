@@ -22,65 +22,37 @@ class ChiTietMuiTiemService
 
         return $chitiet;
     }
-    // public function getForm()
+
+    // public function createChiTiet($request)
     // {
-    //     $forms = Vehicle::select(
-    //         'vehicles.*',
-    //         'students.name',
-    //         'students.vehicle',
-    //         'students.code as student_code',
-    //         'semesters.name as semester_name',
-    //     )
-    //         ->join('students', 'students.id', '=', 'vehicles.student_id')
-    //         ->join('semesters', 'semesters.id', '=', 'vehicles.semester_id')
-    //         ->where('vehicles.del_flg', 'not like', 1)
-    //         ->paginate(20);
-    //     return $forms;
-    // }
-    // public function updateHidden($request, $phieudk)
-    // {
-    //     $request->validate([]);
-    //     $b = 0;
+    //    dd($request);
+    //     $request->validate([
+    //         'id_VX' => 'required',
+    //         // 'id_NV' => 'required',
+    //         'ngayTiem' => 'required',
+    //         'id_PhieuDK' => 'required',
+    //         'donGia' => 'required',
+    //         // 'soLuong' => 'required',
+    //         // 'soMui' => 'required',
+    //     ]);
+    //     // $ldate = date('Y-m-d');
+
     //     try {
-    //         $phieudk->update([
-    //             'del' => $b,
+    //         ChiTietMuiTiem::create([
+    //             'id_VX' => $request->input('id_VX'),
+    //             'ngayTiem' => $request->input('ngayTiem'),
+    //             'donGia' => $request->input('donGia'),
+    //             // 'soLuong' => $request->input('soLuong'),
+    //             'id_NV' => Auth::user()->id,
+    //             // 'ngayDKTiem' => $request->input('ngayDKTiem'),
+    //             // 'id_PhieuDK' =>
+
     //         ]);
-    //         Session::flash('success', 'Xoá phiếu đăng ký thành công!');
+    //         Session::flash('success', 'Phiếu đăng ký tiêm được tạo thành công!');
     //     } catch (Exception $err) {
-    //         Session::flash('error', $err->getMessage('Xoá phiếu đăng ký không thành công'));
+    //         Session::flash('error', $err->getMessage('Phiếu đăng ký tiêm tạo không thành công!'));
     //         return false;
     //     }
     //     return true;
     // }
-    public function createChiTiet($request)
-    {
-        $request->validate([
-            'id_VX' => 'required',
-            // 'id_NV' => 'required',
-            'ngayTiem' => 'required',
-            'id_PhieuDK' => 'required',
-            'donGia' => 'required',
-            // 'soLuong' => 'required',
-            // 'soMui' => 'required',
-        ]);
-        // $ldate = date('Y-m-d');
-
-        try {
-            ChiTietMuiTiem::create([
-                'id_VX' => $request->input('id_VX'),
-                'ngayTiem' => $request->input('ngayTiem'),
-                'donGia' => $request->input('donGia'),
-                // 'soLuong' => $request->input('soLuong'),
-                'id_NV' => Auth::user()->id,
-                // 'ngayDKTiem' => $request->input('ngayDKTiem'),
-                // 'id_PhieuDK' =>
-
-            ]);
-            Session::flash('success', 'Phiếu đăng ký tiêm được tạo thành công!');
-        } catch (Exception $err) {
-            Session::flash('error', $err->getMessage('Phiếu đăng ký tiêm tạo không thành công!'));
-            return false;
-        }
-        return true;
-    }
 }

@@ -173,7 +173,7 @@
         </form>
         @else
         <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('admin/phieutiem/chitietmuitiem/list')}}">Quay lại</a></button>
-        <button type="submit" id="btn-submit" class="btn btn-primary">Xác nhận đã kiểm tra</button>
+        <button type="submit" id="btn-submit" class="btn btn-primary">Xác nhận kiểm tra</button>
 
 </div>
 @csrf

@@ -105,7 +105,7 @@ ul.submenu > li:hover > a {
             <ul class="nav navbar-nav navbar-right" id="menu">
                 <li><a href="/" class="smoothScroll">Trang chủ</a></li>
                 <li><a href="/gioi-thieu" class="smoothScroll">Giới thiệu</a></li>
-                <li><a href="/vaccines" class="smoothScroll">Vắc xin</a></li>
+                <li><a href="{{asset('vaccines')}}" class="smoothScroll">Vắc xin</a></li>
                 <li><a href="/dang-ky-tiem" class="smoothScroll">Đăng ký tiêm</a></li>
                 <li><a href="/lich-trinh" class="smoothScroll">Lịch trình</a></li>
                 <li><a href="/benh-hoc" class="smoothScroll">Bệnh học</a></li>

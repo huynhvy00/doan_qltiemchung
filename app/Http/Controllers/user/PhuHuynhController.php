@@ -60,7 +60,7 @@ class PhuHuynhController extends Controller
     }
 
     public function store(Request $request){
-        // dd($request);
+        dd($request);
         $ph = new PhuHuynh();
         $request->validate([
             'tenPH' => 'required',
@@ -139,6 +139,18 @@ class PhuHuynhController extends Controller
             return redirect()->back();
         }
     }
+    // public function login(Request $request){
+    //     $this->phuhuynhService->postLogin($request);
+    //     return redirect()->back();
+    // }
+
+    // public function logout(){
+    //     if (session()->has('phuhuynh')){
+    //         session()->pull('phuhuynh');
+    //         session()->pull('tenPH');
+    //     }
+    //     return redirect('index');
+    // }
     public function getKhuVuc(){
         return khuVuc::all();
     }

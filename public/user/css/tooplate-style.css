@@ -1086,3 +1086,40 @@ http://www.tooplate.com/view/2098-health
 #item {
     margin-bottom: 20px;
 }
+/*  */
+.vaccine {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+margin-left: 17px;
+}
+.item-vx {
+    display: flex;
+    /* border: 1px solid #0002; */
+    font-size: 15px;
+    flex-direction: row;
+    border-radius: 8px;
+    padding: 10px 10px 10px 00px;
+}
+.detail-vx {
+    display: flex;
+    flex-direction: column;
+}
+.exam{
+    color: red;
+}
+.chiso {
+    padding-top: calc(0.375rem + 1px);
+    padding-bottom: calc(0.375rem + 1px);
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: 1.5;
+    margin-left: 14px;
+}
+.vaccine-lits {
+    height: 200px;
+}
+.check-vx {
+    margin: 5px 10px !important;
+    height: 0px;
+}

@@ -2,10 +2,7 @@
 <html>
 
 <head>
-
     @include('admin.header')
-
-
 </head>
 
 <body>
@@ -19,20 +16,22 @@
                             <h5>QUẢN LÝ TIÊM CHỦNG</h5>
                         </div>
                     </li>
-                    <li >
-                        <a href="/admin/main">
+                    <li>
+                        <a href="{{asset('admin/main')}}">
                             <i class="fa fa-star"></i>
                             <span class="nav-label">Dashboards </span>
                         </a>
                     </li>
-                    <li >
-                        <a href="{{asset('vaccine/list')}}">
+                    <!-- @can('admin-non-position') -->
+                    <li>
+                        <a href="{{asset('admin/vaccine/list')}}">
                             <i class="fa fa-database"></i>
                             <span class="nav-label">Quản lý Vaccine</span>
                         </a>
                     </li>
+                    <!-- @endcan -->
                     <li>
-                        <a href="{{asset('benh/list')}}">
+                        <a href="{{asset('admin/benh/list')}}">
                             <i class="fa fa-edit"></i>
                             <span class="nav-label">Quản lý thông tin bệnh</span>
                         </a>
@@ -40,17 +39,23 @@
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Quản lý hồ sơ</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="{{asset('phuhuynh/list')}}">Phụ huynh</a></li>
-                            <li><a href="{{asset('treem/list')}}">Trẻ em</a></li>
-                            <li><a href="{{asset('nhanvien/list')}}">Nhân viên</a></li>
+                            <li><a href="{{asset('admin/phuhuynh/list')}}">Phụ huynh</a></li>
+                            <li><a href="{{asset('admin/treem/list')}}">Trẻ em</a></li>
+                            <!-- @can('admin-position') -->
+                            <li><a href="{{asset('admin/nhanvien/list')}}">Nhân viên</a></li>
+                            <!-- @endcan -->
                         </ul>
                     </li>
                     <li>
                         <a href=""><i class="fa fa-sitemap"></i> <span class="nav-label">Quản lý phiếu tiêm </span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li class="active"><a href="{{asset('phieutiem/list')}}">Phiếu đăng ký tiêm<span class="label label-warning float-right">/24</span></a></li>
-                            <li><a href="">Thực hiện tiêm</a></li>
-                            <li><a href="">Tạo phiếu đăng ký tiêm</a></li>
+                        <!-- @can('trungtam-position') -->
+                            <li class="active"><a href="{{asset('admin/phieutiem/list')}}">Phiếu đăng ký tiêm<span class="label label-warning float-right">1/2</span></a></li>
+                            <!-- @endcan -->
+                            <li><a href="{{asset('admin/phieutiem/chitietmuitiem/list')}}">Thực hiện tiêm</a></li>
+                        <!-- @can('trungtam-position') -->
+                            <li><a href="{{asset('admin/phieutiem/create')}}">Tạo phiếu đăng ký tiêm</a></li>
+                            <!-- @endcan -->
                         </ul>
                     </li>
                     <li>
@@ -69,32 +74,33 @@
                 <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
                     <div class="navbar-header">
                         <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-                        <form role="search" class="navbar-form-custom" action="search_results.html">
+                        <form role="search" class="navbar-form-custom" method="get">
                             <div class="form-group">
-                                <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                                <input type="text" placeholder="Tìm kiếm..." class="form-control" name="key_search" id="top-search">
                             </div>
                         </form>
                     </div>
                     <ul class="nav navbar-top-links navbar-right">
                         <li>
+
                             <div style="display: flex;   flex-direction: row; gap:10px">
 
-                            <a href="" style="padding: 0px 0px;">
-                                <img alt="image" class="rounded-circle" src="/images/phuhuynh/{{ Auth::user()->anh }}" style="margin: 15px 0px 15px 15px; height: 30px; width: 30px" />
-                                @if( Auth::user()->idLoaiNV == 1 )
-                                <span >
-                                   Chào NVYT, {{ Auth::user()->tenNV }}
-                                   </span>
+                                <a href="" style="padding: 0px 0px;">
+                                    <img alt="image" class="rounded-circle" src="/images/phuhuynh/{{ Auth::user()->anh }}" style="margin: 15px 0px 15px 15px; height: 30px; width: 30px" />
+                                    @if( Auth::user()->idLoaiNV == 1 )
+                                    <span>
+                                        Chào NVYT, {{ Auth::user()->tenNV }}
+                                    </span>
 
-                                @elseif( Auth::user()->idLoaiNV == 2 )
-                                <span >
-                                   Chào NVTT, {{ Auth::user()->tenNV }}
-                                   </span>
-                                @else
-                                <span >
-                                   Chào AD, {{ Auth::user()->tenNV }}
-                                   </span>
-                                @endif
+                                    @elseif( Auth::user()->idLoaiNV == 2 )
+                                    <span>
+                                        Chào NVTT, {{ Auth::user()->tenNV }}
+                                    </span>
+                                    @else
+                                    <span>
+                                        Chào AD, {{ Auth::user()->tenNV }}
+                                    </span>
+                                    @endif
                                 </a>
 
                             </div>
@@ -467,7 +473,7 @@
         </div>
         <div class="footer">
             <div class="float-right">
-               Huynh Thi Thao Vy <strong>- 1811505310454</strong>
+                Huynh Thi Thao Vy <strong>- 1811505310454</strong>
             </div>
             <div>
                 <strong>Copyright</strong> Hệ thống quản lý tiêm chủng Đà Nẵng &copy; 2021-2022

@@ -24,7 +24,7 @@
         Thông tin trẻ em (MÃ HỒ SƠ: {{ $treem ->id }})
     </h3>
     <button style="background: none; margin-right: 40px; border: none;margin-top: 10px;">
-        <a class="btn btn-primary" style="float: right; " href="{{url('treem/create')}}">
+        <a class="btn btn-primary" style="float: right; " href="{{url('admin/treem/create')}}">
             Tra cứu lịch sử tiêm
         </a>
     </button>
@@ -146,7 +146,7 @@
     </div>
 </div>
 <button id="btn-submit" class="btn btn-secondary" style="width: fit-content; margin: 0px 0px 20px 33px !important">
-    <a style="color: #fff;" href="{{url('treem/list')}}">Quay lại</a>
+    <a style="color: #fff;" href="{{url('admin/treem/list')}}">Quay lại</a>
 </button>
 
 </div>

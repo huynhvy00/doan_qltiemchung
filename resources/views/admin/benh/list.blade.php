@@ -19,7 +19,7 @@
         </div>
         <button style="background: none;
     border: none;">
-            <a class="btn btn-primary" style="float: right; " href="{{url('benh/create')}}">Thêm mới</a>
+            <a class="btn btn-primary" style="float: right; " href="{{url('admin/benh/create')}}">Thêm mới</a>
         </button>
     </div>
 
@@ -38,7 +38,7 @@
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
                             </a>
-                            <a href="{{url('benh/edit/'.$nv->id)}}">
+                            <a href="{{url('admin/benh/edit/'.$nv->id)}}">
                                 <i class="fa fa-edit"></i>
                             </a>
 

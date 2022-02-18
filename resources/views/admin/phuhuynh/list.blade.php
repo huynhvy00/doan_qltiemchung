@@ -19,7 +19,7 @@
         </div>
         <button style="background: none;
     border: none;">
-            <a class="btn btn-primary" style="float: right; " href="{{url('phuhuynh/create')}}">Thêm mới</a>
+            <a class="btn btn-primary" style="float: right; " href="{{url('admin/phuhuynh/create')}}">Thêm mới</a>
         </button>
     </div>
     <div class="page-title">
@@ -92,8 +92,8 @@
                                         <td class="text-bold-500" style="color: blue;"><b>Đang hoạt động</b></td>
                                         @endif
 
-                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/detail/'.$ph->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
-                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/active/'.$ph->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
+                                        <td class="text-bold-500"> <a href="{{url('admin/phuhuynh/detail/'.$ph->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
+                                        <td class="text-bold-500"> <a href="{{url('admin/phuhuynh/active/'.$ph->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
 
                                     </tr>
                                     @endforeach
@@ -154,8 +154,8 @@
                                         <td class="text-bold-500" style="color: blue;"><b>Đang hoạt động</b></td>
                                         @endif
 
-                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/detail/'.$ph->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
-                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/active/'.$ph->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
+                                        <td class="text-bold-500"> <a href="{{url('admin/phuhuynh/detail/'.$ph->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
+                                        <td class="text-bold-500"> <a href="{{url('admin/phuhuynh/active/'.$ph->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
 
                                     </tr>
                                     @endforeach
@@ -215,8 +215,8 @@
                                         <td class="text-bold-500" style="color: blue;"><b>Đang hoạt động</b></td>
                                         @endif
 
-                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/detail/'.$ph->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
-                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/active/'.$ph->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
+                                        <td class="text-bold-500"> <a href="{{url('admin/phuhuynh/detail/'.$ph->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
+                                        <td class="text-bold-500"> <a href="{{url('admin/phuhuynh/active/'.$ph->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
 
                                     </tr>
                                     @endforeach
@@ -276,8 +276,8 @@
                                         <td class="text-bold-500" style="color: blue;"><b>Đang hoạt động</b></td>
                                         @endif
 
-                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/detail/'.$ph->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
-                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/active/'.$ph->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
+                                        <td class="text-bold-500"> <a href="{{url('admin/phuhuynh/detail/'.$ph->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
+                                        <td class="text-bold-500"> <a href="{{url('admin/phuhuynh/active/'.$ph->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
 
                                     </tr>
                                     @endforeach
@@ -337,8 +337,8 @@
                                         <td class="text-bold-500" style="color: blue;"><b>Đang hoạt động</b></td>
                                         @endif
 
-                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/detail/'.$ph->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
-                                        <td class="text-bold-500"> <a href="{{url('phuhuynh/active/'.$ph->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
+                                        <td class="text-bold-500"> <a href="{{url('admin/phuhuynh/detail/'.$ph->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
+                                        <td class="text-bold-500"> <a href="{{url('admin/phuhuynh/active/'.$ph->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
 
                                     </tr>
                                     @endforeach

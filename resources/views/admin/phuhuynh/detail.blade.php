@@ -148,7 +148,7 @@
     </div>
 </div>
 <button id="btn-submit" class="btn btn-secondary" style="width: fit-content; margin: 0px 0px 20px 33px !important">
-    <a style="color: #fff;" href="{{url('phuhuynh/list')}}">Quay lại</a>
+    <a style="color: #fff;" href="{{url('admin/phuhuynh/list')}}">Quay lại</a>
 </button>
 
 </div>

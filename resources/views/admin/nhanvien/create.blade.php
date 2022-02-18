@@ -103,7 +103,7 @@
                         </div>
                     </div>
 
-                    <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('nhanvien/list')}}">Quay lại</a></button>
+                    <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('admin/nhanvien/list')}}">Quay lại</a></button>
                     <button type="submit" id="btn-submit" class="btn btn-primary">Tạo mới</button>
             </div>
             </fieldset>

@@ -10,7 +10,7 @@ class UserService
 {
     public function getUser($idLoaiNV)
     {
-        return User::where('idLoaiNV', $idLoaiNV)->orderByDesc('code')->get();
+        return User::where('idLoaiNV', $idLoaiNV)->orderByDesc('code')->orderByDesc('tinhTrang')->get();
     }
     public function active($user){
         $user = User::where('id',$user)->First();

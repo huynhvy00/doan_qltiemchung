@@ -18,42 +18,55 @@
             </ol>
         </div>
     </div>
-    <form method="post" enctype="multipart/form-data">
-        <section class="section" style="background: #fff; margin-top: 20px;">
+    <section class="section" style="background: #fff; margin-top: 20px;">
+        <form method="post" enctype="multipart/form-data">
             <div class="panel-body">
-                <h3>Chi tiết phiếu đăng ký tiêm (MÃ PHIẾU: {{ $phieudk ->id }})</h3>
-                <hr>
-                <h3 class="title-detail">THÔNG TIN TRẺ ĐĂNG KÝ</h3>
+                <!-- <h3>Chi tiết phiếu đăng ký tiêm (MÃ PHIẾU: )</h3> -->
                 <div class="abb">
                     <div class="ro">
+                        <h3 class="title-detail">THÔNG TIN TRẺ ĐĂNG KÝ</h3>
                         <div class="infor">
                             <label class="co2 ">Họ và tên trẻ: </label>
+                            @foreach($phieudk as $dk)
+                            @if($chitiet->id_PhieuDK == $dk->id)
                             @foreach($treem as $tre)
-                            @if($phieudk ->id_Tre == $tre ->id)
+                            @if($dk ->id_Tre == $tre ->code)
                             <label class="col2"><b>{{$tre->tenTre}}</b></label>
+                            @endif
+                            @endforeach
                             @endif
                             @endforeach
                         </div>
                         <div class="infor">
                             <label class="co2 ">Mã tiêm chủng: </label>
+                            @foreach($phieudk as $dk)
+                            @if($chitiet->id_PhieuDK == $dk->id)
                             @foreach($treem as $tre)
-                            @if($phieudk ->id_Tre == $tre ->id)
+                            @if($dk ->id_Tre == $tre ->code)
                             <label class="col2"><b>{{$tre->code}}</b></label>
+                            @endif
+                            @endforeach
                             @endif
                             @endforeach
                         </div>
                         <div class="infor">
                             <label class="co2 ">Ngày sinh: </label>
+                            @foreach($phieudk as $dk)
+                            @if($chitiet->id_PhieuDK == $dk->id)
                             @foreach($treem as $tre)
-                            @if($phieudk ->id_Tre == $tre ->id)
+                            @if($dk ->id_Tre == $tre ->code)
                             <label class="col2"><b>{{$tre->ngaySinh}}</b></label>
+                            @endif
+                            @endforeach
                             @endif
                             @endforeach
                         </div>
                         <div class="infor">
                             <label class="co2 ">Nhóm trẻ: </label>
+                            @foreach($phieudk as $dk)
+                            @if($chitiet->id_PhieuDK == $dk->id)
                             @foreach($treem as $tre)
-                            @if($phieudk ->id_Tre == $tre ->id)
+                            @if($dk ->id_Tre == $tre ->code)
                             @foreach($doituong as $dt)
                             @if($tre ->id_DT == $dt ->id)
                             <label class="col2"><b>{{$dt->tenDT}} - {{$dt->doTuoi}}</b></label>
@@ -61,68 +74,12 @@
                             @endforeach
                             @endif
                             @endforeach
-                        </div>
-                    </div>
-                    <div class="ro">
-                        <div class="infor">
-                            <label class="co2 ">Họ và tên phụ huynh: </label>
-                            @foreach($treem as $tre)
-                            @if($phieudk ->id_Tre == $tre ->id)
-                            @foreach($phuhuynh as $ph)
-                            @if($tre ->id_PH == $ph ->id)
-                            <label class="col2"><b>{{$ph->tenPH}}</b></label>
-                            @endif
-                            @endforeach
-                            @endif
-                            @endforeach
-                        </div>
-                        <div class="infor">
-                            <label class="co2 ">CMND: </label>
-                            @foreach($treem as $tre)
-                            @if($phieudk ->id_Tre == $tre ->id)
-                            @foreach($phuhuynh as $ph)
-                            @if($tre ->id_PH == $ph ->id)
-                            <label class="col2"><b>{{$ph->CMND}}</b></label>
-                            @endif
-                            @endforeach
-                            @endif
-                            @endforeach
-                        </div>
-                        <div class="infor">
-                            <label class="co2 ">Số điện thoại: </label>
-                            @foreach($treem as $tre)
-                            @if($phieudk ->id_Tre == $tre ->id)
-                            @foreach($phuhuynh as $ph)
-                            @if($tre ->id_PH == $ph ->id)
-                            <label class="col2"><b>{{$ph->sdt}}</b></label>
-                            @endif
-                            @endforeach
-                            @endif
-                            @endforeach
-                        </div>
-                        <div class="infor">
-                            <label class="co2 ">Địa chỉ: </label>
-                            @foreach($treem as $tre)
-                            @if($phieudk ->id_Tre == $tre ->id)
-                            @foreach($phuhuynh as $ph)
-                            @if($tre ->id_PH == $ph ->id)
-                            <label class="col2"><b>{{$ph->diaChi}}</b></label>
-                            @endif
-                            @endforeach
                             @endif
                             @endforeach
                         </div>
                     </div>
-                </div>
-                <hr>
-
-                <h3 class="title-detail">THÔNG TIN ĐĂNG KÝ TIÊM</h3>
-
-                <div class="abb">
-                    @foreach($chitietmuitiem as $chitiet)
-                    @if($phieudk ->id == $chitiet ->id_PhieuDK)
                     <div class="ro">
-
+                        <h3 class="title-detail">THÔNG TIN ĐĂNG KÝ TIÊM</h3>
                         <div class="infor">
                             <label class="co2 ">Loại vắc xin: </label>
                             @foreach($vaccine as $vx)
@@ -153,45 +110,76 @@
                             <label class="co2 ">Đơn giá: </label>
                             @foreach($vaccine as $vx)
                             @if($chitiet ->id_VX == $vx ->id)
-
                             <label class="col2"><b>{{ number_format($vx->donGia,0,',','.').' đ'}}</b></label>
-
                             @endif
                             @endforeach
                         </div>
-
                     </div>
-                    @endif
-                    @endforeach
-
                 </div>
                 <hr>
+                <h3 class="title-detail">NHẬP CÁC CHỈ SỐ </h3>
 
                 <div class="abb">
-
                     <div class="ro">
+                        <div class="infor">
+                            <label class="chiso">Biểu hiện trước khi tiêm:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="bieuHienTruoc">
+                            </div>
+                        </div>
+                        <div class="infor">
+                            <label class="chiso">Biểu hiện sau khi tiêm:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="bieuHienSau">
+                            </div>
+                        </div>
+                        <div class="infor">
+                            <label class="chiso">Nhịp tim:</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="nhipTim">
+                            </div>
+                        </div>
 
-                        <div class="infor">
-                            <label class="co2 ">Ngày dự kiến tiêm: </label>
-                            <label class="col2"><b>{{$phieudk->ngayDKTiem}}</b></label>
+                    </div>
+                    <div class="ro">
+                       <div class="infor">
+                            <label class="chiso">Chiều cao:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="chieuCao">
+                            </div>
                         </div>
                         <div class="infor">
-                            <label class="co2 ">Tình trạng: </label>
-                            @if($phieudk->tinhTrang == 0)
-                            <label class="col2"><b>Chưa xác nhận</b></label>
-                            @else
-                            <label class="col2"><b>Đã xác nhận</b></label>
-                            @endif
+                            <label class="chiso">Cân nặng:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="canNang">
+                            </div>
                         </div>
+                        <div class="infor">
+                            <label class="chiso">Nhiệt độ cơ thể:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="nhietDo">
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('phieutiem/list')}}">Quay lại</a></button>
 
 
+                @if($chitiet->tinhTrang == 1)
+                <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('admin/phieutiem/chitietmuitiem/list')}}">Quay lại</a></button>
             </div>
-        </section>
-        @csrf
-    </form>
+            @csrf
+        </form>
+        @else
+        <button id="btn-submit" class="btn btn-secondary"><a style="color: #fff;" href="{{url('admin/phieutiem/chitietmuitiem/list')}}">Quay lại</a></button>
+        <button type="submit" id="btn-submit" class="btn btn-primary">Xác nhận đã kiểm tra</button>
 
-    @endsection
+</div>
+@csrf
+</form>
+@endif
+
+</section>
+@endsection
+</div>

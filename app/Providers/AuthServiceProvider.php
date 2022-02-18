@@ -25,10 +25,45 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
         Gate::define('admin-position', function($user){
-            if($user->idLoaiNV === 'AD'){
+            if($user->idLoaiNV === 3){
                 return true;
             }else{
                 return false;
+            }
+        });
+        Gate::define('yte-position', function($user){
+            if($user->idLoaiNV === 1){
+                return true;
+            }else{
+                return false;
+            }
+        });
+        Gate::define('trungtam-position', function($user){
+            if($user->idLoaiNV === 2){
+                return true;
+            }else{
+                return false;
+            }
+        });
+        Gate::define('admin-non-position', function($user){
+            if($user->idLoaiNV === 3){
+                return false;
+            }else{
+                return true;
+            }
+        });
+        Gate::define('yte-position', function($user){
+            if($user->idLoaiNV === 1){
+                return false;
+            }else{
+                return true;
+            }
+        });
+        Gate::define('trungtam-position', function($user){
+            if($user->idLoaiNV === 2){
+                return false;
+            }else{
+                return true;
             }
         });
     }

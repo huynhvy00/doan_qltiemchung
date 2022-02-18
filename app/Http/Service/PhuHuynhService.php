@@ -38,4 +38,39 @@ class PhuHuynhService
     //     }
     //     return true;
     // }
+    public function postLogin($request){
+       // dd($request);
+        $request->validate([
+            'CMND'=>'required',
+            'password'=>'required'
+        ]);
+        $s_pass = $request->input('password');
+        $s_code = $request->input('CMND');
+        $s_data = $this->selectPhuHuynh($s_code);
+        // dd($s_data);
+
+        if(isset($s_data)){
+
+            $student_pass = $s_data->password;
+            // dd($student_pass);
+            if(password_verify($s_pass,$student_pass)){
+
+                $request->session()->put('phuhuynh',$s_data->id);
+                // dd(session('phuhuynh'));
+                $request->session()->put('tenPH',$s_data->tenPH);
+                redirect()->back();
+            }else{
+                Session::flash('error','Mật khẩu sai. Vui lòng nhập lại');
+                redirect()->back();
+            }
+        }else{
+            Session::flash('error','Mã sinh viên không tồn tại.');
+            redirect()->back();
+        }
+
+    }
+    public function selectPhuHuynh($CMND){
+        // dd($CMND);
+        return PhuHuynh::where('CMND',$CMND)->where('tinhTrang',1)->First();
+    }
 }

@@ -21,7 +21,17 @@
         </div>
     </div>
     <div class="page-title">
-
+        <div class="page-title-actions">
+            <div class="mb-2 mr-2 btn-group">
+                <button class="btn btn-focus"> <i class="pe-7s-filter"></i></button>
+                <select name="filter" id="exampleSelect" class="dropdown-toggle-split dropdown-toggle btn btn-focus">
+                    <option value="">--Choose an option--</option>
+                    <option value="code">Mã số sinh viên</option>
+                    <option value="name">Tên sinh viên</option>
+                    <option value="course">Khoá học</option>
+                </select>
+            </div>
+        </div>
     </div>
 
     @include('admin.alert')
@@ -31,9 +41,9 @@
 
         <div class="tabs-container" style="margin-top: 20px;">
             <ul class="nav nav-tabs" role="tablist">
-                <li><a class="nav-link active show" data-toggle="tab" href="#tab-1"> Tất cả phiếu đăng ký</a></li>
-                <li><a class="nav-link" data-toggle="tab" href="#tab-2">Phiếu đăng ký đã xác nhận</a></li>
-                <li><a class="nav-link" data-toggle="tab" href="#tab-3">Phiếu đăng ký chưa xác nhận</a></li>
+                <li><a class="nav-link active show" data-toggle="tab" href="#tab-1">Chưa kiểm tra (B1)</a></li>
+                <li><a class="nav-link" data-toggle="tab" href="#tab-2">Đã kiểm tra (B2)</a></li>
+                <li><a class="nav-link" data-toggle="tab" href="#tab-3">Đã Tiêm (B3)</a></li>
             </ul>
             <div class="tab-content">
                 <div role="tabpanel" id="tab-1" class="tab-pane active show">
@@ -42,35 +52,50 @@
                             <thead>
                                 <tr>
                                     <th>STT</th>
+                                    <th>Mã phiếu</th>
+                                    <th>Loại vaccine</th>
                                     <th>Họ tên trẻ</th>
                                     <th>Mã tiêm</th>
                                     <th>Khu vực</th>
-                                    <th>Số mũi</th>
-                                    <th>Ngày tiêm dự kiến</th>
-                                    <th>Tổng tiền</th>
+                                    <th>Ngày tiêm </th>
+                                    <th>Đơn giá</th>
+                                    <th>Số lượng</th>
                                     <th>Nhân viên</th>
-                                    <th>Ngày tạo phiếu</th>
 
                                     <th>Tình trạng</th>
                                     <th>Chi tiết</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($phieudk as $dk )
+                                @foreach($chuakiemtra as $chuakt )
                                 <tr>
                                     <td class="text-bold-500">{{++$i}}</td>
+                                    <td class="text-bold-500">{{$chuakt ->id_PhieuDK}}</td>
+
+                                    @foreach($vaccine as $vx)
+                                    @if($chuakt->id_VX == $vx->id)
+                                    <td class="text-bold-500">{{ $vx->tenVX }}</td>
+                                    @endif
+                                    @endforeach
+
+                                    @foreach($phieudk as $dk)
+                                    @if($chuakt->id_PhieuDK == $dk->id)
                                     @foreach($treem as $te)
                                     @if($dk->id_Tre == $te->code)
                                     <td class="text-bold-500">{{ $te->tenTre }}</td>
                                     @endif
                                     @endforeach
-
-                                    @foreach($treem as $te)
-                                    @if($dk->id_Tre == $te->code)
-                                    <td class="text-bold-500">{{ $te->code }}</td>
                                     @endif
                                     @endforeach
 
+                                    @foreach($phieudk as $dk)
+                                    @if($chuakt->id_PhieuDK == $dk->id)
+                                    <td class="text-bold-500">{{ $dk->id_Tre }}</td>
+                                    @endif
+                                    @endforeach
+
+                                    @foreach($phieudk as $dk)
+                                    @if($chuakt->id_PhieuDK == $dk->id)
                                     @foreach($treem as $te)
                                     @if($dk->id_Tre == $te->code)
 
@@ -87,28 +112,31 @@
                                     @endforeach
                                     @endif
                                     @endforeach
+                                    @endif
+                                    @endforeach
 
-                                    <td class="text-bold-500">{{ $dk->soMui }}</td>
-                                    <td class="text-bold-500">{{ $dk->ngayDKTiem }}</td>
-                                    <td class="text-bold-500">{{ number_format($dk->tongTien,0,',','.').' đ'}}
+                                    <td class="text-bold-500">{{ $chuakt->ngayTiem }}</td>
+                                    <td class="text-bold-500">{{ number_format($chuakt->donGia,0,',','.').' đ'}}
 
-                                        @if($dk->id_NV == 0)
+                                    <td class="text-bold-500">{{ $chuakt->soLuong }}</td>
+                                    @if($chuakt->id_NV == 0)
                                     <td class="text-bold-500" style="color: red;">Trống</td>
                                     @endif
                                     @foreach($nhanvien as $nv)
-                                    @if($dk->id_NV == $nv->id)
+                                    @if($chuakt->id_NV == $nv->id)
                                     <td class="text-bold-500">{{ $nv->tenNV }}</td>
                                     @endif
                                     @endforeach
-                                    <td class="text-bold-500">{{ $dk->ngayTao }}</td>
 
-                                    @if ($dk->tinhTrang ==0)
-                                    <td class="text-bold-500" style="color: #fff;background: red; margin-left:20px ">Chưa xác nhận</td>
+                                    @if ($chuakt->tinhTrang ==0)
+                                    <td class="text-bold-500" style="color: #fff;background: red; margin-left:20px ">Chưa kiểm tra</td>
+                                    @elseif ($chuakt->tinhTrang ==1)
+                                    <td class="text-bold-500" style="color: #fff;background: red; margin-left:20px ">Đã kiểm tra</td>
                                     @else
                                     <td class="text-bold-500">Đã xác nhận</td>
                                     @endif
                                     <td class="text-bold-500">
-                                        <a href="{{url('admin/phieutiem/detail/'.$dk->id)}}">
+                                        <a href="{{url('admin/phieutiem/chitietmuitiem/detail/'.$chuakt->id)}}">
                                             <i class="fa fa-edit" style="color: blue;font-size: 20px;"></i>
                                         </a>
                                     </td>
@@ -122,40 +150,55 @@
                     </div>
                 </div>
                 <div role="tabpanel" id="tab-2" class="tab-pane">
-                    <div class="panel-body">
+                <div class="panel-body">
                         <table class="table table-striped mb-0" style="font-size: 13px;">
                             <thead>
                                 <tr>
                                     <th>STT</th>
+                                    <th>Mã phiếu</th>
+                                    <th>Loại vaccine</th>
                                     <th>Họ tên trẻ</th>
                                     <th>Mã tiêm</th>
                                     <th>Khu vực</th>
-                                    <th>Số mũi</th>
-                                    <th>Ngày tiêm dự kiến</th>
-                                    <th>Tổng tiền</th>
+                                    <th>Ngày tiêm </th>
+                                    <th>Đơn giá</th>
+                                    <th>Số lượng</th>
                                     <th>Nhân viên</th>
-                                    <th>Ngày tạo phiếu</th>
 
                                     <th>Tình trạng</th>
                                     <th>Chi tiết</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($a2 as $dk )
+                                @foreach($dakiemtra as $dakt )
                                 <tr>
-                                    <td class="text-bold-500">{{++$j}}</td>
+                                    <td class="text-bold-500">{{++$i}}</td>
+                                    <td class="text-bold-500">{{$dakt ->id_PhieuDK}}</td>
+
+                                    @foreach($vaccine as $vx)
+                                    @if($dakt->id_VX == $vx->id)
+                                    <td class="text-bold-500">{{ $vx->tenVX }}</td>
+                                    @endif
+                                    @endforeach
+
+                                    @foreach($phieudk as $dk)
+                                    @if($dakt->id_PhieuDK == $dk->id)
                                     @foreach($treem as $te)
                                     @if($dk->id_Tre == $te->code)
                                     <td class="text-bold-500">{{ $te->tenTre }}</td>
                                     @endif
                                     @endforeach
-
-                                    @foreach($treem as $te)
-                                    @if($dk->id_Tre == $te->code)
-                                    <td class="text-bold-500">{{ $te->code }}</td>
                                     @endif
                                     @endforeach
 
+                                    @foreach($phieudk as $dk)
+                                    @if($dakt->id_PhieuDK == $dk->id)
+                                    <td class="text-bold-500">{{ $dk->id_Tre }}</td>
+                                    @endif
+                                    @endforeach
+
+                                    @foreach($phieudk as $dk)
+                                    @if($dakt->id_PhieuDK == $dk->id)
                                     @foreach($treem as $te)
                                     @if($dk->id_Tre == $te->code)
 
@@ -172,84 +215,93 @@
                                     @endforeach
                                     @endif
                                     @endforeach
+                                    @endif
+                                    @endforeach
 
-                                    <td class="text-bold-500">{{ $dk->soMui }}</td>
-                                    <td class="text-bold-500">{{ $dk->ngayDKTiem }}</td>
-                                    <td class="text-bold-500">{{ number_format($dk->tongTien,0,',','.').' đ'}}
+                                    <td class="text-bold-500">{{ $dakt->ngayTiem }}</td>
+                                    <td class="text-bold-500">{{ number_format($dakt->donGia,0,',','.').' đ'}}
 
-                                        @if($dk->id_NV == 0)
+                                    <td class="text-bold-500">{{ $dakt->soLuong }}</td>
+                                    @if($dakt->id_NV == 0)
                                     <td class="text-bold-500" style="color: red;">Trống</td>
                                     @endif
                                     @foreach($nhanvien as $nv)
-                                    @if($dk->id_NV == $nv->id)
+                                    @if($dakt->id_NV == $nv->id)
                                     <td class="text-bold-500">{{ $nv->tenNV }}</td>
                                     @endif
                                     @endforeach
-                                    <td class="text-bold-500">{{ $dk->ngayTao }}</td>
 
-
-                                    @if ($dk->tinhTrang ==0)
-                                    <td class="text-bold-500" style="color: red">Chưa xác nhận</td>
+                                    @if ($dakt->tinhTrang ==0)
+                                    <td class="text-bold-500" style="color: #fff;background: red; margin-left:20px ">Chưa kiểm tra</td>
+                                    @elseif ($dakt->tinhTrang ==1)
+                                    <td class="text-bold-500" style="color: #fff;background: red; margin-left:20px ">Đã kiểm tra</td>
                                     @else
                                     <td class="text-bold-500">Đã xác nhận</td>
                                     @endif
-
-                                    @if ($dk->tinhTrang ==0)
                                     <td class="text-bold-500">
-                                        <a href="{{url('admin/phieutiem/detail/'.$dk->id)}}">
+                                        <a href="{{url('admin/phieutiem/chitietphieutiem/detail/'.$dakt->id)}}">
                                             <i class="fa fa-edit" style="color: blue;font-size: 20px;"></i>
                                         </a>
                                     </td>
-                                    @else
-                                    <td class="text-bold-500">
-                                        <a href="{{url('admin/phieutiem/detail/'.$dk->id)}}">
-                                            <i class="fa fa-edit" style="font-size: 20px;"></i>
-                                        </a>
-                                    </td>
-                                    @endif
 
                                 </tr>
                                 @endforeach
 
                             </tbody>
                         </table>
+
                     </div>
                 </div>
                 <div role="tabpanel" id="tab-3" class="tab-pane">
-                    <div class="panel-body">
+                <div class="panel-body">
                         <table class="table table-striped mb-0" style="font-size: 13px;">
                             <thead>
                                 <tr>
                                     <th>STT</th>
+                                    <th>Mã phiếu</th>
+                                    <th>Loại vaccine</th>
                                     <th>Họ tên trẻ</th>
                                     <th>Mã tiêm</th>
                                     <th>Khu vực</th>
-                                    <th>Số mũi</th>
-                                    <th>Ngày tiêm dự kiến</th>
-                                    <th>Tổng tiền</th>
+                                    <th>Ngày tiêm </th>
+                                    <th>Đơn giá</th>
+                                    <th>Số lượng</th>
                                     <th>Nhân viên</th>
-                                    <th>Ngày tạo phiếu</th>
 
                                     <th>Tình trạng</th>
-                                    <th >Chi tiết</th>
+                                    <th>Chi tiết</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($a1 as $dk )
+                                @foreach($datiem as $dt )
                                 <tr>
-                                    <td class="text-bold-500">{{++$f}}</td>
+                                    <td class="text-bold-500">{{++$i}}</td>
+                                    <td class="text-bold-500">{{$dt ->id_PhieuDK}}</td>
+
+                                    @foreach($vaccine as $vx)
+                                    @if($dt->id_VX == $vx->id)
+                                    <td class="text-bold-500">{{ $vx->tenVX }}</td>
+                                    @endif
+                                    @endforeach
+
+                                    @foreach($phieudk as $dk)
+                                    @if($dt->id_PhieuDK == $dk->id)
                                     @foreach($treem as $te)
                                     @if($dk->id_Tre == $te->code)
                                     <td class="text-bold-500">{{ $te->tenTre }}</td>
                                     @endif
                                     @endforeach
-
-                                    @foreach($treem as $te)
-                                    @if($dk->id_Tre == $te->code)
-                                    <td class="text-bold-500">{{ $te->code }}</td>
                                     @endif
                                     @endforeach
 
+                                    @foreach($phieudk as $dk)
+                                    @if($dt->id_PhieuDK == $dk->id)
+                                    <td class="text-bold-500">{{ $dk->id_Tre }}</td>
+                                    @endif
+                                    @endforeach
+
+                                    @foreach($phieudk as $dk)
+                                    @if($dt->id_PhieuDK == $dk->id)
                                     @foreach($treem as $te)
                                     @if($dk->id_Tre == $te->code)
 
@@ -266,29 +318,31 @@
                                     @endforeach
                                     @endif
                                     @endforeach
+                                    @endif
+                                    @endforeach
 
-                                    <td class="text-bold-500">{{ $dk->soMui }}</td>
-                                    <td class="text-bold-500">{{ $dk->ngayDKTiem }}</td>
-                                    <td class="text-bold-500">{{ number_format($dk->tongTien,0,',','.').' đ'}}
+                                    <td class="text-bold-500">{{ $dt->ngayTiem }}</td>
+                                    <td class="text-bold-500">{{ number_format($dt->donGia,0,',','.').' đ'}}
 
-                                        @if($dk->id_NV == 0)
+                                    <td class="text-bold-500">{{ $dt->soLuong }}</td>
+                                    @if($dt->id_NV == 0)
                                     <td class="text-bold-500" style="color: red;">Trống</td>
                                     @endif
                                     @foreach($nhanvien as $nv)
-                                    @if($dk->id_NV == $nv->id)
+                                    @if($dt->id_NV == $nv->id)
                                     <td class="text-bold-500">{{ $nv->tenNV }}</td>
                                     @endif
                                     @endforeach
-                                    <td class="text-bold-500">{{ $dk->ngayTao }}</td>
 
-
-                                    @if ($dk->tinhTrang ==0)
-                                    <td class="text-bold-500" style="color: #fff; background: red;">Chưa xác nhận</td>
+                                    @if ($dt->tinhTrang ==0)
+                                    <td class="text-bold-500" style="color: #fff;background: red; margin-left:20px ">Chưa kiểm tra</td>
+                                    @elseif ($dt->tinhTrang ==1)
+                                    <td class="text-bold-500" style="color: #fff;background: red; margin-left:20px ">Đã kiểm tra</td>
                                     @else
                                     <td class="text-bold-500">Đã xác nhận</td>
                                     @endif
                                     <td class="text-bold-500">
-                                        <a href="{{url('admin/phieutiem/detail/'.$dk->id)}}">
+                                        <!-- <a href="{{url('phieutiem/detail/'.$dt->id)}}"> -->
                                             <i class="fa fa-edit" style="color: blue;font-size: 20px;"></i>
                                         </a>
                                     </td>
@@ -298,6 +352,7 @@
 
                             </tbody>
                         </table>
+
                     </div>
                 </div>
             </div>

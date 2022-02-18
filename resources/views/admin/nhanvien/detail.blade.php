@@ -89,7 +89,7 @@
     <img class="img-vaccine" src="/images/phuhuynh/{{ $nhanvien->anh }}" alt="">
 </div>
 <button id="btn-submit" class="btn btn-secondary" style="width: fit-content; margin: 0px 0px 20px 33px !important">
-    <a style="color: #fff;" href="{{url('nhanvien/list')}}">Quay lại</a>
+    <a style="color: #fff;" href="{{url('admin/nhanvien/list')}}">Quay lại</a>
 </button>
 
 </div>

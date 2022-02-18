@@ -121,7 +121,7 @@
         <div id="myModal" class="modal">
             <div class="modal-dialog modal-login">
                 <div class="modal-content">
-                    <form action="/modal-login/store" method="post">
+                    <form action="/login/store" method="post">
                         <div class="modal-header">
                             <h4 class="modal-title">Đăng nhập</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -359,7 +359,7 @@
                             <img src="images/vx/vx1.jpg" class="img-responsive" alt="">
                         </a>
                         <div class="news-info">
-                            <span>Vắc xin VARILRIX (Bỉ) phòng bệnh thủy đậu</span>
+                            <span>Vắc xin VARILRIX (Bỉ) phòng bệnh thủy đậu cho trẻ dưới 12 tháng tuổi</span>
                             <span>Giá: 200.000 VND</span>
                             <span></span>
                         </div>

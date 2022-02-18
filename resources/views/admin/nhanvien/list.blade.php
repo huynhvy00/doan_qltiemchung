@@ -20,7 +20,7 @@
             </ol>
         </div>
         <button style="background: none; border: none;">
-            <a class="btn btn-primary" style="float: right; " href="{{url('nhanvien/create')}}">Thêm nhân viên mới</a>
+            <a class="btn btn-primary" style="float: right; " href="{{url('admin/nhanvien/create')}}">Thêm nhân viên mới</a>
         </button>
     </div>
     <section class="section">
@@ -64,20 +64,20 @@
                                             <p style="margin-bottom: 10px;"><i class="fa fa-star"></i> {{ $nv->CMND }}</p>
                                             <div style="flex-direction: row; display: flex; gap: 30px">
                                                 @if ($nv->tinhTrang ==0)
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="lock">
                                                         <i class="fa fa-check-cancle"></i> Bị khoá
                                                     </strong>
                                                 </a>
                                                 @else
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="status">
                                                         <i class="fa fa-check-circle"></i>
                                                         Đang hoạt động
                                                     </strong>
                                                 </a>
                                                 @endif
-                                                <a href="{{url('nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
+                                                <a href="{{url('admin/nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
                                             </div>
 
                                         </div>
@@ -111,20 +111,20 @@
                                             <p style="margin-bottom: 10px;"><i class="fa fa-star"></i> {{ $nv->CMND }}</p>
                                             <div style="flex-direction: row; display: flex; gap: 30px">
                                                 @if ($nv->tinhTrang ==0)
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="lock">
                                                         <i class="fa fa-check-cancle"></i> Bị khoá
                                                     </strong>
                                                 </a>
                                                 @else
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="status">
                                                         <i class="fa fa-check-circle"></i>
                                                         Đang hoạt động
                                                     </strong>
                                                 </a>
                                                 @endif
-                                                <a href="{{url('nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
+                                                <a href="{{url('admin/nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -157,20 +157,20 @@
                                             <p style="margin-bottom: 10px;"><i class="fa fa-star"></i> {{ $nv->CMND }}</p>
                                             <div style="flex-direction: row; display: flex; gap: 30px">
                                                 @if ($nv->tinhTrang ==0)
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="lock">
                                                         <i class="fa fa-check-cancle"></i> Bị khoá
                                                     </strong>
                                                 </a>
                                                 @else
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="status">
                                                         <i class="fa fa-check-circle"></i>
                                                         Đang hoạt động
                                                     </strong>
                                                 </a>
                                                 @endif
-                                                <a href="{{url('nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
+                                                <a href="{{url('admin/nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -203,20 +203,20 @@
                                             <p style="margin-bottom: 10px;"><i class="fa fa-star"></i> {{ $nv->CMND }}</p>
                                             <div style="flex-direction: row; display: flex; gap: 30px">
                                                 @if ($nv->tinhTrang ==0)
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="lock">
                                                         <i class="fa fa-check-cancle"></i> Bị khoá
                                                     </strong>
                                                 </a>
                                                 @else
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="status">
                                                         <i class="fa fa-check-circle"></i>
                                                         Đang hoạt động
                                                     </strong>
                                                 </a>
                                                 @endif
-                                                <a href="{{url('nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
+                                                <a href="{{url('admin/nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -249,20 +249,20 @@
                                             <p style="margin-bottom: 10px;"><i class="fa fa-star"></i> {{ $nv->CMND }}</p>
                                             <div style="flex-direction: row; display: flex; gap: 30px">
                                                 @if ($nv->tinhTrang ==0)
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="lock">
                                                         <i class="fa fa-check-cancle"></i> Bị khoá
                                                     </strong>
                                                 </a>
                                                 @else
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="status">
                                                         <i class="fa fa-check-circle"></i>
                                                         Đang hoạt động
                                                     </strong>
                                                 </a>
                                                 @endif
-                                                <a href="{{url('nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
+                                                <a href="{{url('admin/nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -307,20 +307,20 @@
                                             <p style="margin-bottom: 10px;"><i class="fa fa-star"></i> {{ $nv->CMND }}</p>
                                             <div style="flex-direction: row; display: flex; gap: 30px">
                                                 @if ($nv->tinhTrang ==0)
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="lock">
                                                         <i class="fa fa-check-cancle"></i> Bị khoá
                                                     </strong>
                                                 </a>
                                                 @else
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="status">
                                                         <i class="fa fa-check-circle"></i>
                                                         Đang hoạt động
                                                     </strong>
                                                 </a>
                                                 @endif
-                                                <a href="{{url('nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
+                                                <a href="{{url('admin/nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -353,20 +353,20 @@
                                             <p style="margin-bottom: 10px;"><i class="fa fa-star"></i> {{ $nv->CMND }}</p>
                                             <div style="flex-direction: row; display: flex; gap: 30px">
                                                 @if ($nv->tinhTrang ==0)
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="lock">
                                                         <i class="fa fa-check-cancle"></i> Bị khoá
                                                     </strong>
                                                 </a>
                                                 @else
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="status">
                                                         <i class="fa fa-check-circle"></i>
                                                         Đang hoạt động
                                                     </strong>
                                                 </a>
                                                 @endif
-                                                <a href="{{url('nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
+                                                <a href="{{url('admin/nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -399,20 +399,20 @@
                                             <p style="margin-bottom: 10px;"><i class="fa fa-star"></i> {{ $nv->CMND }}</p>
                                             <div style="flex-direction: row; display: flex; gap: 30px">
                                                 @if ($nv->tinhTrang ==0)
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="lock">
                                                         <i class="fa fa-check-cancle"></i> Bị khoá
                                                     </strong>
                                                 </a>
                                                 @else
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="status">
                                                         <i class="fa fa-check-circle"></i>
                                                         Đang hoạt động
                                                     </strong>
                                                 </a>
                                                 @endif
-                                                <a href="{{url('nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
+                                                <a href="{{url('admin/nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -445,20 +445,20 @@
                                             <p style="margin-bottom: 10px;"><i class="fa fa-star"></i> {{ $nv->CMND }}</p>
                                             <div style="flex-direction: row; display: flex; gap: 30px">
                                                 @if ($nv->tinhTrang ==0)
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="lock">
                                                         <i class="fa fa-check-cancle"></i> Bị khoá
                                                     </strong>
                                                 </a>
                                                 @else
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="status">
                                                         <i class="fa fa-check-circle"></i>
                                                         Đang hoạt động
                                                     </strong>
                                                 </a>
                                                 @endif
-                                                <a href="{{url('nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
+                                                <a href="{{url('admin/nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -491,20 +491,20 @@
                                             <p style="margin-bottom: 10px;"><i class="fa fa-star"></i> {{ $nv->CMND }}</p>
                                             <div style="flex-direction: row; display: flex; gap: 30px">
                                                 @if ($nv->tinhTrang ==0)
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="lock">
                                                         <i class="fa fa-check-cancle"></i> Bị khoá
                                                     </strong>
                                                 </a>
                                                 @else
-                                                <a href="{{url('nhanvien/active/'.$nv->id)}}">
+                                                <a href="{{url('admin/nhanvien/active/'.$nv->id)}}">
                                                     <strong class="status">
                                                         <i class="fa fa-check-circle"></i>
                                                         Đang hoạt động
                                                     </strong>
                                                 </a>
                                                 @endif
-                                                <a href="{{url('nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
+                                                <a href="{{url('admin/nhanvien/detail/'.$nv->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a>
                                             </div>
                                         </div>
                                     </div>

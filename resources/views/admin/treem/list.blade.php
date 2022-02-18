@@ -23,7 +23,7 @@ $m = 0; ?>
         </div>
         <button style="background: none;
     border: none;">
-            <a class="btn btn-primary" style="float: right; " href="{{url('treem/create')}}">Thêm mới</a>
+            <a class="btn btn-primary" style="float: right; " href="{{url('admin/treem/create')}}">Thêm mới</a>
         </button>
     </div>
 
@@ -79,8 +79,8 @@ $m = 0; ?>
                                     @else
                                     <td class="text-bold-500">Nam</td>
                                     @endif
-                                    <td class="text-bold-500"> <a href="{{url('treem/detail/'.$te->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
-                                    <td class="text-bold-500"> <a href="{{url('treem/active/'.$te->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
+                                    <td class="text-bold-500"> <a href="{{url('admin/treem/detail/'.$te->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
+                                    <td class="text-bold-500"> <a href="{{url('admin/treem/active/'.$te->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
 
                                 </tr>
                                 @endforeach
@@ -127,8 +127,8 @@ $m = 0; ?>
                                     @else
                                     <td class="text-bold-500">Nam</td>
                                     @endif
-                                    <td class="text-bold-500"> <a href="{{url('treem/detail/'.$te->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
-                                    <td class="text-bold-500"> <a href="{{url('treem/active/'.$te->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
+                                    <td class="text-bold-500"> <a href="{{url('admin/treem/detail/'.$te->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
+                                    <td class="text-bold-500"> <a href="{{url('admin/treem/active/'.$te->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
 
                                 </tr>
                                 @endforeach
@@ -175,8 +175,8 @@ $m = 0; ?>
                                     @else
                                     <td class="text-bold-500">Nam</td>
                                     @endif
-                                    <td class="text-bold-500"> <a href="{{url('treem/detail/'.$te->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
-                                    <td class="text-bold-500"> <a href="{{url('treem/active/'.$te->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
+                                    <td class="text-bold-500"> <a href="{{url('admin/treem/detail/'.$te->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
+                                    <td class="text-bold-500"> <a href="{{url('admin/treem/active/'.$te->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
 
                                 </tr>
                                 @endforeach
@@ -223,8 +223,8 @@ $m = 0; ?>
                                     @else
                                     <td class="text-bold-500">Nam</td>
                                     @endif
-                                    <td class="text-bold-500"> <a href="{{url('treem/detail/'.$te->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
-                                    <td class="text-bold-500"> <a href="{{url('treem/active/'.$te->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
+                                    <td class="text-bold-500"> <a href="{{url('admin/treem/detail/'.$te->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
+                                    <td class="text-bold-500"> <a href="{{url('admin/treem/active/'.$te->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
 
                                 </tr>
                                 @endforeach
@@ -270,8 +270,8 @@ $m = 0; ?>
                                     @else
                                     <td class="text-bold-500">Nam</td>
                                     @endif
-                                    <td class="text-bold-500"> <a href="{{url('treem/detail/'.$te->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
-                                    <td class="text-bold-500"> <a href="{{url('treem/active/'.$te->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
+                                    <td class="text-bold-500"> <a href="{{url('admin/treem/detail/'.$te->id)}}"><i class="fa fa-info" style="color: yelow ;font-size: 20px;"></i></a></td>
+                                    <td class="text-bold-500"> <a href="{{url('admin/treem/active/'.$te->id)}}"><i class="fa fa-edit" style="color: blue;font-size: 20px;"></i></a></td>
 
                                 </tr>
                                 @endforeach

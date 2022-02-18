@@ -21,16 +21,126 @@
 </head>
 
 <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
-    <section class="preloader">
+    <!-- <section class="preloader">
         <div class="spinner">
             <span class="spinner-rotate"></span>
         </div>
-    </section>
+    </section> -->
     <!-- HEADER -->
     @include('header')
     <!-- HOME -->
-<div>
+<div class="vaccine-list">
+<section id="news" data-stellar-background-ratio="2.5">
+        <div class="container">
+            <div class="row">
 
+                <div class="col-md-12 col-sm-12">
+                    <!-- SECTION TITLE -->
+                    <div class="section-title wow fadeInUp" id="tit" data-wow-delay="0.1s">
+                        <h3>Danh mục Vắc xin</h3>
+                    </div>
+                    <hr>
+
+                </div>
+
+                <div class="col-md-4 col-sm-6" id="item">
+                    <!-- NEWS THUMB -->
+                    <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="news-detail.html">
+                            <img src="images/vx/vx1.jpg" class="img-responsive" alt="">
+                        </a>
+                        <div class="news-info">
+                            <span>Vắc xin VARILRIX (Bỉ) phòng bệnh thủy đậu cho trẻ dưới 12 tháng tuổi</span>
+                            <span>Giá: 200.000 VND</span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6" id="item">
+                    <!-- NEWS THUMB -->
+                    <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="news-detail.html">
+                            <img src="images/vx/vx2.png" class="img-responsive" alt="">
+                        </a>
+                        <div class="news-info">
+                            <span>IMOJEV – Vắc xin phòng viêm não Nhật Bản thế hệ mới</span>
+                            <span>Giá: 290.000 VND</span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6" id="item">
+                    <!-- NEWS THUMB -->
+                    <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="news-detail.html">
+                            <img src="images/vx/vx3.jpg" class="img-responsive" alt="">
+                        </a>
+                        <div class="news-info">
+                            <span>Vắc xin ENGERIX B (Bỉ) phòng bệnh viêm gan B</span>
+                            <span>Giá: 900.000 VND</span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6" id="item">
+                    <!-- NEWS THUMB -->
+                    <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="news-detail.html">
+                            <img src="images/vx/vx1.jpg" class="img-responsive" alt="">
+                        </a>
+                        <div class="news-info">
+                            <span>Vắc xin VARILRIX (Bỉ) phòng bệnh thủy đậu cho trẻ dưới 12 tháng tuổi</span>
+                            <span>Giá: 200.000 VND</span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6" id="item">
+                    <!-- NEWS THUMB -->
+                    <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="news-detail.html">
+                            <img src="images/vx/vx2.png" class="img-responsive" alt="">
+                        </a>
+                        <div class="news-info">
+                            <span>IMOJEV – Vắc xin phòng viêm não Nhật Bản thế hệ mới</span>
+                            <span>Giá: 290.000 VND</span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6" id="item">
+                    <!-- NEWS THUMB -->
+                    <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="news-detail.html">
+                            <img src="images/vx/vx1.jpg" class="img-responsive" alt="">
+                        </a>
+                        <div class="news-info">
+                            <span>Vắc xin VARILRIX (Bỉ) phòng bệnh thủy đậu cho trẻ dưới 12 tháng tuổi</span>
+                            <span>Giá: 200.000 VND</span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6" id="item">
+                    <!-- NEWS THUMB -->
+                    <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="news-detail.html">
+                            <img src="images/vx/vx2.png" class="img-responsive" alt="">
+                        </a>
+                        <div class="news-info">
+                            <span>IMOJEV – Vắc xin phòng viêm não Nhật Bản thế hệ mới</span>
+                            <span>Giá: 290.000 VND</span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 </div>
 
     @include('footer')

@@ -137,8 +137,9 @@ use Illuminate\Support\Facades\Route;
         Route::post('login/store', [MainUserController::class, 'login']);
         Route::get('logout',[MainUserController::class,'logout']);
         Route::get('vaccines',[VaccineController::class,'getVaccine']);
-        Route::get('dang-ky-tiem',[PhuHuynhController::class,'createPhieuDK']);
-        Route::post('dang-ky-tiem',[PhuHuynhController::class,'storePhieuDK']);
+        Route::get('dang-ky-tiem',[PhieuDangKyTiemController::class,'createDK']);
+        Route::post('dang-ky-tiem',[PhieuDangKyTiemController::class,'storeDK']);
+        Route::get('chi-tiet-dang-ky',[PhieuDangKyTiemController::class,'chitietDangKy']);
 
         Route::get('contract/{room}',[MainIndexController::class,'getRegist']);
         Route::post('contract/{room}',[MainIndexController::class,'postRegist']);

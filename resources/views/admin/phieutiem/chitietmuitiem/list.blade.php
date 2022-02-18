@@ -20,6 +20,17 @@
             </ol>
         </div>
     </div>
+    <div class="app-header__content">
+        <div class="app-header-left">
+            <div class="search-wrapper active">
+                <div class="input-holder">
+                    <input type="text" class="search-input" placeholder="Type to search" name="key_search">
+                    <button class="search-icon"><span>search</span></button>
+                </div>
+                <button type="button" class="close"></button>
+            </div>
+        </div>
+    </div>
 
 
     @include('admin.alert')

@@ -68,6 +68,8 @@
     </section> -->
     <!-- HEADER -->
     @include('header')
+    @include('admin.alert')
+
     <!-- HOME -->
     <div class="dangky-main">
         <div class="form-dk">
@@ -75,8 +77,11 @@
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-md-6 col-sm-6" style="width:100%">
-                            <!-- CONTACT FORM HERE -->
+                        <div class="col-md-6 col-sm-6" style="width:100%; background: red">
+
+                        <h3>Mời bạn đăng nhập tài khoản hụ huynh để thục hiện đăng ký! </h3>
+                        @if (session()->has('phuhuynh'))
+                        <!-- CONTACT FORM HERE -->
                             <form id="appointment-form" role="form" method="post" action="#">
 
                                 <!-- SECTION TITLE -->
@@ -87,11 +92,11 @@
                                 <div class="wow" data-wow-delay="0.8s" style="margin-bottom: 20px;">
                                     <div class="col-md-6 col-sm-6">
                                         <label for="select">Chọn trẻ</label>
-                                        <select class="form-control">
-                                            @foreach($treem as $te)
-                                            @if (session()->has('phuhuynh') == $te->id_PH)
+                                        <select name ="id_Tre" class="form-control">
+                                            @foreach($tre as $te)
+
                                             <option value="{{$te->code}}">{{$te->tenTre}}</option>
-                                            @endif
+
                                             @endforeach
                                         </select>
                                     </div>
@@ -135,6 +140,7 @@
                                 </div>
                                 @csrf
                             </form>
+                            @endif
                         </div>
                     </div>
                 </div>

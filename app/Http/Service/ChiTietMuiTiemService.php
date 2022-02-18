@@ -18,6 +18,7 @@ class ChiTietMuiTiemService
         ->join('phieu_dang_ky_tiems', 'phieu_dang_ky_tiems.id', '=', 'chi_tiet_mui_tiems.id_PhieuDK')
         ->where('chi_tiet_mui_tiems.tinhTrang', $tinhTrang)
         ->where('phieu_dang_ky_tiems.tinhTrang', $ttPhieu)
+
         ->orderBy('chi_tiet_mui_tiems.ngayTiem', 'DESC')->get();
 
         return $chitiet;
